@@ -1,0 +1,86 @@
+--- dump_converter_old.c	2018-02-22 10:24:48.713452303 +0300
++++ dump_converter.c	2018-02-22 10:40:57.270095192 +0300
+@@ -75,7 +75,7 @@
+ 
+ // #define ETH_AND_UDP_HDR_OFFSETS (sizeof(struct ether_header) + sizeof(struct iphdr) + sizeof(struct udphdr))
+ 
+-
++// #define USE_DEPRECATED_NS_DUMP_FORMAT
+ #define ETH_AND_UDP_HDR_OFFSETS 0
+ 
+ zb_int_t g_udp_port = ZB_UDP_PORT_REAL;
+@@ -182,13 +182,20 @@
+ 
+     memset(iobuf, 0, sizeof(iobuf));
+ 
+-#define DATA_BUF (iobuf + ETH_AND_UDP_HDR_OFFSETS + real_mode + custom_ns_header_offset)
++#define DATA_BUF (iobuf + ETH_AND_UDP_HDR_OFFSETS + custom_ns_header_offset)
+ 
+     if ((r = fread(DATA_BUF, hdr.len, 1, in_f)) != 1)
+     {
+       fprintf(stderr, "packet #%d: error reading %d bytes from the input file\n", pkt_n, hdr.len);
+       return -1;
+     }
++
++    if (real_mode)
++    {
++      hdr.len --;
++      memmove(DATA_BUF, DATA_BUF + 1, hdr.len);
++    }
++    
+     if (real_mode && hdr.len == 1 && hdr.type == 1 && prev_len && prev_len < 3)
+     {
+       /* this is register rx. Put address (it was write) here to be able to
+@@ -200,12 +207,8 @@
+     else if (real_mode && hdr.len > 3)
+     {
+       /* FIFO tx. Add FCS. */
+-      if (hdr.type != 1 && hdr.len > 4)
+-      {
+-        /* format: 1b hdr len, 1b frame len, data. Add FCS after buffer */
+-        fcs_add(DATA_BUF + 4, hdr.len - 4);
+-        hdr.len += 2;
+-      }
++      hdr.len -= 1;
++      fcs_add(DATA_BUF, hdr.len);
+     }
+ 
+     memcpy(prev_reg_rx, DATA_BUF, 2);
+@@ -216,12 +219,11 @@
+       continue;
+     }
+ 
+-    // create_eth_hdr(iobuf, hdr.len + real_mode, (hdr.type != 1));
+     cap_hdr.caplen = cap_hdr.len = ETH_AND_UDP_HDR_OFFSETS + hdr.len + real_mode + custom_ns_header_offset;
+     if (g_udp_port != ZB_UDP_PORT_NS)
+     {
+       /* put header type before body to distinguish between IN and OUT */
+-      iobuf[ETH_AND_UDP_HDR_OFFSETS] = hdr.type;
++      // iobuf[ETH_AND_UDP_HDR_OFFSETS] = hdr.type;
+     }
+     else
+     {
+@@ -250,8 +252,11 @@
+ static void usage(char **argv)
+ {
+   printf("Usage: %s {-ns} dump_file pcap_file\n"
+-         " - ns - dump produced by ns stack build (no transiver registers access)\n",
+-         argv[0]);
++
++#ifdef USE_DEPRECATED_NS_DUMP_FORMAT	 
++	 " - ns - dump produced by ns stack build (no transiver registers access)\n"
++#endif	 
++         , argv[0]);
+   exit(1);
+ }
+ 
+@@ -263,7 +268,9 @@
+   {
+     if ( !strcmp(argv[i], "-ns") )
+     {
++#ifdef USE_DEPRECATED_NS_DUMP_FORMAT
+       g_udp_port = ZB_UDP_PORT_NS;
++#endif
+       i++;
+       break;
+     }
