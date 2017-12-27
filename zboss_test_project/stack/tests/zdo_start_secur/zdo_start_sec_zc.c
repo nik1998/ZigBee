@@ -1,4 +1,4 @@
-/***************************************************************************
+/**************************************************************************2
 *                      ZBOSS ZigBee Pro 2007 stack                         *
 *                                                                          *
 *          Copyright (c) 2012 DSR Corporation Denver CO, USA.              *
@@ -67,10 +67,16 @@ PURPOSE: Test for ZC application written using ZDO.
 #error Define ZB_SECURITY
 #endif
 
-
+#define On 1
+#define Off 0
+#define Toggle 2
+#define LevelSet 3
+#define LevelDown 5
+#define LevelUp 4
   
 
-
+zb_uint8_t stat=1;
+int light=100;
 zb_ieee_addr_t g_ieee_addr = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x08};
 zb_uint8_t g_key[16] = { 0xab, 0xcd, 0xef, 0x01, 0x23, 0x45, 0x67, 0x89, 0, 0, 0, 0, 0, 0, 0, 0};
 
@@ -83,11 +89,11 @@ zb_uint8_t g_key[16] = { 0xab, 0xcd, 0xef, 0x01, 0x23, 0x45, 0x67, 0x89, 0, 0, 0
 
 #ifndef APS_RETRANSMIT_TEST
 //static void zc_send_data(zb_buf_t *buf, zb_uint16_t addr);
-static void zc_send_data(zb_uint8_t param);
+//static void zc_send_data(zb_uint8_t param);
 #endif
-
-//void data_indication(zb_uint8_t param) ZB_CALLBACK;
-
+void checkf(zb_uint8_t param);
+void data_indication(zb_uint8_t param) ZB_CALLBACK;
+static void send_data(zb_uint8_t param);
 MAIN()
 {
   ARGV_UNUSED;
@@ -122,7 +128,7 @@ MAIN()
   }
 
   TRACE_DEINIT();
-
+  zb_af_set_data_indication(checkf);
   MAIN_RETURN(0);
 }
 
@@ -135,8 +141,9 @@ void zb_zdo_startup_complete(zb_uint8_t param) ZB_CALLBACK
   if (buf->u.hdr.status == 0)
   {
     TRACE_MSG(TRACE_APS1, "Device STARTED OK", (FMT__0));
-   // zb_af_set_data_indication(data_indication);
-     zb_af_set_data_indication(zc_send_data);
+    // zb_af_set_data_indication(data_indication);
+     zb_af_set_data_indication(checkf);
+   // ZB_SCHEDULE_ALARM(zc_send_data,0,3*ZB_TIME_ONE_SECOND);
   }
   else
   {
@@ -185,230 +192,115 @@ void data_indication(zb_uint8_t param) ZB_CALLBACK
 #endif
 }
 
-#ifndef APS_RETRANSMIT_TEST
-zb_uint8_t a[10]={1,0,3,5,2,2,1,2,1,0};
-zb_uint8_t inn=0;
-void sent_data (zb_uint8_t param)
+//#ifndef APS_RETRANSMIT_TEST
+void send_data(zb_uint8_t param)
 {
-    zb_buf_t *buf =(zb_buf_t *)ZB_BUF_FROM_REF(param);
-    zb_apsde_data_req_t *req;
-   // zb_uint8_t *ptr = NULL;
-   // zb_short_t i;
-    zb_uint16_t addr=0x0001;
-   // ZB_BUF_INITIAL_ALLOC(buf, ZB_TEST_DATA_SIZE, ptr);
-    req = ZB_GET_BUF_TAIL(buf, sizeof(zb_apsde_data_req_t));
-    req->dst_addr.addr_short = addr; /* send to ZR */
-    req->addr_mode = ZB_APS_ADDR_MODE_16_ENDP_PRESENT;
-    req->tx_options = ZB_APSDE_TX_OPT_ACK_TX;
-    req->radius = 1;
-    req->profileid = 2;
-    req->src_endpoint = 10;
-    req->dst_endpoint = 10;
-    buf->u.hdr.handle = 0x11;
-   /* for (i = 1 ; i < ZB_TEST_DATA_SIZE ; ++i)
-    {
-      ptr[i] =0 ;
-    }
-    ptr[0]=stat;
-    ptr[1]=val;*/
-    TRACE_MSG(TRACE_APS1, "Sending apsde_data.request", (FMT__0)); 
-   // ZB_SCHEDULE_ALARM(zb_apsde_data_request, ZB_REF_FROM_BUF(buf),5*ZB_TIME_ONE_SECOND);
-   ZB_SCHEDULE_CALLBACK(zb_apsde_data_request, ZB_REF_FROM_BUF(buf));
+  zb_apsde_data_req_t *req;
+  zb_uint8_t *ptr = NULL;
+  zb_short_t i;
+  zb_buf_t *buf = (zb_buf_t *)ZB_BUF_FROM_REF(param);
+  ZB_BUF_INITIAL_ALLOC(buf, ZB_TEST_DATA_SIZE, ptr);
+  req = ZB_GET_BUF_TAIL(buf, sizeof(zb_apsde_data_req_t));
+  req->dst_addr.addr_short = 0x0001;
+  req->addr_mode = ZB_APS_ADDR_MODE_16_ENDP_PRESENT;
+  req->tx_options = ZB_APSDE_TX_OPT_ACK_TX;
+  req->radius = 1;
+  req->profileid = 2;
+  req->src_endpoint = 10;
+  req->dst_endpoint = 10;
 
-}
+  buf->u.hdr.handle = 0x11;
 
-
-
-void  On (zb_uint8_t param)
-{
-
-   /* zb_uint8_t *ptr = NULL;
-    zb_short_t i;
-    zb_buf_t *buf = ZB_BUF_FROM_REF(param);
-   // param=ZB_REF_FROM_BUF(buf);
-    ZB_BUF_INITIAL_ALLOC(buf, ZB_TEST_DATA_SIZE, ptr);
-    for (i = 1 ; i < ZB_TEST_DATA_SIZE ; ++i)
-    {
-      ptr[i] =0 ;
-    }
-    ptr[0]=a[inn];
-    ptr[1]=0;*/
-
-   sent_data(param);
-}
-void  Off (zb_uint8_t param)
-{          
-
-   /* zb_uint8_t *ptr = NULL;
-    zb_short_t i;
-    zb_buf_t *buf = ZB_BUF_FROM_REF(param);
-   // param=ZB_REF_FROM_BUF(buf);
-    ZB_BUF_INITIAL_ALLOC(buf, ZB_TEST_DATA_SIZE, ptr);
-    for (i = 1 ; i < ZB_TEST_DATA_SIZE ; ++i)
-    {
-      ptr[i] =0 ;
-    }
-    ptr[0]=a[inn];
-    ptr[1]=0;*/
-
-   sent_data(param);
-}
-void  Toggle (zb_uint8_t param)
-{           
-
-  /*  zb_uint8_t *ptr = NULL;
-    zb_short_t i;
-    zb_buf_t *buf =ZB_BUF_FROM_REF(param);
-   // param=ZB_REF_FROM_BUF(buf);
-    ZB_BUF_INITIAL_ALLOC(buf, ZB_TEST_DATA_SIZE, ptr);
-    for (i = 1 ; i < ZB_TEST_DATA_SIZE ; ++i)
-    {
-      ptr[i] =0 ;
-    }
-    ptr[0]=a[inn];
-    ptr[1]=0;*/
-   sent_data(param);
-}
-void  LevelSet (zb_uint8_t param)
-{           
-
-   /* zb_uint8_t *ptr = NULL;
-    zb_short_t i;
-    zb_buf_t *buf = ZB_BUF_FROM_REF(param);
-   // param=ZB_REF_FROM_BUF(buf);
-    ZB_BUF_INITIAL_ALLOC(buf, ZB_TEST_DATA_SIZE, ptr);
-    for (i = 1 ; i < ZB_TEST_DATA_SIZE ; ++i)
-    {
-      ptr[i] =0 ;
-    }
-    ptr[0]=a[inn];
-    ptr[1]=50;*/
-   sent_data(param);
-}
-void  LevelUp (zb_uint8_t param)
-{          
-
-    /*zb_uint8_t *ptr = NULL;
-    zb_short_t i;
-    zb_buf_t *buf = ZB_BUF_FROM_REF(param);
-   // param=ZB_REF_FROM_BUF(buf);
-    ZB_BUF_INITIAL_ALLOC(buf, ZB_TEST_DATA_SIZE, ptr);
-    for (i = 1 ; i < ZB_TEST_DATA_SIZE ; ++i)
-    {
-      ptr[i] =0 ;
-    }
-    ptr[0]=a[inn];
-    ptr[1]=20;*/
-   sent_data(param);
-}
-void  LevelDown (zb_uint8_t param)
-{
-
-  /*  zb_uint8_t *ptr = NULL;
-    zb_short_t i;
-    zb_buf_t *buf =ZB_BUF_FROM_REF(param);
-    //param=ZB_REF_FROM_BUF(buf);
-    ZB_BUF_INITIAL_ALLOC(buf, ZB_TEST_DATA_SIZE, ptr);
-    for (i = 1 ; i < ZB_TEST_DATA_SIZE ; ++i)
-    {
-      ptr[i] =0 ;
-    }
-    ptr[0]=a[inn];
-    ptr[1]=30;*/
-   sent_data(param);
-}
-
-//static void zc_send_data(zb_buf_t *buf, zb_uint16_t addr)
-static void zc_send_data(zb_uint8_t param)
-{
-    zb_uint8_t *ptr = NULL;
-    zb_short_t i;
-    zb_buf_t *buf =zb_get_out_buf();// ZB_BUF_FROM_REF(param);
-    param=ZB_REF_FROM_BUF(buf);
-    ZB_BUF_INITIAL_ALLOC(buf, ZB_TEST_DATA_SIZE, ptr);
-    for (i = 1 ; i < ZB_TEST_DATA_SIZE ; ++i)
-    {
-      ptr[i] =0 ;
-    }
-
-   // zb_free_buf(buf);
-   /* zb_apsde_data_req_t *req;
-    zb_uint8_t *ptr = NULL;
-    zb_short_t i;
-    ZB_BUF_INITIAL_ALLOC(buf, ZB_TEST_DATA_SIZE, ptr);
-    req = ZB_GET_BUF_TAIL(buf, sizeof(zb_apsde_data_req_t));
-    req->dst_addr.addr_short = addr;*/ /* send to ZR */
-   /* req->addr_mode = ZB_APS_ADDR_MODE_16_ENDP_PRESENT;
-    req->tx_options = ZB_APSDE_TX_OPT_ACK_TX;
-    req->radius = 1;
-    req->profileid = 2;
-    req->src_endpoint = 10;
-    req->dst_endpoint = 10;  
-    buf->u.hdr.handle = 0x11;  
-    for (i = 1 ; i < ZB_TEST_DATA_SIZE ; ++i)
-    {
-      ptr[i] =0 ;
-    }
-    TRACE_MSG(TRACE_APS3, "Sending apsde_data.request%hd", (FMT__H,inn));  */
-    if(inn<10)
-    {
-       switch(a[inn])
-       {
-         case 0:
-         {
-           ptr[0]=a[inn];
-           ptr[1]=0;
-           Off(param);
-           break;
-         }
-         case 1:
-         {
-            ptr[0]=a[inn];
-            ptr[1]=0;
-           On(param);
-           break;
-         }
-         case 2:
-         {
-           ptr[0]=a[inn];
-           ptr[1]=0;
-           Toggle(param);
-           break;
-         }
-         case 3:
-         {
-           ptr[0]=a[inn];
-           ptr[1]=50;
-           LevelSet(param);
-           break;
-         }
-         case 4:
-         {
-           ptr[0]=a[inn];
-           ptr[1]=20;
-           LevelUp(param);
-           break;
-         }
-         case 5:
-         {
-           ptr[0]=a[inn];
-           ptr[1]=30;
-           LevelDown(param);
-           break;
-         }
-         default:break;
-       }
-       inn++;
-       TRACE_MSG(TRACE_APS1, "Recall fuction", (FMT__0)); 
-
-       ZB_SCHEDULE_ALARM(zc_send_data,0,5*ZB_TIME_ONE_SECOND);
-      // ZB_SCHEDULE_CALLBACK(zc_send_data, ZB_REF_FROM_BUF(buf));
-
-    }
-      /*TRACE_MSG(TRACE_APS1, "Sending apsde_data.request", (FMT__0)); 
-      // zb_apsde_data_request(1);
-       ZB_SCHEDULE_CALLBACK(zb_apsde_data_request, ZB_REF_FROM_BUF(buf));*/
-}
+#if 0   /* test with wrong pan_id after join */
+  MAC_PIB().mac_pan_id = 0x1aaa;
+  ZB_UPDATE_PAN_ID();		?
 #endif
+
+  for (i = 0 ; i < ZB_TEST_DATA_SIZE ; ++i)
+  {
+     ptr[i]=0;
+  }
+  if(stat==0)
+  {
+    ptr[0]=0;
+  }
+  else
+  {
+    ptr[0]=1;
+  }
+  ptr[1]=light;
+  TRACE_MSG(TRACE_APS2, "Sending apsde_data.request", (FMT__0));
+  ZB_SCHEDULE_CALLBACK(zb_apsde_data_request, ZB_REF_FROM_BUF(buf));
+}
+void checkf(zb_uint8_t param)
+{
+  zb_buf_t *asdu = (zb_buf_t *)ZB_BUF_FROM_REF(param);
+  zb_uint8_t *ptr;
+  ZB_APS_HDR_CUT_P(asdu, ptr);
+  TRACE_MSG(TRACE_APS2, "aaaaaaaaaa", (FMT__0));
+  switch(*ptr)
+  {
+     case On:
+     {
+        stat=1;
+        TRACE_MSG(TRACE_APS2, "turn on", (FMT__0));
+        break;
+     }
+     case Off:
+     {
+       stat=0;
+       light=0;
+       TRACE_MSG(TRACE_APS2, "turn off", (FMT__0));
+       break;
+     }
+     case Toggle:
+     {
+         stat=(stat+1)%2;
+         if(stat==1)
+         {
+           light=50;
+         }
+         else
+         {
+           light=0;
+         }
+         TRACE_MSG(TRACE_APS2,"toggle",(FMT__0));
+         break;
+     }
+     case LevelSet:
+     {
+        int value =ptr[1];
+        light=value;
+        TRACE_MSG(TRACE_APS2, "level of light %d", (FMT__D,value));
+        break;
+     }
+     case LevelUp:
+     {
+        int value =ptr[1];
+        light=light+value;
+        TRACE_MSG(TRACE_APS2, "level of light %d", (FMT__D,light));
+        break;
+     }
+     case LevelDown:
+     {
+         int value =ptr[1];
+         if(light<value)
+         {
+            light=0;
+         }
+         else
+         light=light-value;
+         TRACE_MSG(TRACE_APS2, "level of light %d", (FMT__D,light));
+         break;
+     }
+     default:
+         TRACE_MSG(TRACE_APS2,"Unknown command!!!",(FMT__0));
+  }
+  send_data(param);
+}
+
+
+
+//#endif
 
 /*! @} */

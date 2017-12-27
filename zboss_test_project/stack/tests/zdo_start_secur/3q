@@ -67,15 +67,15 @@ PURPOSE:
 /*! \addtogroup ZB_TESTS */
 /*! @{ */
 
-//static void send_data(zb_buf_t *buf);
+static void send_data(zb_buf_t *buf);
 #ifndef APS_RETRANSMIT_TEST
 void data_indication(zb_uint8_t param) ZB_CALLBACK;
 #endif
-static void zc_send_data(zb_uint8_t param);
+
 /*
   ZR joins to ZC, then sends APS packet.
  */
-
+void checkf(zb_uint8_t param);
 
 
 MAIN()
@@ -120,7 +120,7 @@ MAIN()
     zdo_main_loop();
   }
 
- // zb_af_set_data_indication(checkf);
+  zb_af_set_data_indication(checkf);
  // MACPIB.macRxOnWhenIdle=false;
   TRACE_DEINIT();
   MAIN_RETURN(0);
@@ -134,9 +134,10 @@ void zb_zdo_startup_complete(zb_uint8_t param) ZB_CALLBACK
     TRACE_MSG(TRACE_APS1, "Device STARTED OK", (FMT__0));
 #ifndef APS_RETRANSMIT_TEST
    // zb_af_set_data_indication(data_indication);
-    ZB_SCHEDULE_CALLBACK(zc_send_data, ZB_REF_FROM_BUF(buf));
- //  zb_af_set_data_indication(checkf);
+
+   zb_af_set_data_indication(checkf);
 #endif
+    send_data((zb_buf_t *)ZB_BUF_FROM_REF(param));
   }
   else
   {
@@ -156,10 +157,10 @@ void sent_data (zb_uint8_t param)
     zb_apsde_data_req_t *req;
    // zb_uint8_t *ptr = NULL;
    // zb_short_t i;
-    zb_uint16_t addr=0x0000;
+    zb_uint16_t addr=0x0001;
    // ZB_BUF_INITIAL_ALLOC(buf, ZB_TEST_DATA_SIZE, ptr);
     req = ZB_GET_BUF_TAIL(buf, sizeof(zb_apsde_data_req_t));
-    req->dst_addr.addr_short = addr; 
+    req->dst_addr.addr_short = addr; /* send to ZR */
     req->addr_mode = ZB_APS_ADDR_MODE_16_ENDP_PRESENT;
     req->tx_options = ZB_APSDE_TX_OPT_ACK_TX;
     req->radius = 1;
@@ -333,6 +334,7 @@ void data_indication(zb_uint8_t param)
   zb_ushort_t i;
   zb_uint8_t *ptr;
   zb_buf_t *asdu = (zb_buf_t *)ZB_BUF_FROM_REF(param);
+
   /* Remove APS header from the packet */
   ZB_APS_HDR_CUT_P(asdu, ptr);
 
@@ -350,7 +352,7 @@ void data_indication(zb_uint8_t param)
     }
   }
 
-  //sent_data(asdu);
+  send_data(asdu);
 }
 #endif
 
