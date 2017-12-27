@@ -196,7 +196,7 @@ void checkf(zb_uint8_t param)
      default:
          TRACE_MSG(TRACE_APS2,"Unknown command!!!",(FMT__0));
   }
-  send_data(asdu);
+ // send_data(asdu);
 }
 void zb_zdo_startup_complete(zb_uint8_t param) ZB_CALLBACK
 {
