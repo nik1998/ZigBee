@@ -33,14 +33,13 @@ Write to pipe: pipe 0 ret 11
 have smth from node 0
 Read from pipe: rpipe 3 ret 29
 dump of buf [29] buf parse
-1d 00 80 79 79 38 00 00 ff cf 00 00 00 21 84 00 
-00 00 00 08 07 06 05 ff ff ff 00 d4 00 
+1d 00 80 79 79 08 00 00 ff cf 00 00 00 21 84 00 
+00 00 00 08 07 06 05 ff ff ff 00 4b 47 
 mf.frame_control.dest_addr_mode 0  all 32768
 frame 0 0 0 0 0 0 0 0 2
-addr 14457 0 53247 0
+addr 2169 0 53247 0
 nNode 65535
-write pipe /tmp/zt1.write open failed No such device or address
-Write to pipe: pipe 1 ret -1
+Write to pipe: pipe 1 ret 29
 have smth from node 1
 Read from pipe: rpipe 4 ret 11
 dump of buf [11] buf parse
@@ -53,21 +52,21 @@ Write to pipe: pipe 0 ret 11
 have smth from node 0
 Read from pipe: rpipe 3 ret 29
 dump of buf [29] buf parse
-1d 00 80 7a 79 38 00 00 ff cf 00 00 00 21 84 00 
-00 00 00 08 07 06 05 ff ff ff 00 18 ed 
+1d 00 80 7a 79 08 00 00 ff cf 00 00 00 21 84 00 
+00 00 00 08 07 06 05 ff ff ff 00 87 aa 
 mf.frame_control.dest_addr_mode 0  all 32768
 frame 0 0 0 0 0 0 0 0 2
-addr 14457 0 53247 0
+addr 2169 0 53247 0
 nNode 65535
 Write to pipe: pipe 1 ret 29
 have smth from node 1
 Read from pipe: rpipe 4 ret 22
 dump of buf [22] buf parse
-16 23 c8 9b 79 38 00 00 ff ff 01 00 00 00 00 00 
-00 08 01 8e 6d 16 
+16 23 c8 9b 79 08 00 00 ff ff 01 00 00 00 00 00 
+00 08 01 8e 50 f9 
 mf.frame_control.dest_addr_mode 2  all 51235
 frame 3 0 0 1 0 0 2 0 3
-addr 14457 0 65535 1
+addr 2169 0 65535 1
 nNode 0
 Write to pipe: pipe 0 ret 22
 have smth from node 0
@@ -76,36 +75,34 @@ dump of buf [6] buf parse
 06 02 00 9b e2 9f 
 mf.frame_control.dest_addr_mode 0  all 2
 frame 2 0 0 0 0 0 0 0 0
-addr 40930 343 6 0
+addr 40930 168 6 0
 nNode 65535
 Write to pipe: pipe 1 ret 6
 have smth from node 1
 Read from pipe: rpipe 4 ret 19
 dump of buf [19] buf parse
-13 63 c8 9c 79 38 00 00 01 00 00 00 00 00 00 08 
-04 3d ab 
+13 63 c8 9c 79 08 00 00 01 00 00 00 00 00 00 08 
+04 55 95 
 mf.frame_control.dest_addr_mode 2  all 51299
 frame 3 0 0 1 1 0 2 0 3
-addr 14457 0 1 0
+addr 2169 0 1 0
 nNode 0
 Write to pipe: pipe 0 ret 19
 have smth from node 0
-Read from pipe: rpipe 3 ret 6
+Read from pipe: rpipe 3 ret 36
 dump of buf [6] buf parse
 06 12 00 9c c8 6e 
 mf.frame_control.dest_addr_mode 0  all 18
 frame 2 0 1 0 0 0 0 0 0
-addr 28360 343 6 0
+addr 28360 168 36 0
 nNode 65535
 Write to pipe: pipe 1 ret 6
-have smth from node 0
-Read from pipe: rpipe 3 ret 30
 dump of buf [30] buf parse
-1e 63 cc 7b 79 38 01 00 00 00 00 00 00 08 00 00 
-00 00 08 07 06 05 02 01 00 00 d7 a6 00 00 
+1e 63 cc 7b 79 08 01 00 00 00 00 00 00 08 00 00 
+00 00 08 07 06 05 02 01 00 00 c2 15 00 00 
 mf.frame_control.dest_addr_mode 3  all 52323
 frame 3 0 0 1 1 0 3 0 3
-addr 14457 1 0 0
+addr 2169 1 0 0
 nNode 1
 Got associate response laddr 1 1 nwk addr 1 
 AddrUpdate 1 <--> 1
@@ -116,6 +113,71 @@ dump of buf [6] buf parse
 06 02 00 7b ec 78 
 mf.frame_control.dest_addr_mode 0  all 2
 frame 2 0 0 0 0 0 0 0 0
-addr 30956 343 6 0
+addr 30956 168 6 0
+nNode 65535
+Write to pipe: pipe 0 ret 6
+have smth from node 1
+Read from pipe: rpipe 4 ret 40
+dump of buf [40] buf parse
+28 41 88 9d 79 08 ff ff 01 00 48 00 fd ff 01 00 
+0a 00 08 00 13 00 00 00 00 99 01 01 00 01 00 00 
+00 00 00 00 08 0e ea 12 
+mf.frame_control.dest_addr_mode 2  all 34881
+frame 1 0 0 0 1 0 2 0 2
+addr 2169 65535 1 72
+nNode 65535
+Got associate response laddr 1 nwk addr 1
+AddrUpdate 1 <--> 1
+Write to pipe: pipe 0 ret 40
+have smth from node 0
+Read from pipe: rpipe 3 ret 40
+dump of buf [40] buf parse
+28 41 88 7c 79 08 ff ff 00 00 48 00 fd ff 01 00 
+09 00 08 00 13 00 00 00 00 99 01 01 00 01 00 00 
+00 00 00 00 08 0e 72 99 
+mf.frame_control.dest_addr_mode 2  all 34881
+frame 1 0 0 0 1 0 2 0 2
+addr 2169 65535 0 72
+nNode 65535
+Got associate response laddr 1 nwk addr 1
+AddrUpdate 1 <--> 1
+Write to pipe: pipe 1 ret 40
+have smth from node 1
+Read from pipe: rpipe 4 ret 38
+dump of buf [38] buf parse
+26 61 88 9e 79 08 00 00 01 00 48 00 00 00 01 00 
+01 01 40 0a 01 00 02 00 0a 9a 01 00 01 00 00 00 
+00 00 00 08 4b 1d 
+mf.frame_control.dest_addr_mode 2  all 34913
+frame 1 0 0 1 1 0 2 0 2
+addr 2169 0 1 72
+nNode 0
+Write to pipe: pipe 0 ret 38
+have smth from node 0
+Read from pipe: rpipe 3 ret 6
+dump of buf [6] buf parse
+06 02 00 9e 4f c8 
+mf.frame_control.dest_addr_mode 0  all 2
+frame 2 0 0 0 0 0 0 0 0
+addr 51279 168 6 0
+nNode 65535
+Write to pipe: pipe 1 ret 6
+have smth from node 0
+Read from pipe: rpipe 3 ret 28
+dump of buf [28] buf parse
+1c 61 88 7d 79 08 01 00 00 00 48 00 01 00 00 00 
+05 00 02 0a 01 00 02 00 0a 9a 5f 93 
+mf.frame_control.dest_addr_mode 2  all 34913
+frame 1 0 0 1 1 0 2 0 2
+addr 2169 1 0 72
+nNode 1
+Write to pipe: pipe 1 ret 28
+have smth from node 1
+Read from pipe: rpipe 4 ret 6
+dump of buf [6] buf parse
+06 02 00 7d da 1d 
+mf.frame_control.dest_addr_mode 0  all 2
+frame 2 0 0 0 0 0 0 0 0
+addr 7642 168 6 0
 nNode 65535
 Write to pipe: pipe 0 ret 6

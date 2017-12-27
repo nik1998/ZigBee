@@ -62,12 +62,12 @@ PURPOSE:
 #ifndef ZB_SECURITY
 #error Define ZB_SECURITY
 #endif
-#define On 1
+/*#define On 1
 #define Off 0
 #define Toggle 2
 #define LevelSet 3
 #define LevelDown 5
-#define LevelUp 4
+#define LevelUp 4*/
 
 /*! \addtogroup ZB_TESTS */
 /*! @{ */
@@ -101,6 +101,11 @@ MAIN()
 #else
   ZB_INIT("zdo_zr", "2", "2");
 #endif
+  ///
+#ifdef ZB_SECURITY
+  ZG->nwk.nib.security_level = 0;
+#endif
+  ///
   //ZB_PIB_RX_ON_WHEN_IDLE()=ZB_FALSE;//sleep
 
   /* FIXME: temporary, until neighbor table is not in nvram */
@@ -138,7 +143,7 @@ void checkf(zb_uint8_t param)
   zb_uint8_t *ptr;
   ZB_APS_HDR_CUT_P(asdu, ptr);
   TRACE_MSG(TRACE_APS2, "aaaaaaaaaa", (FMT__0));
-  switch(*ptr)
+ /* switch(*ptr)
   {
      case On:
      {
@@ -195,8 +200,8 @@ void checkf(zb_uint8_t param)
      }
      default:
          TRACE_MSG(TRACE_APS2,"Unknown command!!!",(FMT__0));
-  }
- // send_data(asdu);
+  }*/
+  send_data(asdu);
 }
 void zb_zdo_startup_complete(zb_uint8_t param) ZB_CALLBACK
 {
@@ -223,7 +228,7 @@ static void send_data(zb_buf_t *buf)
 {
   zb_apsde_data_req_t *req;
   zb_uint8_t *ptr = NULL;
-  zb_short_t i;
+  //zb_short_t i;
 
   ZB_BUF_INITIAL_ALLOC(buf, ZB_TEST_DATA_SIZE, ptr);
   req = ZB_GET_BUF_TAIL(buf, sizeof(zb_apsde_data_req_t));
@@ -242,7 +247,7 @@ static void send_data(zb_buf_t *buf)
   ZB_UPDATE_PAN_ID();						   ?
 #endif
 
-  for (i = 0 ; i < ZB_TEST_DATA_SIZE ; ++i)
+  /*/for (i = 0 ; i < ZB_TEST_DATA_SIZE ; ++i)
   {
      ptr[i]=0;
   }
@@ -254,7 +259,7 @@ static void send_data(zb_buf_t *buf)
   {
     ptr[0]=1;
   }
-  ptr[1]=light;
+  ptr[1]=light;*/
   TRACE_MSG(TRACE_APS2, "Sending apsde_data.request", (FMT__0));
   ZB_SCHEDULE_CALLBACK(zb_apsde_data_request, ZB_REF_FROM_BUF(buf));
 }

@@ -67,8 +67,8 @@ $(BIN)zdo_start_sec_zr$(EXE) : $(OBJS2)  $(LIBS)
 $(BIN)zdo_start_sec_ze$(EXE) : $(OBJS3)  $(LIBS_ED)
 	$(LINK_BINARY_ED)
 
+BINS = $(BIN)zdo_start_sec_zr$(EXE) $(BIN)zdo_start_sec_ze$(EXE)
 #BINS = $(BIN)zdo_start_sec_zc$(EXE) $(BIN)zdo_start_sec_zr$(EXE) $(BIN)zdo_start_sec_ze$(EXE)
-BINS = $(BIN)zdo_start_sec_zc$(EXE) $(BIN)zdo_start_sec_zr$(EXE) $(BIN)zdo_start_sec_ze$(EXE)
 
 #BINS =$(BIN)$(TESTT) $(BIN)zdo_start_sec_zr$(EXE) $(BIN)zdo_start_sec_ze$(EXE)
 all: $(BINS)
