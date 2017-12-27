@@ -48,7 +48,8 @@
 #*/
 
 wait_for_start() {
-    nm=$1
+   nm=$1
+  # nm="zc_test"
     s=''
     while [ A"$s" = A ]
     do
@@ -93,7 +94,8 @@ PipePID=$!
 sleep 1
 
 echo "run coordinator"
-./zdo_start_sec_zc /tmp/zt0.write /tmp/zt0.read &
+#./zdo_start_sec_zc /tmp/zt0.write /tmp/zt0.read &
+./zdo_zc_test /tmp/zt0.write /tmp/zt0.read &
 coordPID=$!
 wait_for_start zc
 

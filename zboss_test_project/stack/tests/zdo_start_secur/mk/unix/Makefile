@@ -56,17 +56,21 @@ OBJS2 = ${SRCS2:.c=.o}
 SRCS3 = zdo_start_sec_ze.c
 OBJS3 = ${SRCS3:.c=.ed.o}
 
-
+TESTT =zdo_zc_test 
 $(BIN)zdo_start_sec_zc$(EXE) : $(OBJS1)  $(LIBS)
 	$(LINK_BINARY)
 
+#$(BIN)zdo_start_sec_zc$(EXE) : $(TESTT)  $(LIBS_ED)
 $(BIN)zdo_start_sec_zr$(EXE) : $(OBJS2)  $(LIBS)
 	$(LINK_BINARY)
 
 $(BIN)zdo_start_sec_ze$(EXE) : $(OBJS3)  $(LIBS_ED)
 	$(LINK_BINARY_ED)
 
+#BINS = $(BIN)zdo_start_sec_zc$(EXE) $(BIN)zdo_start_sec_zr$(EXE) $(BIN)zdo_start_sec_ze$(EXE)
 BINS = $(BIN)zdo_start_sec_zc$(EXE) $(BIN)zdo_start_sec_zr$(EXE) $(BIN)zdo_start_sec_ze$(EXE)
+
+#BINS =$(BIN)$(TESTT) $(BIN)zdo_start_sec_zr$(EXE) $(BIN)zdo_start_sec_ze$(EXE)
 all: $(BINS)
 
 #BINS_TEST='run_test.sh'
