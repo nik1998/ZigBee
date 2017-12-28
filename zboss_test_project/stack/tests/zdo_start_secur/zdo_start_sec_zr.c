@@ -180,10 +180,32 @@ void zd_ieee_addr(zb_uint8_t param)
     req->start_index=0;
     zb_zdo_ieee_addr_req(param,ieee_addr);
 }
+void simple_desc(zb_uint8_t param)
+{
+  zb_buf_t *buf = ZB_BUF_FROM_REF(param);
+  zb_zdo_simple_desc_resp_t * resp;
+  //zb_ieee_addr_t ieee_addr;
+ // zb_uint16_t nwk_addr;
+  //zb_address_ieee_ref_t addr_ref
+  resp=(zb_zdo_simple_desc_resp_t *)ZB_BUF_BEGIN(buf);
+  TRACE_MSG(TRACE_ZDO2,"Endpoint %hd %d",(FMT__H_D,resp->simple_desc.endpoint,resp->simple_desc.app_profile_id));
+  zb_free_buf(buf);
+}
+void zd_simple_req(zb_uint8_t param)
+{ 
+  zb_buf_t *buf = ZB_BUF_FROM_REF(param);
+  zb_zdo_simple_desc_req_t *req;
+  ZB_BUF_INITIAL_ALLOC(buf,sizeof(zb_zdo_simple_desc_req_t),req);
+  req->endpoint =2;
+  req->nwk_addr=0;
+  zb_zdo_simple_desc_req(ZB_REF_FROM_BUF(buf),simple_desc);
+}
+
 static void zc_send_data(zb_uint8_t param)
 {
    zd_nwk(param);
    zd_ieee_addr(param);
+   zd_simple_req(param);
    /* TRACE_MSG(TRACE_APS1, "Recall fuction", (FMT__0)); 
     ZB_SCHEDULE_ALARM(zc_send_data,0,5*ZB_TIME_ONE_SECOND);*/
 }
