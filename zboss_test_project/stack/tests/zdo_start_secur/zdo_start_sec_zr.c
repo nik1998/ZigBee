@@ -220,11 +220,9 @@ void  LevelSet (zb_uint8_t param)
 void  LevelUp (zb_uint8_t param)
 {
     zb_uint8_t *ptr = NULL;
-   zb_buf_t *buf = ZB_BUF_FROM_REF(param); 
-   zb_uint8_t *p=ZB_GET_BUF_PARAM(buf,zb_uint8_t);
-   zb_uint8_t f=*p; 
+   zb_buf_t *buf = ZB_BUF_FROM_REF(param);
    ZB_BUF_INITIAL_ALLOC(buf, ZB_TEST_DATA_SIZE, ptr);
-   ptr[1]=f;
+   ptr[1]=0;
    ptr[0]=4;
    sent_data(param);
 }
@@ -232,10 +230,8 @@ void  LevelDown (zb_uint8_t param)
 {
     zb_uint8_t *ptr = NULL;
    zb_buf_t *buf = ZB_BUF_FROM_REF(param);
-   zb_uint8_t *p=ZB_GET_BUF_PARAM(buf,zb_uint8_t);
-   zb_uint8_t f=*p; 
    ZB_BUF_INITIAL_ALLOC(buf, ZB_TEST_DATA_SIZE, ptr);
-   ptr[1]=f;
+   ptr[1]=0;
    ptr[0]=5;
    sent_data(param);
 }
@@ -297,21 +293,17 @@ static void zc_send_data(zb_uint8_t param)
          case 3:
          {
            zb_uint8_t *p= ZB_GET_BUF_PARAM(buf,zb_uint8_t);
-           *p=50;
+           *p=70;
            LevelSet(param);
            break;
          }
          case 4:
          {
-           zb_uint8_t *p= ZB_GET_BUF_PARAM(buf,zb_uint8_t);
-           *p=20;
            LevelUp(param);
            break;
          }
          case 5:
          {
-           zb_uint8_t *p= ZB_GET_BUF_PARAM(buf,zb_uint8_t);
-           *p=30;
            LevelDown(param);
            break;
          }

@@ -93,7 +93,7 @@ zb_uint8_t g_key[16] = { 0xab, 0xcd, 0xef, 0x01, 0x23, 0x45, 0x67, 0x89, 0, 0, 0
 #endif
 void checkf(zb_uint8_t param);
 void data_indication(zb_uint8_t param) ZB_CALLBACK;
-static void send_data(zb_uint8_t param);
+//static void send_data(zb_uint8_t param);
 MAIN()
 {
   ARGV_UNUSED;
@@ -193,7 +193,7 @@ void data_indication(zb_uint8_t param) ZB_CALLBACK
 }
 
 //#ifndef APS_RETRANSMIT_TEST
-void send_data(zb_uint8_t param)
+/*void send_data(zb_uint8_t param)
 {
   zb_apsde_data_req_t *req;
   zb_uint8_t *ptr = NULL;
@@ -211,7 +211,7 @@ void send_data(zb_uint8_t param)
 
   buf->u.hdr.handle = 0x11;
 
-#if 0   /* test with wrong pan_id after join */
+#if 0
   MAC_PIB().mac_pan_id = 0x1aaa;
   ZB_UPDATE_PAN_ID();		?
 #endif
@@ -231,7 +231,7 @@ void send_data(zb_uint8_t param)
   ptr[1]=light;
   TRACE_MSG(TRACE_APS2, "Sending apsde_data.request", (FMT__0));
   ZB_SCHEDULE_CALLBACK(zb_apsde_data_request, ZB_REF_FROM_BUF(buf));
-}
+}*/
 void checkf(zb_uint8_t param)
 {
   zb_buf_t *asdu = (zb_buf_t *)ZB_BUF_FROM_REF(param);
@@ -243,6 +243,7 @@ void checkf(zb_uint8_t param)
      case On:
      {
         stat=1;
+        light=50;
         TRACE_MSG(TRACE_APS2, "turn on", (FMT__0));
         break;
      }
@@ -276,14 +277,19 @@ void checkf(zb_uint8_t param)
      }
      case LevelUp:
      {
-        int value =ptr[1];
+        int value =10;
+        if(light+value>100)
+        {
+          light=100;
+        }
+        else
         light=light+value;
         TRACE_MSG(TRACE_APS2, "level of light %d", (FMT__D,light));
         break;
      }
      case LevelDown:
      {
-         int value =ptr[1];
+         int value =10;
          if(light<value)
          {
             light=0;
@@ -296,7 +302,7 @@ void checkf(zb_uint8_t param)
      default:
          TRACE_MSG(TRACE_APS2,"Unknown command!!!",(FMT__0));
   }
-  send_data(param);
+  //send_data(param);
 }
 
 
