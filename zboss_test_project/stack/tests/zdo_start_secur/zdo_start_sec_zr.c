@@ -62,17 +62,12 @@ PURPOSE:
 #ifndef ZB_SECURITY
 #error Define ZB_SECURITY
 #endif
-/*#define On 1
-#define Off 0
-#define Toggle 2
-#define LevelSet 3
-#define LevelDown 5
-#define LevelUp 4*/
+
 
 /*! \addtogroup ZB_TESTS */
 /*! @{ */
 
-static void send_data(zb_buf_t *buf);
+static void zc_send_data(zb_uint8_t param);
 #ifndef APS_RETRANSMIT_TEST
 void data_indication(zb_uint8_t param) ZB_CALLBACK;
 #endif
@@ -130,79 +125,44 @@ MAIN()
     zdo_main_loop();
   }
 
-  zb_af_set_data_indication(checkf);
+ // zb_af_set_data_indication(checkf);
  // MACPIB.macRxOnWhenIdle=false;
   TRACE_DEINIT();
   MAIN_RETURN(0);
 }
-zb_uint8_t stat=1;
-int light=100;
+
 void checkf(zb_uint8_t param)
 {
-  zb_buf_t *asdu = (zb_buf_t *)ZB_BUF_FROM_REF(param);
+ /* zb_buf_t *asdu = (zb_buf_t *)ZB_BUF_FROM_REF(param);
   zb_uint8_t *ptr;
-  ZB_APS_HDR_CUT_P(asdu, ptr);
+  ZB_APS_HDR_CUT_P(asdu, ptr);*/
   TRACE_MSG(TRACE_APS2, "aaaaaaaaaa", (FMT__0));
- /* switch(*ptr)
-  {
-     case On:
-     {
-        stat=1;
-        TRACE_MSG(TRACE_APS2, "turn on", (FMT__0));
-        break;
-     }
-     case Off:
-     {
-       stat=0;
-       light=0;
-       TRACE_MSG(TRACE_APS2, "turn off", (FMT__0));
-       break;
-     }
-     case Toggle:
-     {
-         stat=(stat+1)%2;
-         if(stat==1)
-         {
-           light=50;
-         }
-         else
-         {
-           light=0;
-         }
-         TRACE_MSG(TRACE_APS2,"toggle",(FMT__0));
-         break;
-     }
-     case LevelSet:
-     {
-        int value =ptr[1];
-        light=value;
-        TRACE_MSG(TRACE_APS2, "level of light %d", (FMT__D,value));
-        break;
-     }
-     case LevelUp:
-     {
-        int value =ptr[1];
-        light=light+value;
-        TRACE_MSG(TRACE_APS2, "level of light %d", (FMT__D,light));
-        break;
-     }
-     case LevelDown:
-     {
-         int value =ptr[1];
-         if(light<value)
-         {
-            light=0;
-         }
-         else
-         light=light-value;
-         TRACE_MSG(TRACE_APS2, "level of light %d", (FMT__D,light));
-         break;
-     }
-     default:
-         TRACE_MSG(TRACE_APS2,"Unknown command!!!",(FMT__0));
-  }*/
-  send_data(asdu);
+  zc_send_data(param);
 }
+void zb_get_sh(zb_uint8_t param)
+{
+   zb_buf_t *buf =ZB_BUF_FROM_REF(param);
+   zb_zdo_nwk_addr_resp_head_t *resp;
+  // zb_ieee_addr_t ieee_addr;
+   resp=( zb_zdo_nwk_addr_resp_head_t*)ZB_BUF_BEGIN(buf);
+   TRACE_MSG(TRACE_ZDO2,"bbbbbbb %hd %d",(FMT__H_D , resp->status,resp->nwk_addr));
+}
+
+static void zc_send_data(zb_uint8_t param)
+{
+
+    zb_buf_t *buf =zb_get_out_buf();// ZB_BUF_FROM_REF(param);
+    param=ZB_REF_FROM_BUF(buf);
+    zb_zdo_nwk_addr_req_param_t *req_param=ZB_GET_BUF_PARAM(buf,zb_zdo_nwk_addr_req_param_t);
+    req_param->dst_addr=0x0000;
+    zb_address_ieee_by_ref(req_param->ieee_addr, 0x0000);
+    req_param->request_type=ZB_ZDO_SINGLE_DEVICE_RESP;
+    req_param->start_index=0;
+    zb_zdo_nwk_addr_req(param,zb_get_sh);
+    TRACE_MSG(TRACE_APS1, "Recall fuction", (FMT__0)); 
+    ZB_SCHEDULE_ALARM(zc_send_data,0,5*ZB_TIME_ONE_SECOND);
+}
+
 void zb_zdo_startup_complete(zb_uint8_t param) ZB_CALLBACK
 {
   zb_buf_t *buf = ZB_BUF_FROM_REF(param);
@@ -212,9 +172,10 @@ void zb_zdo_startup_complete(zb_uint8_t param) ZB_CALLBACK
 #ifndef APS_RETRANSMIT_TEST
    // zb_af_set_data_indication(data_indication);
 
-   zb_af_set_data_indication(checkf);
+     ZB_SCHEDULE_CALLBACK(checkf, ZB_REF_FROM_BUF(buf));
+     //zb_af_set_data_indication(checkf);
 #endif
-    send_data((zb_buf_t *)ZB_BUF_FROM_REF(param));
+   // send_data((zb_buf_t *)ZB_BUF_FROM_REF(param));
   }
   else
   {
@@ -224,7 +185,7 @@ void zb_zdo_startup_complete(zb_uint8_t param) ZB_CALLBACK
 }
 
 
-static void send_data(zb_buf_t *buf)
+/*static void send_data(zb_buf_t *buf)
 {
   zb_apsde_data_req_t *req;
   zb_uint8_t *ptr = NULL;
@@ -232,7 +193,7 @@ static void send_data(zb_buf_t *buf)
 
   ZB_BUF_INITIAL_ALLOC(buf, ZB_TEST_DATA_SIZE, ptr);
   req = ZB_GET_BUF_TAIL(buf, sizeof(zb_apsde_data_req_t));
-  req->dst_addr.addr_short = 0; /* send to ZC */
+  req->dst_addr.addr_short = 0; 
   req->addr_mode = ZB_APS_ADDR_MODE_16_ENDP_PRESENT;
   req->tx_options = ZB_APSDE_TX_OPT_ACK_TX;
   req->radius = 1;
@@ -241,37 +202,20 @@ static void send_data(zb_buf_t *buf)
   req->dst_endpoint = 10;
 
   buf->u.hdr.handle = 0x11;
-
-#if 0   /* test with wrong pan_id after join */
   MAC_PIB().mac_pan_id = 0x1aaa;
-  ZB_UPDATE_PAN_ID();						   ?
-#endif
-
-  /*/for (i = 0 ; i < ZB_TEST_DATA_SIZE ; ++i)
-  {
-     ptr[i]=0;
-  }
-  if(stat==0)
-  {
-    ptr[0]=0;
-  }
-  else
-  {
-    ptr[0]=1;
-  }
-  ptr[1]=light;*/
+  ZB_UPDATE_PAN_ID();
   TRACE_MSG(TRACE_APS2, "Sending apsde_data.request", (FMT__0));
   ZB_SCHEDULE_CALLBACK(zb_apsde_data_request, ZB_REF_FROM_BUF(buf));
-}
+}*/
 
 #ifndef APS_RETRANSMIT_TEST
-void data_indication(zb_uint8_t param)
+/*void data_indication(zb_uint8_t param)
 {
   zb_ushort_t i;
   zb_uint8_t *ptr;
   zb_buf_t *asdu = (zb_buf_t *)ZB_BUF_FROM_REF(param);
 
-  /* Remove APS header from the packet */
+  //Remove APS header from the packet 
   ZB_APS_HDR_CUT_P(asdu, ptr);
 
   TRACE_MSG(TRACE_APS2, "data_indication: packet %p len %d handle 0x%x", (FMT__P_D_D,
@@ -289,7 +233,7 @@ void data_indication(zb_uint8_t param)
   }
 
   send_data(asdu);
-}
+}*/
 #endif
 
 

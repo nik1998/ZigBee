@@ -217,33 +217,6 @@ void sent_data (zb_uint8_t param)
 
 }
 
-
-
-void  On (zb_uint8_t param)
-{
-   sent_data(param);
-}
-void  Off (zb_uint8_t param)
-{          
-   sent_data(param);
-}
-void  Toggle (zb_uint8_t param)
-{           
-   sent_data(param);
-}
-void  LevelSet (zb_uint8_t param)
-{           
-   sent_data(param);
-}
-void  LevelUp (zb_uint8_t param)
-{          
-   sent_data(param);
-}
-void  LevelDown (zb_uint8_t param)
-{
-   sent_data(param);
-}
-
 //static void zc_send_data(zb_buf_t *buf, zb_uint16_t addr)
 void zb_get_sh(zb_uint8_t param)
 {
@@ -271,83 +244,10 @@ static void zc_send_data(zb_uint8_t param)
     req_param->request_type=ZB_ZDO_SINGLE_DEVICE_RESP;
     req_param->start_index=0;
     zb_zdo_nwk_addr_req(param,zb_get_sh);
-   // zb_free_buf(buf);
-   /* zb_apsde_data_req_t *req;
-    zb_uint8_t *ptr = NULL;
-    zb_short_t i;
-    ZB_BUF_INITIAL_ALLOC(buf, ZB_TEST_DATA_SIZE, ptr);
-    req = ZB_GET_BUF_TAIL(buf, sizeof(zb_apsde_data_req_t));
-    req->dst_addr.addr_short = addr;*/ /* send to ZR */
-   /* req->addr_mode = ZB_APS_ADDR_MODE_16_ENDP_PRESENT;
-    req->tx_options = ZB_APSDE_TX_OPT_ACK_TX;
-    req->radius = 1;
-    req->profileid = 2;
-    req->src_endpoint = 10;
-    req->dst_endpoint = 10;  
-    buf->u.hdr.handle = 0x11;  
-    for (i = 1 ; i < ZB_TEST_DATA_SIZE ; ++i)
-    {
-      ptr[i] =0 ;
-    }
-    TRACE_MSG(TRACE_APS3, "Sending apsde_data.request%hd", (FMT__H,inn));  */
-   /* if(inn<10)
-    {
-       switch(a[inn])
-       {
-         case 0:
-         {
-           ptr[0]=a[inn];
-           ptr[1]=0;
-           Off(param);
-           break;
-         }
-         case 1:
-         {
-            ptr[0]=a[inn];
-            ptr[1]=0;
-           On(param);
-           break;
-         }
-         case 2:
-         {
-           ptr[0]=a[inn];
-           ptr[1]=0;
-           Toggle(param);
-           break;
-         }
-         case 3:
-         {
-           ptr[0]=a[inn];
-           ptr[1]=50;
-           LevelSet(param);
-           break;
-         }
-         case 4:
-         {
-           ptr[0]=a[inn];
-           ptr[1]=20;
-           LevelUp(param);
-           break;
-         }
-         case 5:
-         {
-           ptr[0]=a[inn];
-           ptr[1]=30;
-           LevelDown(param);
-           break;
-         }
-         default:break;
-       }*/
-       inn++;
+         inn++;
        TRACE_MSG(TRACE_APS1, "Recall fuction", (FMT__0)); 
        
        ZB_SCHEDULE_ALARM(zc_send_data,0,5*ZB_TIME_ONE_SECOND);
-      // ZB_SCHEDULE_CALLBACK(zc_send_data, ZB_REF_FROM_BUF(buf));
-
-   // }
-      /*TRACE_MSG(TRACE_APS1, "Sending apsde_data.request", (FMT__0)); 
-      // zb_apsde_data_request(1);
-       ZB_SCHEDULE_CALLBACK(zb_apsde_data_request, ZB_REF_FROM_BUF(buf));*/
 }
 #endif
 
