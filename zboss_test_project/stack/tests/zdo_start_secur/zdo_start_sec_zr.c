@@ -146,7 +146,7 @@ static void send_data(zb_buf_t *buf)
   req->profileid = 2;
   req->src_endpoint = 1;
   req->dst_endpoint = 11;
-  req->clusterid=0x4000;
+  req->clusterid=43690;
   buf->u.hdr.handle = 0x11;
   MAC_PIB().mac_pan_id = 0x1aaa;
   ptr[0]=1;
@@ -236,8 +236,8 @@ void simple_desc(zb_uint8_t param)
   resp=(zb_zdo_simple_desc_resp_t *)ZB_BUF_BEGIN(buf);
   TRACE_MSG(TRACE_ZDO2,"Endpoint %hd Profile %d",(FMT__H_D,resp->simple_desc.endpoint,resp->simple_desc.app_profile_id));
   TRACE_MSG(TRACE_ZDO2,"DeviceID %hd DeviceVer %d",(FMT__D_H,resp->simple_desc.app_device_id,resp->simple_desc.app_device_version));
-  TRACE_MSG(TRACE_APS1,"clusters:",(FMT__0));
-  for(zb_uint_t i=0;i<resp->simple_desc.app_input_cluster_count+resp->simple_desc.app_output_cluster_count;i++)
+  TRACE_MSG(TRACE_APS1,"clusters: %hd, %hd",(FMT__H_H, resp->simple_desc.app_input_cluster_count,resp->simple_desc.app_output_cluster_count));
+  for(zb_uint_t i=0;i<resp->simple_desc.app_input_cluster_count; i++)
   {
     TRACE_MSG(TRACE_APS1, "icluster  %hx", (FMT__H , resp->simple_desc.app_cluster_list[i]));
   }
