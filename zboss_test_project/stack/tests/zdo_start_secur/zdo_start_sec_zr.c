@@ -188,7 +188,9 @@ void simple_desc(zb_uint8_t param)
  // zb_uint16_t nwk_addr;
   //zb_address_ieee_ref_t addr_ref
   resp=(zb_zdo_simple_desc_resp_t *)ZB_BUF_BEGIN(buf);
-  TRACE_MSG(TRACE_ZDO2,"Endpoint %hd %d",(FMT__H_D,resp->simple_desc.endpoint,resp->simple_desc.app_profile_id));
+  TRACE_MSG(TRACE_ZDO2,"Endpoint %hd Profile %d",(FMT__H_D,resp->simple_desc.endpoint,resp->simple_desc.app_profile_id));
+  TRACE_MSG(TRACE_ZDO2,"DeviceID %hd DeviceVer %d",(FMT__D_H,resp->simple_desc.app_device_id,resp->simple_desc.app_device_version));
+
   zb_free_buf(buf);
 }
 void zd_simple_req(zb_uint8_t param)
@@ -196,16 +198,38 @@ void zd_simple_req(zb_uint8_t param)
   zb_buf_t *buf = ZB_BUF_FROM_REF(param);
   zb_zdo_simple_desc_req_t *req;
   ZB_BUF_INITIAL_ALLOC(buf,sizeof(zb_zdo_simple_desc_req_t),req);
-  req->endpoint =2;
+  req->endpoint =1;
   req->nwk_addr=0;
   zb_zdo_simple_desc_req(ZB_REF_FROM_BUF(buf),simple_desc);
 }
-
+void power_req(zb_uint8_t param)
+{
+  zb_buf_t *buf = ZB_BUF_FROM_REF(param);
+  zb_zdo_power_desc_resp_t * resp;
+  //zb_ieee_addr_t ieee_addr;
+ // zb_uint16_t nwk_addr;
+  //zb_address_ieee_ref_t addr_ref
+  resp=(zb_zdo_power_desc_resp_t *)ZB_BUF_BEGIN(buf);
+  TRACE_MSG(TRACE_ZDO2,"Power_mode %hd",(FMT__H,ZB_GET_POWER_DESC_CUR_POWER_MODE(&resp->power_desc)));
+}
+void zd_power_req(zb_uint8_t param)
+{
+    zb_zdo_power_desc_req_t *req = NULL;
+    zb_buf_t *buf =zb_get_out_buf();// ZB_BUF_FROM_REF(param);
+    param=ZB_REF_FROM_BUF(buf);
+    ZB_BUF_INITIAL_ALLOC(buf, sizeof(zb_zdo_power_desc_resp_t*),req);
+    req->nwk_addr=0x0000;
+   // req->request_type=ZB_ZDO_SINGLE_DEV_RESPONSE;
+   // req->start_index=0;
+    zb_zdo_power_desc_req(param,power_req);
+}
 static void zc_send_data(zb_uint8_t param)
 {
-   zd_nwk(param);
-   zd_ieee_addr(param);
-   zd_simple_req(param);
+    zd_nwk(param);
+    zd_ieee_addr(param);
+    zd_simple_req(param);
+   // zd_power_req(param);
+    ZB_SCHEDULE_ALARM(zd_power_req,param,5*ZB_TIME_ONE_SECOND);
    /* TRACE_MSG(TRACE_APS1, "Recall fuction", (FMT__0)); 
     ZB_SCHEDULE_ALARM(zc_send_data,0,5*ZB_TIME_ONE_SECOND);*/
 }
