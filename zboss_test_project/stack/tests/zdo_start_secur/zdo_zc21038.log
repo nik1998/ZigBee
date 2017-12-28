@@ -1,0 +1,2439 @@
+06:22:47.053 0 zb_ib.c:115	aps_channel_mask 0x1800
+06:22:47.054 0 mac.c:76	>>mac_init
+06:22:47.054 0 zb_bufpool.c:137	zb_get_buf 0: buffer 0x4e3784, ref 0, head 0x4e3820, allocated 1 / 0
+06:22:47.054 0 zb_bufpool.c:137	zb_get_buf 1: buffer 0x4e3820, ref 1, head 0x4e38bc, allocated 1 / 1
+06:22:47.054 0 zb_bufpool.c:137	zb_get_buf 0: buffer 0x4e38bc, ref 2, head 0x4e3958, allocated 2 / 1
+06:22:47.054 0 mac.c:161	<<mac_init
+06:22:47.054 0 nwk_main.c:93	+nwk_init
+06:22:47.054 0 nwk_main.c:115	>>nib_init
+06:22:47.054 0 nwk_main.c:128	<<nib_init
+06:22:47.054 0 nwk_neighbor.c:67	nb_init
+06:22:47.054 0 nwk_cr_mesh_routing.c:139	>> mesh_r_init
+06:22:47.054 0 zb_scheduler.c:283	tm_freelist, get nent 0x4e364c
+06:22:47.054 0 zb_scheduler.c:294	0x4e364c scheduled alarm 0x4bb40c, run_after 130, at 130, param 0
+06:22:47.054 0 zb_scheduler.c:349	cur t 0, head t 130
+06:22:47.054 0 nwk_cr_mesh_routing.c:143	schd r disc expiry f 0
+06:22:47.054 0 zb_scheduler.c:283	tm_freelist, get nent 0x4e363c
+06:22:47.054 0 zb_scheduler.c:294	0x4e363c scheduled alarm 0x4bb74d, run_after 325, at 325, param 0
+06:22:47.054 0 zb_scheduler.c:349	cur t 0, head t 130
+06:22:47.054 0 nwk_cr_mesh_routing.c:147	schd pend expiry f 0
+06:22:47.054 0 nwk_cr_mesh_routing.c:149	<< mesh_r_init
+06:22:47.054 0 nwk_main.c:110	-nwk_init
+06:22:47.054 0 aps_main.c:94	+zb_aps_init
+06:22:47.054 0 aps_main.c:109	-zb_aps_init
+06:22:47.054 0 af_descriptor.c:243	zb_set_default_ffd_descriptor_values
+06:22:47.054 0 af_descriptor.c:85	node desc, server_mask 41 mac cap 0xa
+06:22:47.054 0 af_descriptor.c:160	cluster_id 0x8000, cluster_number 0, input count 7
+06:22:47.054 0 af_descriptor.c:160	cluster_id 0x8001, cluster_number 1, input count 7
+06:22:47.054 0 af_descriptor.c:160	cluster_id 0x8002, cluster_number 2, input count 7
+06:22:47.054 0 af_descriptor.c:160	cluster_id 0x8003, cluster_number 3, input count 7
+06:22:47.054 0 af_descriptor.c:160	cluster_id 0x8004, cluster_number 4, input count 7
+06:22:47.054 0 af_descriptor.c:160	cluster_id 0x8005, cluster_number 5, input count 7
+06:22:47.054 0 af_descriptor.c:160	cluster_id 0x8006, cluster_number 6, input count 7
+06:22:47.054 0 af_descriptor.c:174	cluster_id 0x0, cluster_number 0, output count 8
+06:22:47.055 0 af_descriptor.c:174	cluster_id 0x1, cluster_number 1, output count 8
+06:22:47.055 0 af_descriptor.c:174	cluster_id 0x2, cluster_number 2, output count 8
+06:22:47.055 0 af_descriptor.c:174	cluster_id 0x3, cluster_number 3, output count 8
+06:22:47.055 0 af_descriptor.c:174	cluster_id 0x4, cluster_number 4, output count 8
+06:22:47.055 0 af_descriptor.c:174	cluster_id 0x5, cluster_number 5, output count 8
+06:22:47.055 0 af_descriptor.c:174	cluster_id 0x6, cluster_number 6, output count 8
+06:22:47.055 0 af_descriptor.c:174	cluster_id 0x13, cluster_number 7, output count 8
+06:22:47.055 0 af_descriptor.c:243	zb_set_default_ffd_descriptor_values
+06:22:47.055 0 af_descriptor.c:85	node desc, server_mask 41 mac cap 0xa
+06:22:47.055 0 af_descriptor.c:160	cluster_id 0x8000, cluster_number 0, input count 7
+06:22:47.055 0 af_descriptor.c:160	cluster_id 0x8001, cluster_number 1, input count 7
+06:22:47.055 0 af_descriptor.c:160	cluster_id 0x8002, cluster_number 2, input count 7
+06:22:47.055 0 af_descriptor.c:160	cluster_id 0x8003, cluster_number 3, input count 7
+06:22:47.055 0 af_descriptor.c:160	cluster_id 0x8004, cluster_number 4, input count 7
+06:22:47.055 0 af_descriptor.c:160	cluster_id 0x8005, cluster_number 5, input count 7
+06:22:47.055 0 af_descriptor.c:160	cluster_id 0x8006, cluster_number 6, input count 7
+06:22:47.055 0 af_descriptor.c:174	cluster_id 0x0, cluster_number 0, output count 8
+06:22:47.055 0 af_descriptor.c:174	cluster_id 0x1, cluster_number 1, output count 8
+06:22:47.055 0 af_descriptor.c:174	cluster_id 0x2, cluster_number 2, output count 8
+06:22:47.055 0 af_descriptor.c:174	cluster_id 0x3, cluster_number 3, output count 8
+06:22:47.055 0 af_descriptor.c:174	cluster_id 0x4, cluster_number 4, output count 8
+06:22:47.055 0 af_descriptor.c:174	cluster_id 0x5, cluster_number 5, output count 8
+06:22:47.055 0 af_descriptor.c:174	cluster_id 0x6, cluster_number 6, output count 8
+06:22:47.055 0 af_descriptor.c:174	cluster_id 0x13, cluster_number 7, output count 8
+06:22:47.055 0 af_descriptor.c:160	cluster_id 0xaaaa, cluster_number 0, input count 1
+06:22:47.055 0 af_descriptor.c:174	cluster_id 0x7d0, cluster_number 0, output count 4
+06:22:47.055 0 af_descriptor.c:174	cluster_id 0x7d1, cluster_number 1, output count 4
+06:22:47.055 0 af_descriptor.c:174	cluster_id 0x7d2, cluster_number 0, output count 4
+06:22:47.055 0 af_descriptor.c:174	cluster_id 0x7d3, cluster_number 1, output count 4
+06:22:47.055 0 zdo_app.c:131	ext pan id 0 - startup
+06:22:47.055 0 zb_bufpool.c:137	zb_get_buf 0: buffer 0x4e3958, ref 3, head 0x4e39f4, allocated 3 / 1
+06:22:47.055 0 zb_scheduler.c:254	0x4e34a0 scheduled cb 0x4b2d61 param 3 (in_b 0)
+06:22:47.055 0 zdo_app.c:199	return now
+06:22:47.055 0 zb_scheduler.c:105	cb_q written 1, read_i 0, write_i 1
+06:22:47.055 0 zb_scheduler.c:115	0x4e34a0 calling cb 0x4b2d61 param 3 in_b 0 len 0
+06:22:47.055 0 nwk_cr_formation.c:71	>>nwk_formation_req 3
+06:22:47.055 0 nwk_cr_formation.c:73	nwk state 0 joined 0
+06:22:47.055 0 zb_scheduler.c:254	0x4e34a8 scheduled cb 0x4d1990 param 3 (in_b 0)
+06:22:47.055 0 nwk_cr_formation.c:127	<<nwk_formation_req
+06:22:47.056 0 zb_scheduler.c:105	cb_q written 1, read_i 1, write_i 2
+06:22:47.056 0 zb_scheduler.c:115	0x4e34a8 calling cb 0x4d1990 param 3 in_b 0 len 0
+06:22:47.056 0 mac_scan.c:104	>> zb_mlme_scan_request 3
+06:22:47.056 0 zb_scheduler.c:254	0x4e34b0 scheduled cb 0x4d1878 param 3 (in_b 0)
+06:22:47.056 0 mac_scan.c:136	<< zb_mlme_scan_request
+06:22:47.056 0 zb_scheduler.c:105	cb_q written 1, read_i 2, write_i 3
+06:22:47.056 0 zb_scheduler.c:115	0x4e34b0 calling cb 0x4d1878 param 3 in_b 0 len 0
+06:22:47.056 0 mac_scan.c:67	>> zb_handle_scan_request
+06:22:47.056 0 mac_scan.c:156	>> zb_mlme_ed_scan
+06:22:47.056 0 zb_bufpool.c:354	zb_reuse_buf 0x4e3958, ref 3, in buf 0 allocated in 0 out 0
+06:22:47.056 0 zb_scheduler.c:254	0x4e34b8 scheduled cb 0x4b23b7 param 3 (in_b 0)
+06:22:47.056 0 mac_scan.c:194	<< zb_mlme_ed_scan, ret 0
+06:22:47.056 0 mac_scan.c:92	<< zb_handle_scan_request i
+06:22:47.056 0 zb_scheduler.c:105	cb_q written 1, read_i 3, write_i 4
+06:22:47.056 0 zb_scheduler.c:115	0x4e34b8 calling cb 0x4b23b7 param 3 in_b 0 len 0
+06:22:47.056 0 nwk_discovery.c:353	>>zb_mlme_scan_confirm 3
+06:22:47.056 0 nwk_discovery.c:355	nwk state 2
+06:22:47.056 0 nwk_cr_formation.c:139	>>nwk_form_ed_scan_conf buf 0x4e3958
+06:22:47.056 0 nwk_cr_formation.c:151	ch 0 e_level 0 
+06:22:47.056 0 nwk_cr_formation.c:151	ch 1 e_level 0 
+06:22:47.056 0 nwk_cr_formation.c:151	ch 2 e_level 0 
+06:22:47.056 0 nwk_cr_formation.c:151	ch 3 e_level 0 
+06:22:47.056 0 nwk_cr_formation.c:151	ch 4 e_level 0 
+06:22:47.056 0 nwk_cr_formation.c:151	ch 5 e_level 0 
+06:22:47.056 0 nwk_cr_formation.c:151	ch 6 e_level 0 
+06:22:47.056 0 nwk_cr_formation.c:151	ch 7 e_level 0 
+06:22:47.056 0 nwk_cr_formation.c:151	ch 8 e_level 0 
+06:22:47.056 0 nwk_cr_formation.c:151	ch 9 e_level 0 
+06:22:47.056 0 nwk_cr_formation.c:151	ch 10 e_level 0 
+06:22:47.056 0 nwk_cr_formation.c:151	ch 11 e_level 0 
+06:22:47.056 0 nwk_cr_formation.c:151	ch 12 e_level 0 
+06:22:47.057 0 nwk_cr_formation.c:151	ch 13 e_level 0 
+06:22:47.057 0 nwk_cr_formation.c:151	ch 14 e_level 0 
+06:22:47.057 0 nwk_cr_formation.c:151	ch 15 e_level 0 
+06:22:47.057 0 nwk_cr_formation.c:162	ch mask for as 0x1800
+06:22:47.057 0 nwk_neighbor.c:80	>>exnb_start
+06:22:47.057 0 nwk_neighbor.c:131	cut 16
+06:22:47.057 0 nwk_neighbor.c:146	new base n size 16
+06:22:47.057 0 nwk_neighbor.c:155	cut 208, off 208, ext n size 14 ext n 0x4e4580
+06:22:47.057 0 nwk_neighbor.c:159	<<exnb_start
+06:22:47.057 0 zb_scheduler.c:254	0x4e34c0 scheduled cb 0x4d1990 param 3 (in_b 0)
+06:22:47.057 0 nwk_cr_formation.c:180	<<nwk_form_ed_scan_conf
+06:22:47.057 0 nwk_discovery.c:494	<<zb_mlme_scan_confirm
+06:22:47.057 0 zb_scheduler.c:105	cb_q written 1, read_i 4, write_i 5
+06:22:47.057 0 zb_scheduler.c:115	0x4e34c0 calling cb 0x4d1990 param 3 in_b 0 len 0
+06:22:47.057 0 mac_scan.c:104	>> zb_mlme_scan_request 3
+06:22:47.057 0 zb_scheduler.c:254	0x4e34c8 scheduled cb 0x4d1878 param 3 (in_b 0)
+06:22:47.057 0 mac_scan.c:136	<< zb_mlme_scan_request
+06:22:47.057 0 zb_scheduler.c:105	cb_q written 1, read_i 5, write_i 6
+06:22:47.057 0 zb_scheduler.c:115	0x4e34c8 calling cb 0x4d1878 param 3 in_b 0 len 0
+06:22:47.057 0 mac_scan.c:67	>> zb_handle_scan_request
+06:22:47.057 0 mac_scan.c:359	>> zb_mlme_active_scan
+06:22:47.057 0 mac_scan.c:364	idle state, set beacon found == 0
+06:22:47.057 0 mac_scan.c:371	set beacon mode ret 0, param channels 0x1800
+06:22:47.057 0 mac_scan.c:384	chan mask 1800 0 , chan 11
+06:22:47.057 0 zb_scheduler.c:254	0x4e34d0 scheduled cb 0x4d1d08 param 0 (in_b 255)
+06:22:47.057 0 mac_scan.c:386	<< zb_mlme_active_scan, ret 0
+06:22:47.057 0 mac_scan.c:92	<< zb_handle_scan_request i
+06:22:47.057 0 zb_scheduler.c:105	cb_q written 1, read_i 6, write_i 7
+06:22:47.057 0 zb_scheduler.c:115	0x4e34d0 calling cb 0x4d1d08 param 0 in_b 255 len -1
+06:22:47.057 0 mac_scan.c:208	>> zb_mlme_scan_step
+06:22:47.057 0 mac_scan.c:257	set channel 11
+06:22:47.057 0 mac_routines.c:225	+zb_beacon_request_command
+06:22:47.057 0 mac.c:571	>>mac_fill_mhr
+06:22:47.057 0 mac.c:622	<<mac_fill_mhr
+06:22:47.057 0 zb_mac_transport_linux_pipes.c:199	>>zb_mac_put_data buf 0x4e3784
+06:22:47.057 0 zb_mac_transport_linux_pipes.c:149	>>zb_mac_traffic_dump #1 buf 0x4e3784 / 0 in_b 0 (size 11) is_w 1
+06:22:47.058 0 zb_mac_transport_linux_pipes.c:182	t: start 1514431367; t 1514431367 58051, time 3
+06:22:47.058 0 zb_mac_transport_linux_pipes.c:192	<<zb_mac_traffic_dump
+06:22:47.058 0 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:22:47.058 0 zb_mac_transport_linux_pipes.c:381	open wpipe /tmp/zt0.read. wait if nessesary
+06:22:47.058 0 zb_mac_transport_linux_pipes.c:79	written: len 11 total 11
+06:22:47.058 0 zb_mac_transport_linux_pipes.c:93	0B 03 08 79 FF FF FF FF 07 4A C9 
+06:22:47.058 0 zb_mac_transport_linux_pipes.c:446	out buffer is sent
+06:22:47.058 0 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 11
+06:22:47.058 0 zb_mac_transport_linux_pipes.c:225	<<zb_mac_put_data ret
+06:22:47.058 0 mac_routines.c:272	<< zb_beacon_request_command ret 0
+06:22:47.058 0 zb_scheduler.c:283	tm_freelist, get nent 0x4e362c
+06:22:47.058 0 zb_scheduler.c:294	0x4e362c scheduled alarm 0x4d1d08, run_after 257, at 257, param 0
+06:22:47.058 0 zb_scheduler.c:349	cur t 0, head t 130
+06:22:47.058 0 mac_scan.c:337	<< zb_mlme_scan_step
+06:22:47.058 0 zb_mac_transport_linux_pipes.c:477	>>zb_mac_wait_for_ext_event
+06:22:47.058 0 zb_mac_transport_linux_pipes.c:485	open rpipe 6. ret 0
+06:22:47.058 0 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:22:47.058 0 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 0
+06:22:47.058 0 zb_mac_transport_linux_pipes.c:507	timer started = 1
+06:22:47.058 0 zb_mac_transport_linux_pipes.c:513	timer stop 130 timer 0  tmo 130
+06:22:47.059 0 zb_mac_transport_linux_pipes.c:529	select() timeout 1.989000
+06:22:49.050 0 zb_mac_transport_linux_pipes.c:548	delta 1992 (130)
+06:22:49.050 130 zb_mac_transport_linux_pipes.c:569	timer 130, delta_rest 0
+06:22:49.050 130 zb_mac_transport_linux_pipes.c:590	timeout
+06:22:49.050 130 zb_mac_transport_linux_pipes.c:603	<<zb_mac_wait_for_ext_event 0
+06:22:49.050 130 zb_scheduler.c:145	0x4e364c calling alarm cb 0x4bb40c param 0
+06:22:49.050 130 nwk_cr_mesh_routing.c:732	>> exp_r_disc
+06:22:49.050 130 zb_scheduler.c:283	tm_freelist, get nent 0x4e361c
+06:22:49.050 130 zb_scheduler.c:294	0x4e361c scheduled alarm 0x4bb40c, run_after 130, at 260, param 0
+06:22:49.051 130 zb_scheduler.c:349	cur t 130, head t 257
+06:22:49.051 130 nwk_cr_mesh_routing.c:780	<< exp_r_disc
+06:22:49.051 130 zb_mac_transport_linux_pipes.c:477	>>zb_mac_wait_for_ext_event
+06:22:49.051 130 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:22:49.051 130 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 0
+06:22:49.051 130 zb_mac_transport_linux_pipes.c:507	timer started = 1
+06:22:49.051 130 zb_mac_transport_linux_pipes.c:524	default timeout 1
+06:22:49.051 130 zb_mac_transport_linux_pipes.c:529	select() timeout 1.0
+06:22:50.054 130 zb_mac_transport_linux_pipes.c:548	delta 1004 (65)
+06:22:50.054 195 zb_mac_transport_linux_pipes.c:569	timer 195, delta_rest 0
+06:22:50.054 195 zb_mac_transport_linux_pipes.c:590	timeout
+06:22:50.054 195 zb_mac_transport_linux_pipes.c:603	<<zb_mac_wait_for_ext_event 0
+06:22:50.054 195 zb_mac_transport_linux_pipes.c:477	>>zb_mac_wait_for_ext_event
+06:22:50.055 195 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:22:50.055 195 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 0
+06:22:50.055 195 zb_mac_transport_linux_pipes.c:507	timer started = 1
+06:22:50.055 195 zb_mac_transport_linux_pipes.c:513	timer stop 257 timer 195  tmo 62
+06:22:50.055 195 zb_mac_transport_linux_pipes.c:529	select() timeout 0.948000
+06:22:51.004 195 zb_mac_transport_linux_pipes.c:548	delta 950 (62)
+06:22:51.004 257 zb_mac_transport_linux_pipes.c:569	timer 257, delta_rest 0
+06:22:51.004 257 zb_mac_transport_linux_pipes.c:590	timeout
+06:22:51.004 257 zb_mac_transport_linux_pipes.c:603	<<zb_mac_wait_for_ext_event 0
+06:22:51.004 257 zb_scheduler.c:145	0x4e362c calling alarm cb 0x4d1d08 param 0
+06:22:51.004 257 mac_scan.c:208	>> zb_mlme_scan_step
+06:22:51.004 257 mac_scan.c:257	set channel 12
+06:22:51.004 257 mac_routines.c:225	+zb_beacon_request_command
+06:22:51.004 257 mac.c:571	>>mac_fill_mhr
+06:22:51.005 257 mac.c:622	<<mac_fill_mhr
+06:22:51.005 257 zb_mac_transport_linux_pipes.c:199	>>zb_mac_put_data buf 0x4e3784
+06:22:51.005 257 zb_mac_transport_linux_pipes.c:149	>>zb_mac_traffic_dump #2 buf 0x4e3784 / 0 in_b 0 (size 11) is_w 1
+06:22:51.005 257 zb_mac_transport_linux_pipes.c:182	t: start 1514431367; t 1514431371 5138, time 261
+06:22:51.005 257 zb_mac_transport_linux_pipes.c:192	<<zb_mac_traffic_dump
+06:22:51.005 257 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:22:51.005 257 zb_mac_transport_linux_pipes.c:79	written: len 11 total 11
+06:22:51.005 257 zb_mac_transport_linux_pipes.c:93	0B 03 08 7A FF FF FF FF 07 37 C5 
+06:22:51.005 257 zb_mac_transport_linux_pipes.c:446	out buffer is sent
+06:22:51.005 257 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 11
+06:22:51.005 257 zb_mac_transport_linux_pipes.c:225	<<zb_mac_put_data ret
+06:22:51.005 257 mac_routines.c:272	<< zb_beacon_request_command ret 0
+06:22:51.005 257 zb_scheduler.c:283	tm_freelist, get nent 0x4e364c
+06:22:51.005 257 zb_scheduler.c:294	0x4e364c scheduled alarm 0x4d1d08, run_after 257, at 514, param 0
+06:22:51.005 257 zb_scheduler.c:349	cur t 257, head t 260
+06:22:51.005 257 mac_scan.c:337	<< zb_mlme_scan_step
+06:22:51.005 257 zb_mac_transport_linux_pipes.c:477	>>zb_mac_wait_for_ext_event
+06:22:51.005 257 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:22:51.005 257 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 0
+06:22:51.005 257 zb_mac_transport_linux_pipes.c:507	timer started = 1
+06:22:51.005 257 zb_mac_transport_linux_pipes.c:524	default timeout 1
+06:22:51.006 257 zb_mac_transport_linux_pipes.c:529	select() timeout 1.0
+06:22:52.009 257 zb_mac_transport_linux_pipes.c:548	delta 1004 (65)
+06:22:52.009 322 zb_mac_transport_linux_pipes.c:569	timer 322, delta_rest 0
+06:22:52.009 322 zb_mac_transport_linux_pipes.c:590	timeout
+06:22:52.009 322 zb_mac_transport_linux_pipes.c:603	<<zb_mac_wait_for_ext_event 0
+06:22:52.009 322 zb_scheduler.c:145	0x4e361c calling alarm cb 0x4bb40c param 0
+06:22:52.009 322 nwk_cr_mesh_routing.c:732	>> exp_r_disc
+06:22:52.009 322 zb_scheduler.c:283	tm_freelist, get nent 0x4e362c
+06:22:52.009 322 zb_scheduler.c:294	0x4e362c scheduled alarm 0x4bb40c, run_after 130, at 452, param 0
+06:22:52.009 322 zb_scheduler.c:349	cur t 322, head t 325
+06:22:52.010 322 nwk_cr_mesh_routing.c:780	<< exp_r_disc
+06:22:52.010 322 zb_mac_transport_linux_pipes.c:477	>>zb_mac_wait_for_ext_event
+06:22:52.010 322 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:22:52.010 322 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 0
+06:22:52.010 322 zb_mac_transport_linux_pipes.c:507	timer started = 1
+06:22:52.010 322 zb_mac_transport_linux_pipes.c:513	timer stop 325 timer 322  tmo 3
+06:22:52.010 322 zb_mac_transport_linux_pipes.c:529	select() timeout 0.45000
+06:22:52.055 322 zb_mac_transport_linux_pipes.c:548	delta 46 (3)
+06:22:52.055 325 zb_mac_transport_linux_pipes.c:569	timer 325, delta_rest 0
+06:22:52.056 325 zb_mac_transport_linux_pipes.c:590	timeout
+06:22:52.056 325 zb_mac_transport_linux_pipes.c:603	<<zb_mac_wait_for_ext_event 0
+06:22:52.056 325 zb_scheduler.c:145	0x4e363c calling alarm cb 0x4bb74d param 0
+06:22:52.056 325 nwk_cr_mesh_routing.c:787	>> exp_pend
+06:22:52.056 325 zb_scheduler.c:283	tm_freelist, get nent 0x4e361c
+06:22:52.056 325 zb_scheduler.c:294	0x4e361c scheduled alarm 0x4bb74d, run_after 325, at 650, param 0
+06:22:52.056 325 zb_scheduler.c:349	cur t 325, head t 452
+06:22:52.056 325 nwk_cr_mesh_routing.c:816	<< exp_pend
+06:22:52.057 325 zb_mac_transport_linux_pipes.c:477	>>zb_mac_wait_for_ext_event
+06:22:52.057 325 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:22:52.057 325 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 0
+06:22:52.057 325 zb_mac_transport_linux_pipes.c:507	timer started = 1
+06:22:52.057 325 zb_mac_transport_linux_pipes.c:524	default timeout 1
+06:22:52.057 325 zb_mac_transport_linux_pipes.c:529	select() timeout 1.0
+06:22:53.058 325 zb_mac_transport_linux_pipes.c:548	delta 1002 (65)
+06:22:53.058 390 zb_mac_transport_linux_pipes.c:569	timer 390, delta_rest 0
+06:22:53.058 390 zb_mac_transport_linux_pipes.c:590	timeout
+06:22:53.058 390 zb_mac_transport_linux_pipes.c:603	<<zb_mac_wait_for_ext_event 0
+06:22:53.058 390 zb_mac_transport_linux_pipes.c:477	>>zb_mac_wait_for_ext_event
+06:22:53.058 390 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:22:53.058 390 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 0
+06:22:53.058 390 zb_mac_transport_linux_pipes.c:507	timer started = 1
+06:22:53.058 390 zb_mac_transport_linux_pipes.c:513	timer stop 452 timer 390  tmo 62
+06:22:53.058 390 zb_mac_transport_linux_pipes.c:529	select() timeout 0.948000
+06:22:54.010 390 zb_mac_transport_linux_pipes.c:548	delta 953 (62)
+06:22:54.010 452 zb_mac_transport_linux_pipes.c:569	timer 452, delta_rest 0
+06:22:54.010 452 zb_mac_transport_linux_pipes.c:590	timeout
+06:22:54.010 452 zb_mac_transport_linux_pipes.c:603	<<zb_mac_wait_for_ext_event 0
+06:22:54.010 452 zb_scheduler.c:145	0x4e362c calling alarm cb 0x4bb40c param 0
+06:22:54.010 452 nwk_cr_mesh_routing.c:732	>> exp_r_disc
+06:22:54.010 452 zb_scheduler.c:283	tm_freelist, get nent 0x4e363c
+06:22:54.010 452 zb_scheduler.c:294	0x4e363c scheduled alarm 0x4bb40c, run_after 130, at 582, param 0
+06:22:54.010 452 zb_scheduler.c:349	cur t 452, head t 514
+06:22:54.010 452 nwk_cr_mesh_routing.c:780	<< exp_r_disc
+06:22:54.010 452 zb_mac_transport_linux_pipes.c:477	>>zb_mac_wait_for_ext_event
+06:22:54.010 452 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:22:54.010 452 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 0
+06:22:54.010 452 zb_mac_transport_linux_pipes.c:507	timer started = 1
+06:22:54.010 452 zb_mac_transport_linux_pipes.c:524	default timeout 1
+06:22:54.010 452 zb_mac_transport_linux_pipes.c:529	select() timeout 1.0
+06:22:55.013 452 zb_mac_transport_linux_pipes.c:548	delta 1003 (65)
+06:22:55.013 517 zb_mac_transport_linux_pipes.c:569	timer 517, delta_rest 0
+06:22:55.013 517 zb_mac_transport_linux_pipes.c:590	timeout
+06:22:55.013 517 zb_mac_transport_linux_pipes.c:603	<<zb_mac_wait_for_ext_event 0
+06:22:55.013 517 zb_scheduler.c:145	0x4e364c calling alarm cb 0x4d1d08 param 0
+06:22:55.013 517 mac_scan.c:208	>> zb_mlme_scan_step
+06:22:55.013 517 mac_scan.c:311	beacon found 0
+06:22:55.013 517 zb_scheduler.c:254	0x4e34d8 scheduled cb 0x4b23b7 param 3 (in_b 0)
+06:22:55.013 517 mac_scan.c:337	<< zb_mlme_scan_step
+06:22:55.013 517 zb_scheduler.c:105	cb_q written 1, read_i 7, write_i 8
+06:22:55.013 517 zb_scheduler.c:115	0x4e34d8 calling cb 0x4b23b7 param 3 in_b 0 len 0
+06:22:55.014 517 nwk_discovery.c:353	>>zb_mlme_scan_confirm 3
+06:22:55.014 517 nwk_discovery.c:355	nwk state 3
+06:22:55.014 517 nwk_cr_formation.c:204	>>sel_ch buf 0x4e3958
+06:22:55.014 517 nwk_cr_formation.c:235	cur ch 11 ch_nw 255 en_lev 255
+06:22:55.014 517 nwk_cr_formation.c:237	i pan_cnt 11 en_lev 0
+06:22:55.014 517 nwk_cr_formation.c:266	sel ch 11 # nw 0 en_lev 0
+06:22:55.014 517 nwk_cr_formation.c:296	sel pan_id 18553
+06:22:55.014 517 nwk_address_assign.c:71	>>zb_nwk_daa_calc_cskip depth 0
+06:22:55.014 517 nwk_address_assign.c:92	<<zb_nwk_daa_calc_cskip 2721
+06:22:55.014 517 nwk_cr_formation.c:382	ch 11
+06:22:55.014 517 zb_scheduler.c:254	0x4e34e0 scheduled cb 0x4ab3b8 param 3 (in_b 0)
+06:22:55.014 517 nwk_cr_formation.c:311	<<sel_ch
+06:22:55.014 517 nwk_discovery.c:494	<<zb_mlme_scan_confirm
+06:22:55.014 517 zb_scheduler.c:105	cb_q written 1, read_i 8, write_i 9
+06:22:55.014 517 zb_scheduler.c:115	0x4e34e0 calling cb 0x4ab3b8 param 3 in_b 0 len 0
+06:22:55.014 517 mac_routines.c:166	+zb_mlme_start_request 3
+06:22:55.014 517 mac_routines.c:114	+zb_mac_process_mlme_start, state 5065490
+06:22:55.014 517 mac_cr_coordinator.c:422	>>zb_mac_update_superframe_and_pib
+06:22:55.014 517 mac_cr_coordinator.c:439	set pan id 0x4879 channel 0xb
+06:22:55.014 517 mac_cr_coordinator.c:444	<<zb_mac_update_superframe_and_pib
+06:22:55.014 517 zb_scheduler.c:254	0x4e34e8 scheduled cb 0x4b2a4a param 3 (in_b 0)
+06:22:55.014 517 mac_routines.c:155	<< zb_mac_process_mlme_start
+06:22:55.014 517 mac_routines.c:198	<< zb_mlme_start_request
+06:22:55.014 517 zb_scheduler.c:105	cb_q written 1, read_i 9, write_i 10
+06:22:55.014 517 zb_scheduler.c:115	0x4e34e8 calling cb 0x4b2a4a param 3 in_b 0 len 0
+06:22:55.014 517 nwk_formation.c:69	>>mlme_start_conf 3
+06:22:55.014 517 nwk_formation.c:71	state 4
+06:22:55.014 517 nwk_neighbor.c:167	>>exneighbor_stop
+06:22:55.015 517 nwk_neighbor.c:298	restore base n size 32
+06:22:55.015 517 nwk_neighbor.c:299	base_neighbor_used 0
+06:22:55.015 517 nwk_neighbor.c:301	<<exneighbor_stop
+06:22:55.015 517 nwk_cr_formation.c:410	>>update_beacon_pl
+06:22:55.015 517 nwk_cr_formation.c:436	new update_id 0
+06:22:55.015 517 nwk_cr_formation.c:440	<<update_beacon_pl
+06:22:55.015 517 zb_scheduler.c:254	0x4e34f0 scheduled cb 0x4c57d4 param 3 (in_b 0)
+06:22:55.015 517 nwk_formation.c:125	<<mlme_start_conf
+06:22:55.015 517 zb_scheduler.c:105	cb_q written 1, read_i 10, write_i 11
+06:22:55.015 517 zb_scheduler.c:115	0x4e34f0 calling cb 0x4c57d4 param 3 in_b 0 len 0
+06:22:55.015 517 zdo_app.c:251	formation conf st 0
+06:22:55.015 517 zdo_secur.c:176	TC init
+06:22:55.015 517 zb_scheduler.c:254	0x4e34f8 scheduled cb 0x4d2ab2 param 3 (in_b 0)
+06:22:55.015 517 zb_scheduler.c:105	cb_q written 1, read_i 11, write_i 12
+06:22:55.015 517 zb_scheduler.c:115	0x4e34f8 calling cb 0x4d2ab2 param 3 in_b 0 len 0
+06:22:55.015 517 nwk_cr_permit_join.c:82	>>zb_nlme_permit_joining_request 3
+06:22:55.015 517 nwk_cr_permit_join.c:85	permit join 0 device type 2
+06:22:55.015 517 nwk_cr_permit_join.c:97	permit duration 255
+06:22:55.015 517 nwk_cr_formation.c:410	>>update_beacon_pl
+06:22:55.015 517 nwk_cr_formation.c:436	new update_id 0
+06:22:55.015 517 nwk_cr_formation.c:440	<<update_beacon_pl
+06:22:55.015 517 zb_scheduler.c:254	0x4e3500 scheduled cb 0x4c58a1 param 3 (in_b 0)
+06:22:55.015 517 nwk_cr_permit_join.c:123	<<zb_nlme_permit_joining_request 0
+06:22:55.015 517 zb_scheduler.c:105	cb_q written 1, read_i 12, write_i 13
+06:22:55.015 517 zb_scheduler.c:115	0x4e3500 calling cb 0x4c58a1 param 3 in_b 0 len 0
+06:22:55.015 517 zdo_app.c:273	permit j conf st 0
+06:22:55.015 517 zb_address.c:595	short_addr 0 l 0 ZG->addr.short_sorted[l] 0 addr 0
+06:22:55.015 517 zb_address.c:370	zb_address_by_short 0 ret 0 ref 0
+06:22:55.015 517 zb_scheduler.c:254	0x4e3508 scheduled cb 0x4a0e30 param 3 (in_b 0)
+06:22:55.015 517 zb_scheduler.c:105	cb_q written 1, read_i 13, write_i 14
+06:22:55.015 517 zb_scheduler.c:115	0x4e3508 calling cb 0x4a0e30 param 3 in_b 0 len 0
+06:22:55.015 517 zdo_zc_test.c:178	>>zb_zdo_startup_complete status 0
+06:22:55.015 517 zdo_zc_test.c:181	Device STARTED OK
+06:22:55.015 517 af_rx.c:105	set apsde_data_ind cb to 0x4a0f09, was (nil)
+06:22:55.015 517 zb_bufpool.c:217	zb_free_buf 0x4e3958, ref 3, in buf 0 allocated in 0 out 0
+06:22:55.015 517 zb_bufpool.c:246	free_buf: 1/2 buf 0x4e3958, next 0x4e39f4, head 0x4e3958
+06:22:55.015 517 zb_mac_transport_linux_pipes.c:477	>>zb_mac_wait_for_ext_event
+06:22:55.015 517 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:22:55.016 517 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 0
+06:22:55.016 517 zb_mac_transport_linux_pipes.c:507	timer started = 1
+06:22:55.016 517 zb_mac_transport_linux_pipes.c:513	timer stop 582 timer 517  tmo 65
+06:22:55.016 517 zb_mac_transport_linux_pipes.c:529	select() timeout 0.994000
+06:22:55.189 517 zb_mac_transport_linux_pipes.c:548	delta 175 (11)
+06:22:55.189 528 zb_mac_transport_linux_pipes.c:569	timer 528, delta_rest 0
+06:22:55.189 528 zb_mac_transport_linux_pipes.c:265	>>read_from_pipe
+06:22:55.189 528 zb_mac_transport_linux_pipes.c:269	no buffer available, call mac to get incoming buffer
+06:22:55.189 528 zb_mac_transport_linux_pipes.c:273	<<read_from_pipe 1
+06:22:55.189 528 zb_mac_transport_linux_pipes.c:600	Schedule mac main loop 2
+06:22:55.189 528 zb_mac_transport_linux_pipes.c:603	<<zb_mac_wait_for_ext_event 1
+06:22:55.189 528 zb_bufpool.c:137	zb_get_buf 1: buffer 0x4e3958, ref 3, head 0x4e39f4, allocated 2 / 2
+06:22:55.189 528 mac.c:177	>>zb_mac_recv_data
+06:22:55.189 528 zb_mac_transport_linux_pipes.c:235	>>zb_mac_start_recv buf 0x4e3958
+06:22:55.189 528 zb_mac_transport_linux_pipes.c:249	<<zb_mac_start_recv ret 0
+06:22:55.189 528 zb_mac_transport_linux_pipes.c:265	>>read_from_pipe
+06:22:55.189 528 zb_mac_transport_linux_pipes.c:79	read: len 1 total 2
+06:22:55.189 528 zb_mac_transport_linux_pipes.c:93	0B 
+06:22:55.189 528 zb_mac_transport_linux_pipes.c:79	read: len 10 total 11
+06:22:55.190 528 zb_mac_transport_linux_pipes.c:93	03 08 99 FF FF FF FF 07 59 4B 
+06:22:55.190 528 zb_mac_transport_linux_pipes.c:333	receive full buffer 3 len 11
+06:22:55.190 528 zb_mac_transport_linux_pipes.c:356	<<read_from_pipe 11
+06:22:55.190 528 mac.c:366	>>mac_parse_recv_dt
+06:22:55.190 528 zb_mac_transport_linux_pipes.c:149	>>zb_mac_traffic_dump #3 buf 0x4e3958 / 3 in_b 1 (size 20) is_w 0
+06:22:55.190 528 zb_mac_transport_linux_pipes.c:182	t: start 1514431367; t 1514431375 190139, time 535
+06:22:55.190 528 zb_mac_transport_linux_pipes.c:192	<<zb_mac_traffic_dump
+06:22:55.190 528 mac_common.c:79	>>zb_parse_mhr mhr 0xbfb26e24, ptr 0x4e39a5
+06:22:55.190 528 mac_common.c:89	dst addr mode: 2
+06:22:55.190 528 mac_common.c:108	src addr mode: 0
+06:22:55.190 528 mac_common.c:173	<< zb_parse_mhr, ret val 7
+06:22:55.190 528 mac.c:384	frame_control 3:8, seq_number 153, dst_pan_id 0xffff, src_pan_id 0x0 dst mode 2 addr 0.0.0.0.0.0.ff.ff src mode 0 addr 0.0.0.0.0.0.0.0
+06:22:55.190 528 mac.c:389	set mac rx , frm 3 len 19
+06:22:55.190 528 mac.c:234	<<can_accept_fr, ret 1
+06:22:55.190 528 mac.c:479	sched cmd accept
+06:22:55.190 528 zb_scheduler.c:254	0x4e3510 scheduled cb 0x4a581d param 3 (in_b 1)
+06:22:55.190 528 mac.c:491	<<mac_parse_recv_data 0
+06:22:55.190 528 mac.c:200	<<zb_mac_recv_data
+06:22:55.190 528 zb_scheduler.c:105	cb_q written 1, read_i 14, write_i 15
+06:22:55.190 528 zb_scheduler.c:115	0x4e3510 calling cb 0x4a581d param 3 in_b 1 len 19
+06:22:55.190 528 mac.c:634	>>mlme_cmd_acc 3
+06:22:55.190 528 mac_common.c:79	>>zb_parse_mhr mhr 0xbfb26e84, ptr 0x4e39a5
+06:22:55.190 528 mac_common.c:89	dst addr mode: 2
+06:22:55.190 528 mac_common.c:108	src addr mode: 0
+06:22:55.190 528 mac_common.c:173	<< zb_parse_mhr, ret val 7
+06:22:55.190 528 mac.c:643	cmd t 7
+06:22:55.190 528 zb_scheduler.c:207	0x4e3530 scheduled mac cb 0x4a8057 param 0 (in_b 255)
+06:22:55.190 528 mac.c:653	free buf 0x4e3958
+06:22:55.190 528 zb_bufpool.c:217	zb_free_buf 0x4e3958, ref 3, in buf 17683 allocated in 0 out 1
+06:22:55.190 528 zb_bufpool.c:246	free_buf: 1/2 buf 0x4e3958, next 0x4e39f4, head 0x4e3958
+06:22:55.190 528 mac.c:795	<<mlme_cmd_acc
+06:22:55.190 528 mac.c:276	tx callback called
+06:22:55.190 528 mac_cr_coordinator.c:452	>> zb_handle_beacon_req dev_type 0x1 mac_beacon_payload_length 0xf
+06:22:55.190 528 mac_cr_coordinator.c:279	>>zb_send_beacon_frame
+06:22:55.190 528 mac_cr_coordinator.c:288	packet length 26, payload len 15
+06:22:55.190 528 mac_cr_coordinator.c:335	beacon set short addr 0
+06:22:55.190 528 mac.c:571	>>mac_fill_mhr
+06:22:55.190 528 mac.c:622	<<mac_fill_mhr
+06:22:55.191 528 mac_cr_coordinator.c:368	superframe cfff ass perm 1
+06:22:55.191 528 zb_mac_transport_linux_pipes.c:199	>>zb_mac_put_data buf 0x4e3784
+06:22:55.191 528 zb_mac_transport_linux_pipes.c:149	>>zb_mac_traffic_dump #4 buf 0x4e3784 / 0 in_b 0 (size 29) is_w 1
+06:22:55.191 528 zb_mac_transport_linux_pipes.c:182	t: start 1514431367; t 1514431375 191121, time 535
+06:22:55.191 528 zb_mac_transport_linux_pipes.c:192	<<zb_mac_traffic_dump
+06:22:55.191 528 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:22:55.191 528 zb_mac_transport_linux_pipes.c:79	written: len 29 total 29
+06:22:55.191 528 zb_mac_transport_linux_pipes.c:86	1D 00 80 79 79 48 00 00 FF CF 00 00 00 21 84 00 
+06:22:55.191 528 zb_mac_transport_linux_pipes.c:93	00 00 00 08 07 06 05 FF FF FF 00 90 4A 
+06:22:55.191 528 zb_mac_transport_linux_pipes.c:446	out buffer is sent
+06:22:55.191 528 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 29
+06:22:55.191 528 zb_mac_transport_linux_pipes.c:225	<<zb_mac_put_data ret
+06:22:55.191 528 mac_cr_coordinator.c:403	<< zb_send_beacon_frame, ret 0
+06:22:55.191 528 mac_cr_coordinator.c:491	<< zb_handle_beacon_req 0
+06:22:55.191 528 zb_mac_transport_linux_pipes.c:477	>>zb_mac_wait_for_ext_event
+06:22:55.191 528 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:22:55.191 528 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 0
+06:22:55.191 528 zb_mac_transport_linux_pipes.c:507	timer started = 1
+06:22:55.191 528 zb_mac_transport_linux_pipes.c:513	timer stop 582 timer 528  tmo 54
+06:22:55.191 528 zb_mac_transport_linux_pipes.c:529	select() timeout 0.826000
+06:22:56.018 528 zb_mac_transport_linux_pipes.c:548	delta 830 (54)
+06:22:56.019 582 zb_mac_transport_linux_pipes.c:569	timer 582, delta_rest 0
+06:22:56.019 582 zb_mac_transport_linux_pipes.c:590	timeout
+06:22:56.019 582 zb_mac_transport_linux_pipes.c:603	<<zb_mac_wait_for_ext_event 0
+06:22:56.019 582 zb_scheduler.c:145	0x4e363c calling alarm cb 0x4bb40c param 0
+06:22:56.019 582 nwk_cr_mesh_routing.c:732	>> exp_r_disc
+06:22:56.019 582 zb_scheduler.c:283	tm_freelist, get nent 0x4e364c
+06:22:56.019 582 zb_scheduler.c:294	0x4e364c scheduled alarm 0x4bb40c, run_after 130, at 712, param 0
+06:22:56.019 582 zb_scheduler.c:349	cur t 582, head t 650
+06:22:56.019 582 nwk_cr_mesh_routing.c:780	<< exp_r_disc
+06:22:56.019 582 zb_mac_transport_linux_pipes.c:477	>>zb_mac_wait_for_ext_event
+06:22:56.019 582 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:22:56.019 582 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 0
+06:22:56.019 582 zb_mac_transport_linux_pipes.c:507	timer started = 1
+06:22:56.019 582 zb_mac_transport_linux_pipes.c:524	default timeout 1
+06:22:56.019 582 zb_mac_transport_linux_pipes.c:529	select() timeout 1.0
+06:22:57.021 582 zb_mac_transport_linux_pipes.c:548	delta 1002 (65)
+06:22:57.021 647 zb_mac_transport_linux_pipes.c:569	timer 647, delta_rest 0
+06:22:57.021 647 zb_mac_transport_linux_pipes.c:590	timeout
+06:22:57.021 647 zb_mac_transport_linux_pipes.c:603	<<zb_mac_wait_for_ext_event 0
+06:22:57.021 647 zb_mac_transport_linux_pipes.c:477	>>zb_mac_wait_for_ext_event
+06:22:57.021 647 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:22:57.021 647 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 0
+06:22:57.021 647 zb_mac_transport_linux_pipes.c:507	timer started = 1
+06:22:57.021 647 zb_mac_transport_linux_pipes.c:513	timer stop 650 timer 647  tmo 3
+06:22:57.022 647 zb_mac_transport_linux_pipes.c:529	select() timeout 0.45000
+06:22:57.069 647 zb_mac_transport_linux_pipes.c:548	delta 47 (3)
+06:22:57.069 650 zb_mac_transport_linux_pipes.c:569	timer 650, delta_rest 0
+06:22:57.069 650 zb_mac_transport_linux_pipes.c:590	timeout
+06:22:57.069 650 zb_mac_transport_linux_pipes.c:603	<<zb_mac_wait_for_ext_event 0
+06:22:57.069 650 zb_scheduler.c:145	0x4e361c calling alarm cb 0x4bb74d param 0
+06:22:57.069 650 nwk_cr_mesh_routing.c:787	>> exp_pend
+06:22:57.069 650 zb_scheduler.c:283	tm_freelist, get nent 0x4e363c
+06:22:57.069 650 zb_scheduler.c:294	0x4e363c scheduled alarm 0x4bb74d, run_after 325, at 975, param 0
+06:22:57.069 650 zb_scheduler.c:349	cur t 650, head t 712
+06:22:57.069 650 nwk_cr_mesh_routing.c:816	<< exp_pend
+06:22:57.069 650 zb_mac_transport_linux_pipes.c:477	>>zb_mac_wait_for_ext_event
+06:22:57.069 650 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:22:57.069 650 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 0
+06:22:57.069 650 zb_mac_transport_linux_pipes.c:507	timer started = 1
+06:22:57.069 650 zb_mac_transport_linux_pipes.c:524	default timeout 1
+06:22:57.069 650 zb_mac_transport_linux_pipes.c:529	select() timeout 1.0
+06:22:58.071 650 zb_mac_transport_linux_pipes.c:548	delta 1002 (65)
+06:22:58.071 715 zb_mac_transport_linux_pipes.c:569	timer 715, delta_rest 0
+06:22:58.071 715 zb_mac_transport_linux_pipes.c:590	timeout
+06:22:58.071 715 zb_mac_transport_linux_pipes.c:603	<<zb_mac_wait_for_ext_event 0
+06:22:58.071 715 zb_scheduler.c:145	0x4e364c calling alarm cb 0x4bb40c param 0
+06:22:58.071 715 nwk_cr_mesh_routing.c:732	>> exp_r_disc
+06:22:58.071 715 zb_scheduler.c:283	tm_freelist, get nent 0x4e361c
+06:22:58.071 715 zb_scheduler.c:294	0x4e361c scheduled alarm 0x4bb40c, run_after 130, at 845, param 0
+06:22:58.072 715 zb_scheduler.c:349	cur t 715, head t 845
+06:22:58.072 715 nwk_cr_mesh_routing.c:780	<< exp_r_disc
+06:22:58.072 715 zb_mac_transport_linux_pipes.c:477	>>zb_mac_wait_for_ext_event
+06:22:58.072 715 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:22:58.072 715 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 0
+06:22:58.072 715 zb_mac_transport_linux_pipes.c:507	timer started = 1
+06:22:58.072 715 zb_mac_transport_linux_pipes.c:513	timer stop 845 timer 715  tmo 130
+06:22:58.072 715 zb_mac_transport_linux_pipes.c:529	select() timeout 1.989000
+06:22:59.142 715 zb_mac_transport_linux_pipes.c:548	delta 1070 (69)
+06:22:59.142 784 zb_mac_transport_linux_pipes.c:569	timer 784, delta_rest 0
+06:22:59.142 784 zb_mac_transport_linux_pipes.c:265	>>read_from_pipe
+06:22:59.143 784 zb_mac_transport_linux_pipes.c:269	no buffer available, call mac to get incoming buffer
+06:22:59.143 784 zb_mac_transport_linux_pipes.c:273	<<read_from_pipe 1
+06:22:59.143 784 zb_mac_transport_linux_pipes.c:600	Schedule mac main loop 2
+06:22:59.143 784 zb_mac_transport_linux_pipes.c:603	<<zb_mac_wait_for_ext_event 1
+06:22:59.143 784 zb_bufpool.c:137	zb_get_buf 1: buffer 0x4e3958, ref 3, head 0x4e39f4, allocated 2 / 2
+06:22:59.143 784 mac.c:177	>>zb_mac_recv_data
+06:22:59.143 784 zb_mac_transport_linux_pipes.c:235	>>zb_mac_start_recv buf 0x4e3958
+06:22:59.143 784 zb_mac_transport_linux_pipes.c:249	<<zb_mac_start_recv ret 0
+06:22:59.143 784 zb_mac_transport_linux_pipes.c:265	>>read_from_pipe
+06:22:59.143 784 zb_mac_transport_linux_pipes.c:79	read: len 1 total 2
+06:22:59.143 784 zb_mac_transport_linux_pipes.c:93	0B 
+06:22:59.143 784 zb_mac_transport_linux_pipes.c:79	read: len 10 total 11
+06:22:59.143 784 zb_mac_transport_linux_pipes.c:93	03 08 9A FF FF FF FF 07 24 47 
+06:22:59.143 784 zb_mac_transport_linux_pipes.c:333	receive full buffer 3 len 11
+06:22:59.143 784 zb_mac_transport_linux_pipes.c:356	<<read_from_pipe 11
+06:22:59.143 784 mac.c:366	>>mac_parse_recv_dt
+06:22:59.143 784 zb_mac_transport_linux_pipes.c:149	>>zb_mac_traffic_dump #5 buf 0x4e3958 / 3 in_b 1 (size 20) is_w 0
+06:22:59.143 784 zb_mac_transport_linux_pipes.c:182	t: start 1514431367; t 1514431379 143514, time 793
+06:22:59.143 784 zb_mac_transport_linux_pipes.c:192	<<zb_mac_traffic_dump
+06:22:59.143 784 mac_common.c:79	>>zb_parse_mhr mhr 0xbfb26e24, ptr 0x4e39a5
+06:22:59.143 784 mac_common.c:89	dst addr mode: 2
+06:22:59.143 784 mac_common.c:108	src addr mode: 0
+06:22:59.143 784 mac_common.c:173	<< zb_parse_mhr, ret val 7
+06:22:59.143 784 mac.c:384	frame_control 3:8, seq_number 154, dst_pan_id 0xffff, src_pan_id 0x0 dst mode 2 addr 0.0.0.0.0.0.ff.ff src mode 0 addr 0.0.0.0.0.0.0.0
+06:22:59.143 784 mac.c:389	set mac rx , frm 3 len 19
+06:22:59.143 784 mac.c:234	<<can_accept_fr, ret 1
+06:22:59.143 784 mac.c:479	sched cmd accept
+06:22:59.143 784 zb_scheduler.c:254	0x4e3518 scheduled cb 0x4a581d param 3 (in_b 1)
+06:22:59.143 784 mac.c:491	<<mac_parse_recv_data 0
+06:22:59.143 784 mac.c:200	<<zb_mac_recv_data
+06:22:59.143 784 zb_scheduler.c:105	cb_q written 1, read_i 15, write_i 0
+06:22:59.143 784 zb_scheduler.c:115	0x4e3518 calling cb 0x4a581d param 3 in_b 1 len 19
+06:22:59.143 784 mac.c:634	>>mlme_cmd_acc 3
+06:22:59.143 784 mac_common.c:79	>>zb_parse_mhr mhr 0xbfb26e84, ptr 0x4e39a5
+06:22:59.143 784 mac_common.c:89	dst addr mode: 2
+06:22:59.144 784 mac_common.c:108	src addr mode: 0
+06:22:59.144 784 mac_common.c:173	<< zb_parse_mhr, ret val 7
+06:22:59.144 784 mac.c:643	cmd t 7
+06:22:59.144 784 zb_scheduler.c:207	0x4e3538 scheduled mac cb 0x4a8057 param 0 (in_b 255)
+06:22:59.144 784 mac.c:653	free buf 0x4e3958
+06:22:59.144 784 zb_bufpool.c:217	zb_free_buf 0x4e3958, ref 3, in buf 17683 allocated in 0 out 1
+06:22:59.144 784 zb_bufpool.c:246	free_buf: 1/2 buf 0x4e3958, next 0x4e39f4, head 0x4e3958
+06:22:59.144 784 mac.c:795	<<mlme_cmd_acc
+06:22:59.144 784 mac.c:276	tx callback called
+06:22:59.144 784 mac_cr_coordinator.c:452	>> zb_handle_beacon_req dev_type 0x1 mac_beacon_payload_length 0xf
+06:22:59.144 784 mac_cr_coordinator.c:279	>>zb_send_beacon_frame
+06:22:59.144 784 mac_cr_coordinator.c:288	packet length 26, payload len 15
+06:22:59.144 784 mac_cr_coordinator.c:335	beacon set short addr 0
+06:22:59.144 784 mac.c:571	>>mac_fill_mhr
+06:22:59.144 784 mac.c:622	<<mac_fill_mhr
+06:22:59.144 784 mac_cr_coordinator.c:368	superframe cfff ass perm 1
+06:22:59.144 784 zb_mac_transport_linux_pipes.c:199	>>zb_mac_put_data buf 0x4e3784
+06:22:59.144 784 zb_mac_transport_linux_pipes.c:149	>>zb_mac_traffic_dump #6 buf 0x4e3784 / 0 in_b 0 (size 29) is_w 1
+06:22:59.144 784 zb_mac_transport_linux_pipes.c:182	t: start 1514431367; t 1514431379 144469, time 793
+06:22:59.144 784 zb_mac_transport_linux_pipes.c:192	<<zb_mac_traffic_dump
+06:22:59.144 784 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:22:59.144 784 zb_mac_transport_linux_pipes.c:79	written: len 29 total 29
+06:22:59.144 784 zb_mac_transport_linux_pipes.c:86	1D 00 80 7A 79 48 00 00 FF CF 00 00 00 21 84 00 
+06:22:59.144 784 zb_mac_transport_linux_pipes.c:93	00 00 00 08 07 06 05 FF FF FF 00 5C A7 
+06:22:59.144 784 zb_mac_transport_linux_pipes.c:446	out buffer is sent
+06:22:59.144 784 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 29
+06:22:59.144 784 zb_mac_transport_linux_pipes.c:225	<<zb_mac_put_data ret
+06:22:59.144 784 mac_cr_coordinator.c:403	<< zb_send_beacon_frame, ret 0
+06:22:59.144 784 mac_cr_coordinator.c:491	<< zb_handle_beacon_req 0
+06:22:59.144 784 zb_mac_transport_linux_pipes.c:477	>>zb_mac_wait_for_ext_event
+06:22:59.144 784 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:22:59.144 784 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 0
+06:22:59.144 784 zb_mac_transport_linux_pipes.c:507	timer started = 1
+06:22:59.144 784 zb_mac_transport_linux_pipes.c:513	timer stop 845 timer 784  tmo 61
+06:22:59.144 784 zb_mac_transport_linux_pipes.c:529	select() timeout 0.933000
+06:23:00.079 784 zb_mac_transport_linux_pipes.c:548	delta 937 (61)
+06:23:00.079 845 zb_mac_transport_linux_pipes.c:569	timer 845, delta_rest 0
+06:23:00.079 845 zb_mac_transport_linux_pipes.c:590	timeout
+06:23:00.079 845 zb_mac_transport_linux_pipes.c:603	<<zb_mac_wait_for_ext_event 0
+06:23:00.079 845 zb_scheduler.c:145	0x4e361c calling alarm cb 0x4bb40c param 0
+06:23:00.079 845 nwk_cr_mesh_routing.c:732	>> exp_r_disc
+06:23:00.079 845 zb_scheduler.c:283	tm_freelist, get nent 0x4e364c
+06:23:00.079 845 zb_scheduler.c:294	0x4e364c scheduled alarm 0x4bb40c, run_after 130, at 975, param 0
+06:23:00.080 845 zb_scheduler.c:349	cur t 845, head t 975
+06:23:00.080 845 nwk_cr_mesh_routing.c:780	<< exp_r_disc
+06:23:00.080 845 zb_mac_transport_linux_pipes.c:477	>>zb_mac_wait_for_ext_event
+06:23:00.080 845 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:23:00.080 845 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 0
+06:23:00.080 845 zb_mac_transport_linux_pipes.c:507	timer started = 1
+06:23:00.080 845 zb_mac_transport_linux_pipes.c:524	default timeout 1
+06:23:00.080 845 zb_mac_transport_linux_pipes.c:529	select() timeout 1.0
+06:23:01.083 845 zb_mac_transport_linux_pipes.c:548	delta 1004 (65)
+06:23:01.083 910 zb_mac_transport_linux_pipes.c:569	timer 910, delta_rest 0
+06:23:01.084 910 zb_mac_transport_linux_pipes.c:590	timeout
+06:23:01.084 910 zb_mac_transport_linux_pipes.c:603	<<zb_mac_wait_for_ext_event 0
+06:23:01.084 910 zb_mac_transport_linux_pipes.c:477	>>zb_mac_wait_for_ext_event
+06:23:01.084 910 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:23:01.084 910 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 0
+06:23:01.084 910 zb_mac_transport_linux_pipes.c:507	timer started = 1
+06:23:01.084 910 zb_mac_transport_linux_pipes.c:513	timer stop 975 timer 910  tmo 65
+06:23:01.084 910 zb_mac_transport_linux_pipes.c:529	select() timeout 0.994000
+06:23:02.079 910 zb_mac_transport_linux_pipes.c:548	delta 996 (65)
+06:23:02.079 975 zb_mac_transport_linux_pipes.c:569	timer 975, delta_rest 0
+06:23:02.079 975 zb_mac_transport_linux_pipes.c:590	timeout
+06:23:02.079 975 zb_mac_transport_linux_pipes.c:603	<<zb_mac_wait_for_ext_event 0
+06:23:02.079 975 zb_scheduler.c:145	0x4e364c calling alarm cb 0x4bb40c param 0
+06:23:02.080 975 nwk_cr_mesh_routing.c:732	>> exp_r_disc
+06:23:02.080 975 zb_scheduler.c:283	tm_freelist, get nent 0x4e361c
+06:23:02.080 975 zb_scheduler.c:294	0x4e361c scheduled alarm 0x4bb40c, run_after 130, at 1105, param 0
+06:23:02.080 975 zb_scheduler.c:349	cur t 975, head t 975
+06:23:02.080 975 nwk_cr_mesh_routing.c:780	<< exp_r_disc
+06:23:02.080 975 zb_scheduler.c:145	0x4e363c calling alarm cb 0x4bb74d param 0
+06:23:02.080 975 nwk_cr_mesh_routing.c:787	>> exp_pend
+06:23:02.080 975 zb_scheduler.c:283	tm_freelist, get nent 0x4e364c
+06:23:02.080 975 zb_scheduler.c:294	0x4e364c scheduled alarm 0x4bb74d, run_after 325, at 1300, param 0
+06:23:02.080 975 zb_scheduler.c:349	cur t 975, head t 1105
+06:23:02.081 975 nwk_cr_mesh_routing.c:816	<< exp_pend
+06:23:02.081 975 zb_mac_transport_linux_pipes.c:477	>>zb_mac_wait_for_ext_event
+06:23:02.081 975 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:23:02.081 975 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 0
+06:23:02.081 975 zb_mac_transport_linux_pipes.c:507	timer started = 1
+06:23:02.081 975 zb_mac_transport_linux_pipes.c:524	default timeout 1
+06:23:02.081 975 zb_mac_transport_linux_pipes.c:529	select() timeout 1.0
+06:23:03.084 975 zb_mac_transport_linux_pipes.c:548	delta 1004 (65)
+06:23:03.084 1040 zb_mac_transport_linux_pipes.c:569	timer 1040, delta_rest 0
+06:23:03.084 1040 zb_mac_transport_linux_pipes.c:590	timeout
+06:23:03.084 1040 zb_mac_transport_linux_pipes.c:603	<<zb_mac_wait_for_ext_event 0
+06:23:03.084 1040 zb_mac_transport_linux_pipes.c:477	>>zb_mac_wait_for_ext_event
+06:23:03.084 1040 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:23:03.084 1040 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 0
+06:23:03.084 1040 zb_mac_transport_linux_pipes.c:507	timer started = 1
+06:23:03.084 1040 zb_mac_transport_linux_pipes.c:513	timer stop 1105 timer 1040  tmo 65
+06:23:03.084 1040 zb_mac_transport_linux_pipes.c:529	select() timeout 0.994000
+06:23:03.179 1040 zb_mac_transport_linux_pipes.c:548	delta 94 (6)
+06:23:03.179 1046 zb_mac_transport_linux_pipes.c:569	timer 1046, delta_rest 0
+06:23:03.179 1046 zb_mac_transport_linux_pipes.c:265	>>read_from_pipe
+06:23:03.179 1046 zb_mac_transport_linux_pipes.c:269	no buffer available, call mac to get incoming buffer
+06:23:03.179 1046 zb_mac_transport_linux_pipes.c:273	<<read_from_pipe 1
+06:23:03.179 1046 zb_mac_transport_linux_pipes.c:600	Schedule mac main loop 2
+06:23:03.179 1046 zb_mac_transport_linux_pipes.c:603	<<zb_mac_wait_for_ext_event 1
+06:23:03.179 1046 zb_bufpool.c:137	zb_get_buf 1: buffer 0x4e3958, ref 3, head 0x4e39f4, allocated 2 / 2
+06:23:03.179 1046 mac.c:177	>>zb_mac_recv_data
+06:23:03.179 1046 zb_mac_transport_linux_pipes.c:235	>>zb_mac_start_recv buf 0x4e3958
+06:23:03.179 1046 zb_mac_transport_linux_pipes.c:249	<<zb_mac_start_recv ret 0
+06:23:03.179 1046 zb_mac_transport_linux_pipes.c:265	>>read_from_pipe
+06:23:03.179 1046 zb_mac_transport_linux_pipes.c:79	read: len 1 total 2
+06:23:03.179 1046 zb_mac_transport_linux_pipes.c:93	16 
+06:23:03.179 1046 zb_mac_transport_linux_pipes.c:79	read: len 21 total 22
+06:23:03.179 1046 zb_mac_transport_linux_pipes.c:86	23 C8 9B 79 48 00 00 FF FF 01 00 00 00 00 00 00 
+06:23:03.179 1046 zb_mac_transport_linux_pipes.c:93	08 01 8E E2 62 
+06:23:03.179 1046 zb_mac_transport_linux_pipes.c:333	receive full buffer 3 len 22
+06:23:03.179 1046 zb_mac_transport_linux_pipes.c:356	<<read_from_pipe 22
+06:23:03.179 1046 mac.c:366	>>mac_parse_recv_dt
+06:23:03.179 1046 zb_mac_transport_linux_pipes.c:149	>>zb_mac_traffic_dump #7 buf 0x4e3958 / 3 in_b 1 (size 31) is_w 0
+06:23:03.179 1046 zb_mac_transport_linux_pipes.c:182	t: start 1514431367; t 1514431383 179870, time 1057
+06:23:03.179 1046 zb_mac_transport_linux_pipes.c:192	<<zb_mac_traffic_dump
+06:23:03.179 1046 mac_common.c:79	>>zb_parse_mhr mhr 0xbfb26e24, ptr 0x4e39a0
+06:23:03.179 1046 mac_common.c:89	dst addr mode: 2
+06:23:03.179 1046 mac_common.c:108	src addr mode: 3
+06:23:03.180 1046 mac_common.c:173	<< zb_parse_mhr, ret val 17
+06:23:03.180 1046 mac.c:384	frame_control 23:c8, seq_number 155, dst_pan_id 0x4879, src_pan_id 0xffff dst mode 2 addr 0.0.0.0.0.0.0.0 src mode 3 addr 8.0.0.0.0.0.0.1
+06:23:03.180 1046 mac.c:389	set mac rx , frm 3 len 30
+06:23:03.180 1046 mac.c:234	<<can_accept_fr, ret 1
+06:23:03.180 1046 mac.c:479	sched cmd accept
+06:23:03.180 1046 zb_scheduler.c:254	0x4e34a0 scheduled cb 0x4a581d param 3 (in_b 1)
+06:23:03.180 1046 mac.c:491	<<mac_parse_recv_data 0
+06:23:03.180 1046 mac.c:200	<<zb_mac_recv_data
+06:23:03.180 1046 zb_scheduler.c:105	cb_q written 1, read_i 0, write_i 1
+06:23:03.180 1046 zb_scheduler.c:115	0x4e34a0 calling cb 0x4a581d param 3 in_b 1 len 30
+06:23:03.180 1046 mac.c:634	>>mlme_cmd_acc 3
+06:23:03.180 1046 mac_common.c:79	>>zb_parse_mhr mhr 0xbfb26e84, ptr 0x4e39a0
+06:23:03.180 1046 mac_common.c:89	dst addr mode: 2
+06:23:03.180 1046 mac_common.c:108	src addr mode: 3
+06:23:03.180 1046 mac_common.c:173	<< zb_parse_mhr, ret val 17
+06:23:03.180 1046 mac.c:643	cmd t 1
+06:23:03.180 1046 zb_scheduler.c:254	0x4e34a8 scheduled cb 0x4a8b0d param 3 (in_b 1)
+06:23:03.180 1046 mac.c:795	<<mlme_cmd_acc
+06:23:03.180 1046 zb_scheduler.c:105	cb_q written 1, read_i 1, write_i 2
+06:23:03.180 1046 zb_scheduler.c:115	0x4e34a8 calling cb 0x4a8b0d param 3 in_b 1 len 30
+06:23:03.180 1046 mac_cr_associate.c:211	>>accept_ass_req_cmd 3
+06:23:03.180 1046 mac_common.c:79	>>zb_parse_mhr mhr 0xbfb26e84, ptr 0x4e39a0
+06:23:03.180 1046 mac_common.c:89	dst addr mode: 2
+06:23:03.180 1046 mac_common.c:108	src addr mode: 3
+06:23:03.180 1046 mac_common.c:173	<< zb_parse_mhr, ret val 17
+06:23:03.180 1046 mac.c:873	>>mac_send_ack 155
+06:23:03.180 1046 mac.c:571	>>mac_fill_mhr
+06:23:03.180 1046 mac.c:622	<<mac_fill_mhr
+06:23:03.180 1046 zb_mac_transport_linux_pipes.c:199	>>zb_mac_put_data buf 0x4e3784
+06:23:03.180 1046 zb_mac_transport_linux_pipes.c:149	>>zb_mac_traffic_dump #8 buf 0x4e3784 / 0 in_b 0 (size 6) is_w 1
+06:23:03.180 1046 zb_mac_transport_linux_pipes.c:182	t: start 1514431367; t 1514431383 180831, time 1057
+06:23:03.180 1046 zb_mac_transport_linux_pipes.c:192	<<zb_mac_traffic_dump
+06:23:03.180 1046 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:23:03.180 1046 zb_mac_transport_linux_pipes.c:79	written: len 6 total 6
+06:23:03.181 1046 zb_mac_transport_linux_pipes.c:93	06 02 00 9B E2 9F 
+06:23:03.181 1046 zb_mac_transport_linux_pipes.c:446	out buffer is sent
+06:23:03.181 1046 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 6
+06:23:03.181 1046 zb_mac_transport_linux_pipes.c:225	<<zb_mac_put_data ret
+06:23:03.181 1046 mac.c:893	<<mac_send_ack ret 0
+06:23:03.181 1046 zb_scheduler.c:254	0x4e34b0 scheduled cb 0x4b4bd5 param 3 (in_b 1)
+06:23:03.181 1046 mac_cr_associate.c:247	<<accept_ass_req_cmd
+06:23:03.181 1046 zb_scheduler.c:105	cb_q written 1, read_i 2, write_i 3
+06:23:03.181 1046 zb_scheduler.c:115	0x4e34b0 calling cb 0x4b4bd5 param 3 in_b 1 len 30
+06:23:03.181 1046 nwk_cr_join.c:394	>>mlme_associate_ind 3
+06:23:03.181 1046 nwk_cr_join.c:398	ieeeaddr 8.0.0.0.0.0.0.1
+06:23:03.181 1046 nwk_cr_join.c:258	>>zb_nwk_accept_child device_address 8.0.0.0.0.0.0.1 cap 0x8e lqi 0 address 0xbfb26e7a
+06:23:03.181 1046 zb_address.c:329	>>zb_address_ieee ieee 0x4e39ea
+06:23:03.181 1046 zb_address.c:331	ieeeaddr 8.0.0.0.0.0.0.1
+06:23:03.181 1046 zb_address.c:349	<< zb_address_ieee, ret -28
+06:23:03.181 1046 nwk_cr_join.c:289	cap_inf 0x8e ed_ch_num 0 router_ch_num 0 max_ch 32 max_routers 4
+06:23:03.181 1046 nwk_cr_join.c:309	assigned router addr 0x1
+06:23:03.181 1046 zb_address.c:595	short_addr 1 l 0 ZG->addr.short_sorted[l] 0 addr 0
+06:23:03.181 1046 zb_address.c:503	>>zb_address_ieee_lock ref 59
+06:23:03.181 1046 zb_address.c:509	<<zb_address_ieee_lock
+06:23:03.181 1046 zb_address.c:448	zb_address_update short 0x1 long 8.0.0.0.0.0.0.1 ref 59 ret 0
+06:23:03.181 1046 nwk_neighbor.c:505	>>zb_nwk_neighbor_get addr_ref 59 cr 1 nbt 0xbfb26e24
+06:23:03.181 1046 zb_address.c:503	>>zb_address_ieee_lock ref 59
+06:23:03.181 1046 zb_address.c:509	<<zb_address_ieee_lock
+06:23:03.181 1046 nwk_neighbor.c:547	<<zb_nwk_neighbor_get 0
+06:23:03.181 1046 nwk_cr_join.c:376	neighbor ent 0x4e44b0 rel 1 dev_t 1 rx.on 1
+06:23:03.181 1046 nwk_cr_join.c:381	<<zb_nwk_accept_child status 0, address 1
+06:23:03.181 1046 nwk_cr_join.c:401	BUILD_ASSOCIATE_RESPONSE
+06:23:03.181 1046 nwk_cr_join.c:404	ieeeaddr 8.0.0.0.0.0.0.1
+06:23:03.182 1046 zb_scheduler.c:254	0x4e34b8 scheduled cb 0x4a8582 param 3 (in_b 1)
+06:23:03.182 1046 nwk_cr_join.c:412	<<mlme_associate_ind
+06:23:03.182 1046 zb_scheduler.c:105	cb_q written 1, read_i 3, write_i 4
+06:23:03.182 1046 zb_scheduler.c:115	0x4e34b8 calling cb 0x4a8582 param 3 in_b 1 len 30
+06:23:03.182 1046 mac_cr_associate.c:67	>>mlme_ass_resp 3
+06:23:03.182 1046 mac_cr_associate.c:107	>>handle_ass_resp
+06:23:03.182 1046 mac_cr_associate.c:161	ASS RESP dst mod 3 addr 8.0.0.0.0.0.0.1
+06:23:03.182 1046 mac_cr_associate.c:166	ASS RESP src mod 3 addr 5.6.7.8.0.0.0.0
+06:23:03.182 1046 mac.c:571	>>mac_fill_mhr
+06:23:03.182 1046 mac.c:622	<<mac_fill_mhr
+06:23:03.182 1046 mac_common.c:79	>>zb_parse_mhr mhr 0xbfb26e44, ptr 0x4e399d
+06:23:03.182 1046 mac_common.c:89	dst addr mode: 3
+06:23:03.182 1046 mac_common.c:108	src addr mode: 3
+06:23:03.182 1046 mac_common.c:173	<< zb_parse_mhr, ret val 21
+06:23:03.182 1046 mac_cr_associate.c:187	ieeeaddr 8.0.0.0.0.0.0.1
+06:23:03.182 1046 mac_routines.c:382	>> zb_mac_put_data_to_pending_queue ptr 0xbfb26e34
+06:23:03.182 1046 mac_routines.c:383	Setting pending bit
+06:23:03.182 1046 zb_scheduler.c:283	tm_freelist, get nent 0x4e363c
+06:23:03.182 1046 zb_scheduler.c:294	0x4e363c scheduled alarm 0x4ab83c, run_after 500, at 1546, param 0
+06:23:03.182 1046 zb_scheduler.c:349	cur t 1046, head t 1105
+06:23:03.182 1046 mac_routines.c:418	<< zb_mac_put_data_to_pending_queue, ret -21
+06:23:03.182 1046 mac_cr_associate.c:197	<<handle_ass_resp set mac 1 st -21 ret 0
+06:23:03.182 1046 mac_cr_associate.c:77	<<mlme_ass_resp
+06:23:03.182 1046 zb_mac_transport_linux_pipes.c:477	>>zb_mac_wait_for_ext_event
+06:23:03.182 1046 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:23:03.182 1046 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 0
+06:23:03.182 1046 zb_mac_transport_linux_pipes.c:507	timer started = 1
+06:23:03.182 1046 zb_mac_transport_linux_pipes.c:513	timer stop 1105 timer 1046  tmo 59
+06:23:03.183 1046 zb_mac_transport_linux_pipes.c:529	select() timeout 0.902000
+06:23:04.087 1046 zb_mac_transport_linux_pipes.c:548	delta 909 (59)
+06:23:04.087 1105 zb_mac_transport_linux_pipes.c:569	timer 1105, delta_rest 0
+06:23:04.087 1105 zb_mac_transport_linux_pipes.c:590	timeout
+06:23:04.087 1105 zb_mac_transport_linux_pipes.c:603	<<zb_mac_wait_for_ext_event 0
+06:23:04.087 1105 zb_scheduler.c:145	0x4e361c calling alarm cb 0x4bb40c param 0
+06:23:04.087 1105 nwk_cr_mesh_routing.c:732	>> exp_r_disc
+06:23:04.087 1105 zb_scheduler.c:283	tm_freelist, get nent 0x4e362c
+06:23:04.087 1105 zb_scheduler.c:294	0x4e362c scheduled alarm 0x4bb40c, run_after 130, at 1235, param 0
+06:23:04.087 1105 zb_scheduler.c:349	cur t 1105, head t 1235
+06:23:04.087 1105 nwk_cr_mesh_routing.c:780	<< exp_r_disc
+06:23:04.087 1105 zb_mac_transport_linux_pipes.c:477	>>zb_mac_wait_for_ext_event
+06:23:04.087 1105 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:23:04.087 1105 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 0
+06:23:04.087 1105 zb_mac_transport_linux_pipes.c:507	timer started = 1
+06:23:04.087 1105 zb_mac_transport_linux_pipes.c:524	default timeout 1
+06:23:04.087 1105 zb_mac_transport_linux_pipes.c:529	select() timeout 1.0
+06:23:04.164 1105 zb_mac_transport_linux_pipes.c:548	delta 76 (4)
+06:23:04.164 1109 zb_mac_transport_linux_pipes.c:569	timer 1109, delta_rest 0
+06:23:04.164 1109 zb_mac_transport_linux_pipes.c:265	>>read_from_pipe
+06:23:04.164 1109 zb_mac_transport_linux_pipes.c:269	no buffer available, call mac to get incoming buffer
+06:23:04.164 1109 zb_mac_transport_linux_pipes.c:273	<<read_from_pipe 1
+06:23:04.164 1109 zb_mac_transport_linux_pipes.c:600	Schedule mac main loop 2
+06:23:04.164 1109 zb_mac_transport_linux_pipes.c:603	<<zb_mac_wait_for_ext_event 1
+06:23:04.164 1109 zb_bufpool.c:137	zb_get_buf 1: buffer 0x4e39f4, ref 4, head 0x4e3a90, allocated 2 / 3
+06:23:04.164 1109 mac.c:177	>>zb_mac_recv_data
+06:23:04.164 1109 zb_mac_transport_linux_pipes.c:235	>>zb_mac_start_recv buf 0x4e39f4
+06:23:04.164 1109 zb_mac_transport_linux_pipes.c:249	<<zb_mac_start_recv ret 0
+06:23:04.164 1109 zb_mac_transport_linux_pipes.c:265	>>read_from_pipe
+06:23:04.164 1109 zb_mac_transport_linux_pipes.c:79	read: len 1 total 2
+06:23:04.164 1109 zb_mac_transport_linux_pipes.c:93	13 
+06:23:04.164 1109 zb_mac_transport_linux_pipes.c:79	read: len 18 total 19
+06:23:04.164 1109 zb_mac_transport_linux_pipes.c:86	63 C8 9C 79 48 00 00 01 00 00 00 00 00 00 08 04 
+06:23:04.164 1109 zb_mac_transport_linux_pipes.c:93	35 C2 
+06:23:04.164 1109 zb_mac_transport_linux_pipes.c:333	receive full buffer 4 len 19
+06:23:04.164 1109 zb_mac_transport_linux_pipes.c:356	<<read_from_pipe 19
+06:23:04.164 1109 mac.c:366	>>mac_parse_recv_dt
+06:23:04.164 1109 zb_mac_transport_linux_pipes.c:149	>>zb_mac_traffic_dump #9 buf 0x4e39f4 / 4 in_b 1 (size 28) is_w 0
+06:23:04.164 1109 zb_mac_transport_linux_pipes.c:182	t: start 1514431367; t 1514431384 164710, time 1121
+06:23:04.164 1109 zb_mac_transport_linux_pipes.c:192	<<zb_mac_traffic_dump
+06:23:04.164 1109 mac_common.c:79	>>zb_parse_mhr mhr 0xbfb26e24, ptr 0x4e3a3d
+06:23:04.164 1109 mac_common.c:89	dst addr mode: 2
+06:23:04.164 1109 mac_common.c:108	src addr mode: 3
+06:23:04.164 1109 mac_common.c:173	<< zb_parse_mhr, ret val 15
+06:23:04.164 1109 mac.c:384	frame_control 63:c8, seq_number 156, dst_pan_id 0x4879, src_pan_id 0x4879 dst mode 2 addr 0.0.0.0.0.0.0.0 src mode 3 addr 8.0.0.0.0.0.0.1
+06:23:04.164 1109 mac.c:389	set mac rx , frm 3 len 27
+06:23:04.164 1109 mac.c:234	<<can_accept_fr, ret 1
+06:23:04.164 1109 mac.c:479	sched cmd accept
+06:23:04.164 1109 zb_scheduler.c:254	0x4e34c0 scheduled cb 0x4a581d param 4 (in_b 1)
+06:23:04.164 1109 mac.c:491	<<mac_parse_recv_data 0
+06:23:04.165 1109 mac.c:200	<<zb_mac_recv_data
+06:23:04.165 1109 zb_scheduler.c:105	cb_q written 1, read_i 4, write_i 5
+06:23:04.165 1109 zb_scheduler.c:115	0x4e34c0 calling cb 0x4a581d param 4 in_b 1 len 27
+06:23:04.165 1109 mac.c:634	>>mlme_cmd_acc 4
+06:23:04.165 1109 mac_common.c:79	>>zb_parse_mhr mhr 0xbfb26e84, ptr 0x4e3a3d
+06:23:04.165 1109 mac_common.c:89	dst addr mode: 2
+06:23:04.165 1109 mac_common.c:108	src addr mode: 3
+06:23:04.165 1109 mac_common.c:173	<< zb_parse_mhr, ret val 15
+06:23:04.165 1109 mac.c:643	cmd t 4
+06:23:04.165 1109 mac.c:721	CMD_DATA_REQ
+06:23:04.165 1109 zb_scheduler.c:207	0x4e3540 scheduled mac cb 0x4aa166 param 4 (in_b 1)
+06:23:04.165 1109 mac.c:795	<<mlme_cmd_acc
+06:23:04.165 1109 mac.c:276	tx callback called
+06:23:04.165 1109 mac_cr_data.c:86	>> zb_accept_data_request_cmd 4
+06:23:04.165 1109 mac_cr_data.c:216	>> zb_handle_data_request_cmd, pending_buf 0x4e39f4
+06:23:04.165 1109 mac_cr_data.c:228	idle
+06:23:04.165 1109 mac_common.c:79	>>zb_parse_mhr mhr 0xbfb26e04, ptr 0x4e3a3d
+06:23:04.165 1109 mac_common.c:89	dst addr mode: 2
+06:23:04.165 1109 mac_common.c:108	src addr mode: 3
+06:23:04.165 1109 mac_common.c:173	<< zb_parse_mhr, ret val 15
+06:23:04.165 1109 mac_cr_data.c:112	check_pending_data: src_addr_mode 3
+06:23:04.165 1109 mac_cr_data.c:118	i 0 pending_data 0x4e3958 dst_addr_mode 3
+06:23:04.165 1109 mac_cr_data.c:131	data_found 1 pending dst 8.0.0.0.0.0.0.1 src 8.0.0.0.0.0.0.1
+06:23:04.165 1109 mac_cr_data.c:239	index 0
+06:23:04.165 1109 mac_cr_data.c:242	pending dat 0x4e3958
+06:23:04.166 1109 mac_common.c:79	>>zb_parse_mhr mhr 0xbfb26e1c, ptr 0x4e399d
+06:23:04.166 1109 mac_common.c:89	dst addr mode: 3
+06:23:04.166 1109 mac_common.c:108	src addr mode: 3
+06:23:04.166 1109 mac_common.c:173	<< zb_parse_mhr, ret val 21
+06:23:04.167 1109 mac_cr_data.c:250	data_found_index 0, fcf 0x4e399d, data_found 1
+06:23:04.167 1109 mac.c:873	>>mac_send_ack 156
+06:23:04.167 1109 mac.c:571	>>mac_fill_mhr
+06:23:04.167 1109 mac.c:622	<<mac_fill_mhr
+06:23:04.167 1109 zb_mac_transport_linux_pipes.c:199	>>zb_mac_put_data buf 0x4e3784
+06:23:04.167 1109 zb_mac_transport_linux_pipes.c:149	>>zb_mac_traffic_dump #10 buf 0x4e3784 / 0 in_b 0 (size 6) is_w 1
+06:23:04.167 1109 zb_mac_transport_linux_pipes.c:182	t: start 1514431367; t 1514431384 167419, time 1122
+06:23:04.167 1109 zb_mac_transport_linux_pipes.c:192	<<zb_mac_traffic_dump
+06:23:04.167 1109 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:23:04.167 1109 zb_mac_transport_linux_pipes.c:79	written: len 6 total 6
+06:23:04.167 1109 zb_mac_transport_linux_pipes.c:93	06 12 00 9C C8 6E 
+06:23:04.167 1109 zb_mac_transport_linux_pipes.c:446	out buffer is sent
+06:23:04.167 1109 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 6
+06:23:04.167 1109 zb_mac_transport_linux_pipes.c:225	<<zb_mac_put_data ret
+06:23:04.167 1109 mac.c:893	<<mac_send_ack ret 0
+06:23:04.167 1109 mac_cr_data.c:287	will send data, frame type 3
+06:23:04.167 1109 mac_data.c:515	>> zb_mac_check_security data_buf 0x4e3958
+06:23:04.167 1109 mac_data.c:551	<< zb_mac_check_security ret 0
+06:23:04.167 1109 mac_common.c:181	tx_total 1
+06:23:04.167 1109 mac_cr_data.c:112	check_pending_data: src_addr_mode 3
+06:23:04.167 1109 mac_cr_data.c:118	i 1 pending_data (nil) dst_addr_mode 0
+06:23:04.167 1109 mac_cr_data.c:118	i 2 pending_data (nil) dst_addr_mode 0
+06:23:04.167 1109 mac_cr_data.c:118	i 3 pending_data (nil) dst_addr_mode 0
+06:23:04.167 1109 zb_mac_transport_linux_pipes.c:199	>>zb_mac_put_data buf 0x4e3958
+06:23:04.168 1109 zb_mac_transport_linux_pipes.c:149	>>zb_mac_traffic_dump #11 buf 0x4e3958 / 3 in_b 1 (size 30) is_w 1
+06:23:04.168 1109 zb_mac_transport_linux_pipes.c:182	t: start 1514431367; t 1514431384 168027, time 1122
+06:23:04.168 1109 zb_mac_transport_linux_pipes.c:192	<<zb_mac_traffic_dump
+06:23:04.168 1109 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:23:04.168 1109 zb_mac_transport_linux_pipes.c:79	written: len 30 total 30
+06:23:04.168 1109 zb_mac_transport_linux_pipes.c:86	1E 63 CC 7B 79 48 01 00 00 00 00 00 00 08 00 00 
+06:23:04.168 1109 zb_mac_transport_linux_pipes.c:93	00 00 08 07 06 05 02 01 00 00 1F A6 00 00 
+06:23:04.168 1109 zb_mac_transport_linux_pipes.c:446	out buffer is sent
+06:23:04.168 1109 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 30
+06:23:04.168 1109 zb_mac_transport_linux_pipes.c:225	<<zb_mac_put_data ret
+06:23:04.168 1109 mac_cr_data.c:340	ack req bit 32
+06:23:04.168 1109 mac_data.c:187	>> zb_mac_check_ack
+06:23:04.168 1109 zb_scheduler.c:283	tm_freelist, get nent 0x4e361c
+06:23:04.168 1109 zb_scheduler.c:294	0x4e361c scheduled alarm 0x4a62c8, run_after 88, at 1197, param 0
+06:23:04.168 1109 zb_scheduler.c:349	cur t 1109, head t 1197
+06:23:04.168 1109 zb_bufpool.c:137	zb_get_buf 1: buffer 0x4e3a90, ref 5, head 0x4e3b2c, allocated 2 / 4
+06:23:04.168 1109 mac.c:177	>>zb_mac_recv_data
+06:23:04.168 1109 zb_mac_transport_linux_pipes.c:235	>>zb_mac_start_recv buf 0x4e3a90
+06:23:04.168 1109 zb_mac_transport_linux_pipes.c:249	<<zb_mac_start_recv ret 0
+06:23:04.168 1109 zb_mac_transport_linux_pipes.c:265	>>read_from_pipe
+06:23:04.173 1109 zb_mac_transport_linux_pipes.c:79	read: len 1 total 2
+06:23:04.173 1109 zb_mac_transport_linux_pipes.c:93	06 
+06:23:04.173 1109 zb_mac_transport_linux_pipes.c:79	read: len 5 total 6
+06:23:04.174 1109 zb_mac_transport_linux_pipes.c:93	02 00 7B EC 78 
+06:23:04.174 1109 zb_mac_transport_linux_pipes.c:333	receive full buffer 5 len 6
+06:23:04.174 1109 zb_mac_transport_linux_pipes.c:356	<<read_from_pipe 6
+06:23:04.174 1109 mac.c:366	>>mac_parse_recv_dt
+06:23:04.174 1109 zb_mac_transport_linux_pipes.c:149	>>zb_mac_traffic_dump #12 buf 0x4e3a90 / 5 in_b 1 (size 15) is_w 0
+06:23:04.174 1109 zb_mac_transport_linux_pipes.c:182	t: start 1514431367; t 1514431384 174257, time 1122
+06:23:04.174 1109 zb_mac_transport_linux_pipes.c:192	<<zb_mac_traffic_dump
+06:23:04.174 1109 mac_common.c:79	>>zb_parse_mhr mhr 0xbfb26d44, ptr 0x4e3ae0
+06:23:04.174 1109 mac_common.c:89	dst addr mode: 0
+06:23:04.174 1109 mac_common.c:108	src addr mode: 0
+06:23:04.174 1109 mac_common.c:173	<< zb_parse_mhr, ret val 3
+06:23:04.174 1109 mac.c:384	frame_control 2:0, seq_number 123, dst_pan_id 0x0, src_pan_id 0x0 dst mode 0 addr 0.0.0.0.0.0.0.0 src mode 0 addr 0.0.0.0.0.0.0.0
+06:23:04.174 1109 mac.c:389	set mac rx , frm 2 len 14
+06:23:04.174 1109 mac.c:234	<<can_accept_fr, ret 1
+06:23:04.174 1109 mac.c:471	Ack acccepted
+06:23:04.174 1109 mac.c:808	>>mlme_ack_acc 0x4e3a90
+06:23:04.174 1109 mac_common.c:79	>>zb_parse_mhr mhr 0xbfb26ca4, ptr 0x4e3ae0
+06:23:04.174 1109 mac_common.c:89	dst addr mode: 0
+06:23:04.174 1109 mac_common.c:108	src addr mode: 0
+06:23:04.174 1109 mac_common.c:173	<< zb_parse_mhr, ret val 3
+06:23:04.174 1109 mac.c:825	ack ok dsn 123, frame_pending_bit 0, frame_ctrl 2 0
+06:23:04.175 1109 mac.c:836	Pending data clear
+06:23:04.175 1109 zb_scheduler.c:376	0x4e361c alarm cancel func 0x4a62c8, param 0
+06:23:04.175 1109 zb_scheduler.c:380	tm_queue -> tm_freelist, ent 0x4e361c
+06:23:04.175 1109 mac.c:851	free buf 0x4e3a90
+06:23:04.175 1109 zb_bufpool.c:217	zb_free_buf 0x4e3a90, ref 5, in buf 18446 allocated in 0 out 1
+06:23:04.175 1109 zb_bufpool.c:246	free_buf: 3/2 buf 0x4e3a90, next 0x4e3b2c, head 0x4e3a90
+06:23:04.175 1109 mac.c:854	<<mlme_ack_acc
+06:23:04.175 1109 mac.c:491	<<mac_parse_recv_data 0
+06:23:04.175 1109 mac.c:200	<<zb_mac_recv_data
+06:23:04.175 1109 mac_data.c:243	<< zb_mac_check_ack ret 0
+06:23:04.175 1109 mac_cr_data.c:371	<< zb_handle_data_request_cmd ret, continue scheduled
+06:23:04.175 1109 mac_cr_data.c:98	<< zb_accept_data_request_cmd, ret: 0
+06:23:04.175 1109 zb_mac_transport_linux_pipes.c:477	>>zb_mac_wait_for_ext_event
+06:23:04.175 1109 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:23:04.175 1109 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 0
+06:23:04.175 1109 zb_mac_transport_linux_pipes.c:507	timer started = 1
+06:23:04.175 1109 zb_mac_transport_linux_pipes.c:513	timer stop 1197 timer 1109  tmo 88
+06:23:04.175 1109 zb_mac_transport_linux_pipes.c:529	select() timeout 1.346000
+06:23:04.181 1109 zb_mac_transport_linux_pipes.c:548	delta 17 (1)
+06:23:04.181 1110 zb_mac_transport_linux_pipes.c:569	timer 1110, delta_rest 0
+06:23:04.181 1110 zb_mac_transport_linux_pipes.c:265	>>read_from_pipe
+06:23:04.181 1110 zb_mac_transport_linux_pipes.c:269	no buffer available, call mac to get incoming buffer
+06:23:04.182 1110 zb_mac_transport_linux_pipes.c:273	<<read_from_pipe 1
+06:23:04.182 1110 zb_mac_transport_linux_pipes.c:600	Schedule mac main loop 2
+06:23:04.182 1110 zb_mac_transport_linux_pipes.c:603	<<zb_mac_wait_for_ext_event 1
+06:23:04.182 1110 mac.c:261	tx waiting callback called, func: 0x4aab6e
+06:23:04.182 1110 mac_cr_data.c:395	>> zb_handle_data_request_cmd ret_continue
+06:23:04.182 1110 mac_cr_data.c:407	frame type 3 data_found_index 0
+06:23:04.182 1110 mac_cr_data.c:411	cmd_ptr 2
+06:23:04.182 1110 mac_cr_data.c:428	calling zb_mac_send_comm_status
+06:23:04.182 1110 mac_routines.c:285	>> zb_mac_send_comm_status pend 0x4e3958, status 0, buf 0x4e39f4
+06:23:04.182 1110 mac_common.c:79	>>zb_parse_mhr mhr 0xbfb26e04, ptr 0x4e399d
+06:23:04.182 1110 mac_common.c:89	dst addr mode: 3
+06:23:04.182 1110 mac_common.c:108	src addr mode: 3
+06:23:04.182 1110 mac_common.c:173	<< zb_parse_mhr, ret val 21
+06:23:04.182 1110 zb_scheduler.c:254	0x4e34c8 scheduled cb 0x4b74a0 param 4 (in_b 1)
+06:23:04.182 1110 mac_routines.c:300	<< zb_mac_send_comm_status pend RET_OK
+06:23:04.182 1110 mac_cr_data.c:439	mac cmd, free buffer 0x4e3958
+06:23:04.182 1110 zb_bufpool.c:217	zb_free_buf 0x4e3958, ref 3, in buf 15645 allocated in -4 out 1
+06:23:04.182 1110 zb_bufpool.c:246	free_buf: 2/2 buf 0x4e3958, next 0x4e3a90, head 0x4e3958
+06:23:04.182 1110 zb_scheduler.c:376	0x4e363c alarm cancel func 0x4ab83c, param 0
+06:23:04.182 1110 zb_scheduler.c:380	tm_queue -> tm_freelist, ent 0x4e363c
+06:23:04.182 1110 mac_cr_data.c:454	Clearing pending bit
+06:23:04.182 1110 mac_cr_data.c:468	<< zb_handle_data_request_cmd_continue
+06:23:04.182 1110 zb_bufpool.c:137	zb_get_buf 1: buffer 0x4e3958, ref 3, head 0x4e3a90, allocated 2 / 3
+06:23:04.182 1110 mac.c:177	>>zb_mac_recv_data
+06:23:04.182 1110 zb_mac_transport_linux_pipes.c:235	>>zb_mac_start_recv buf 0x4e3958
+06:23:04.183 1110 zb_mac_transport_linux_pipes.c:249	<<zb_mac_start_recv ret 0
+06:23:04.183 1110 zb_mac_transport_linux_pipes.c:265	>>read_from_pipe
+06:23:04.183 1110 zb_mac_transport_linux_pipes.c:79	read: len 1 total 2
+06:23:04.183 1110 zb_mac_transport_linux_pipes.c:93	28 
+06:23:04.183 1110 zb_mac_transport_linux_pipes.c:79	read: len 39 total 40
+06:23:04.183 1110 zb_mac_transport_linux_pipes.c:86	41 88 9D 79 48 FF FF 01 00 48 00 FD FF 01 00 0A 
+06:23:04.183 1110 zb_mac_transport_linux_pipes.c:86	00 08 00 13 00 00 00 00 99 01 01 00 01 00 00 00 
+06:23:04.183 1110 zb_mac_transport_linux_pipes.c:93	00 00 00 08 0E 3A 8B 
+06:23:04.183 1110 zb_mac_transport_linux_pipes.c:333	receive full buffer 3 len 40
+06:23:04.183 1110 zb_mac_transport_linux_pipes.c:356	<<read_from_pipe 40
+06:23:04.183 1110 mac.c:366	>>mac_parse_recv_dt
+06:23:04.183 1110 zb_mac_transport_linux_pipes.c:149	>>zb_mac_traffic_dump #13 buf 0x4e3958 / 3 in_b 1 (size 49) is_w 0
+06:23:04.183 1110 zb_mac_transport_linux_pipes.c:182	t: start 1514431367; t 1514431384 183490, time 1123
+06:23:04.183 1110 zb_mac_transport_linux_pipes.c:192	<<zb_mac_traffic_dump
+06:23:04.183 1110 mac_common.c:79	>>zb_parse_mhr mhr 0xbfb26e24, ptr 0x4e3997
+06:23:04.183 1110 mac_common.c:89	dst addr mode: 2
+06:23:04.183 1110 mac_common.c:108	src addr mode: 2
+06:23:04.183 1110 mac_common.c:173	<< zb_parse_mhr, ret val 9
+06:23:04.183 1110 mac.c:384	frame_control 41:88, seq_number 157, dst_pan_id 0x4879, src_pan_id 0x4879 dst mode 2 addr 0.0.0.0.0.0.ff.ff src mode 2 addr 0.0.0.0.0.0.0.1
+06:23:04.183 1110 mac.c:389	set mac rx , frm 1 len 48
+06:23:04.183 1110 mac.c:234	<<can_accept_fr, ret 1
+06:23:04.183 1110 zb_scheduler.c:254	0x4e34d0 scheduled cb 0x4a9daa param 3 (in_b 1)
+06:23:04.183 1110 mac.c:491	<<mac_parse_recv_data 0
+06:23:04.183 1110 mac.c:200	<<zb_mac_recv_data
+06:23:04.183 1110 zb_scheduler.c:105	cb_q written 2, read_i 5, write_i 7
+06:23:04.183 1110 zb_scheduler.c:115	0x4e34c8 calling cb 0x4b74a0 param 4 in_b 1 len 27
+06:23:04.183 1110 nwk_join.c:936	>>mlme_comm_status_ind
+06:23:04.183 1110 nwk_join.c:941	addr[] 0 1
+06:23:04.183 1110 nwk_join.c:941	addr[] 1 0
+06:23:04.183 1110 nwk_join.c:941	addr[] 2 0
+06:23:04.184 1110 nwk_join.c:941	addr[] 3 0
+06:23:04.184 1110 nwk_join.c:941	addr[] 4 0
+06:23:04.184 1110 nwk_join.c:941	addr[] 5 0
+06:23:04.184 1110 nwk_join.c:941	addr[] 6 0
+06:23:04.184 1110 nwk_join.c:941	addr[] 7 8
+06:23:04.184 1110 zb_address.c:329	>>zb_address_ieee ieee 0x4e3a86
+06:23:04.184 1110 zb_address.c:331	ieeeaddr 8.0.0.0.0.0.0.1
+06:23:04.184 1110 zb_address.c:547	ieee reference found 59
+06:23:04.184 1110 zb_address.c:349	<< zb_address_ieee, ret 0
+06:23:04.184 1110 nwk_neighbor.c:505	>>zb_nwk_neighbor_get addr_ref 59 cr 0 nbt 0xbfb26e8c
+06:23:04.184 1110 nwk_neighbor.c:547	<<zb_nwk_neighbor_get 0
+06:23:04.184 1110 nwk_cr_formation.c:410	>>update_beacon_pl
+06:23:04.184 1110 nwk_cr_formation.c:436	new update_id 0
+06:23:04.184 1110 nwk_cr_formation.c:440	<<update_beacon_pl
+06:23:04.184 1110 zb_scheduler.c:254	0x4e34d8 scheduled cb 0x4c596b param 4 (in_b 1)
+06:23:04.184 1110 nwk_join.c:989	<<mlme_comm_status_ind
+06:23:04.184 1110 zb_scheduler.c:105	cb_q written 2, read_i 6, write_i 8
+06:23:04.184 1110 zb_scheduler.c:115	0x4e34d0 calling cb 0x4a9daa param 3 in_b 1 len 48
+06:23:04.184 1110 mac_data.c:712	>> zb_handle_data_frame
+06:23:04.184 1110 mac_common.c:79	>>zb_parse_mhr mhr 0xbfb26e84, ptr 0x4e3997
+06:23:04.184 1110 mac_common.c:89	dst addr mode: 2
+06:23:04.184 1110 mac_common.c:108	src addr mode: 2
+06:23:04.184 1110 mac_common.c:173	<< zb_parse_mhr, ret val 9
+06:23:04.184 1110 zb_scheduler.c:254	0x4e34e0 scheduled cb 0x4ae17a param 3 (in_b 1)
+06:23:04.184 1110 mac_data.c:748	<< zb_handle_data_frame, ret 0
+06:23:04.184 1110 zb_scheduler.c:105	cb_q written 2, read_i 7, write_i 9
+06:23:04.184 1110 zb_scheduler.c:115	0x4e34d8 calling cb 0x4c596b param 4 in_b 1 len 27
+06:23:04.184 1110 zdo_app.c:294	JOINED (st 0) dev 0x1/8.0.0.0.0.0.0.1 cap: dev type 1 rx.w.i. 1 rejoin 0 secur 0
+06:23:04.185 1110 zb_bufpool.c:217	zb_free_buf 0x4e39f4, ref 4, in buf 16667 allocated in 0 out 1
+06:23:04.185 1110 zb_bufpool.c:246	free_buf: 2/2 buf 0x4e39f4, next 0x4e3a90, head 0x4e39f4
+06:23:04.185 1110 zb_scheduler.c:105	cb_q written 1, read_i 8, write_i 9
+06:23:04.185 1110 zb_scheduler.c:115	0x4e34e0 calling cb 0x4ae17a param 3 in_b 1 len 48
+06:23:04.185 1110 nwk_main.c:983	>>zb_mcps_data_indication param 3
+06:23:04.185 1110 nwk_main.c:987	lqi 0
+06:23:04.185 1110 mac_common.c:79	>>zb_parse_mhr mhr 0xbfb26e74, ptr 0x4e3997
+06:23:04.185 1110 mac_common.c:89	dst addr mode: 2
+06:23:04.185 1110 mac_common.c:108	src addr mode: 2
+06:23:04.185 1110 mac_common.c:173	<< zb_parse_mhr, ret val 9
+06:23:04.185 1110 nwk_main.c:1000	hdr_size 8 radius 10 frame type 0
+06:23:04.185 1110 nwk_main.c:1018	broadc addr 0xfffd
+06:23:04.185 1110 nwk_main.c:1097	btt add ent addr 1 seq 0 exp t 9
+06:23:04.185 1110 zb_scheduler.c:283	tm_freelist, get nent 0x4e363c
+06:23:04.185 1110 zb_scheduler.c:294	0x4e363c scheduled alarm 0x4af4b1, run_after 65, at 1175, param 0
+06:23:04.185 1110 zb_scheduler.c:349	cur t 1110, head t 1175
+06:23:04.185 1110 nwk_main.c:1139	dst addr mac 65535 nwk 65533, src addr mac 1 nwk 1
+06:23:04.185 1110 nwk_main.c:1144	new radius 9, frame type 0
+06:23:04.185 1110 zb_address.c:595	short_addr 1 l 1 ZG->addr.short_sorted[l] 59 addr 1
+06:23:04.185 1110 zb_address.c:370	zb_address_by_short 1 ret 0 ref 59
+06:23:04.185 1110 nwk_neighbor.c:505	>>zb_nwk_neighbor_get addr_ref 59 cr 0 nbt 0xbfb26e38
+06:23:04.185 1110 nwk_neighbor.c:547	<<zb_nwk_neighbor_get 0
+06:23:04.185 1110 nwk_main.c:1200	update lqi for 1 to 10
+06:23:04.185 1110 zb_bufpool.c:137	zb_get_buf 1: buffer 0x4e39f4, ref 4, head 0x4e3a90, allocated 2 / 3
+06:23:04.185 1110 zb_scheduler.c:254	0x4e34e8 scheduled cb 0x4adeb5 param 4 (in_b 1)
+06:23:04.185 1110 nwk_main.c:1245	<<mcps_data_ind
+06:23:04.185 1110 zb_scheduler.c:105	cb_q written 1, read_i 9, write_i 10
+06:23:04.185 1110 zb_scheduler.c:115	0x4e34e8 calling cb 0x4adeb5 param 4 in_b 1 len 0
+06:23:04.185 1110 nwk_main.c:915	>>new_buffer_allocated 4
+06:23:04.185 1110 nwk_main.c:933	will use same key for secure
+06:23:04.185 1110 zb_scheduler.c:254	0x4e34f0 scheduled cb 0x4aef16 param 4 (in_b 1)
+06:23:04.185 1110 zb_scheduler.c:254	0x4e34f8 scheduled cb 0x4ad2d1 param 3 (in_b 1)
+06:23:04.185 1110 nwk_main.c:962	<<new_buffer_allocated
+06:23:04.185 1110 zb_scheduler.c:105	cb_q written 2, read_i 10, write_i 12
+06:23:04.185 1110 zb_scheduler.c:115	0x4e34f0 calling cb 0x4aef16 param 4 in_b 1 len 28
+06:23:04.185 1110 nwk_main.c:1292	>> nwk_frame_indication 4
+06:23:04.185 1110 nwk_main.c:1295	frame type 0
+06:23:04.185 1110 zb_scheduler.c:254	0x4e3500 scheduled cb 0x4c1f1c param 4 (in_b 1)
+06:23:04.186 1110 zb_scheduler.c:105	cb_q written 2, read_i 11, write_i 13
+06:23:04.186 1110 zb_scheduler.c:115	0x4e34f8 calling cb 0x4ad2d1 param 3 in_b 1 len 28
+06:23:04.186 1110 nwk_main.c:675	>>forward parm 3
+06:23:04.186 1110 nwk_main.c:306	>>calc_dest nsdu 0x4e3958 handle 255 mac_dst 0xbfb26e66 indir 0xbfb26e68 cmd_status 0xbfb26e6c
+06:23:04.186 1110 nwk_main.c:328	dest addr 65533 dev type 2
+06:23:04.186 1110 nwk_main.c:333	broadcast, mac dst ~0
+06:23:04.186 1110 nwk_main.c:447	<<calc_dest 0
+06:23:04.186 1110 nwk_main.c:709	mcps data req src 0 dst 65535 indirect 0 h 255
+06:23:04.186 1110 nwk_main.c:720	dst 65533 is_br 1 dev_t 2 brrt_cnt 0
+06:23:04.186 1110 nwk_neighbor.c:722	next ze -1
+06:23:04.186 1110 nwk_main.c:740	neighbor_table_iterator -1
+06:23:04.186 1110 zb_bufpool.c:137	zb_get_buf 0: buffer 0x4e3a90, ref 5, head 0x4e3b2c, allocated 3 / 3
+06:23:04.186 1110 zb_scheduler.c:254	0x4e3508 scheduled cb 0x4ac83d param 5 (in_b 0)
+06:23:04.186 1110 nwk_main.c:795	<<forward
+06:23:04.186 1110 zb_scheduler.c:105	cb_q written 2, read_i 12, write_i 14
+06:23:04.186 1110 zb_scheduler.c:115	0x4e3500 calling cb 0x4c1f1c param 4 in_b 1 len 28
+06:23:04.186 1110 aps_main.c:578	+nlde_data_ind 4
+06:23:04.186 1110 aps_main.c:631	+zb_nlde_data_indication_continue 4
+06:23:04.186 1110 zb_address.c:595	short_addr 1 l 1 ZG->addr.short_sorted[l] 59 addr 1
+06:23:04.186 1110 zb_address.c:370	zb_address_by_short 1 ret 0 ref 59
+06:23:04.186 1110 aps_dups.c:90	dup detection: is_dup 0 addr 0x1 ref 59 aps_counter 0 clock 0
+06:23:04.186 1110 zb_scheduler.c:283	tm_freelist, get nent 0x4e361c
+06:23:04.186 1110 zb_scheduler.c:294	0x4e361c scheduled alarm 0x4c4262, run_after 65, at 1175, param 0
+06:23:04.186 1110 zb_scheduler.c:349	cur t 1110, head t 1175
+06:23:04.186 1110 aps_dups.c:103	-aps_check_dups ret 0
+06:23:04.186 1110 aps_main.c:673	data pkt
+06:23:04.187 1110 zb_scheduler.c:254	0x4e3510 scheduled cb 0x4c738b param 4 (in_b 1)
+06:23:04.187 1110 aps_main.c:686	-zb_nlde_data_indication_continue
+06:23:04.187 1110 zb_scheduler.c:105	cb_q written 2, read_i 13, write_i 15
+06:23:04.187 1110 zb_scheduler.c:115	0x4e3508 calling cb 0x4ac83d param 5 in_b 0 len 0
+06:23:04.187 1110 nwk_main.c:462	>>nwk_broadcast_transmition 5
+06:23:04.187 1110 nwk_main.c:471	found brdcst packet 3 retries 0 ready to be retransmitted
+06:23:04.187 1110 nwk_main.c:516	ent 0x4e43ff rerties 0 nbtbl_iter -1
+06:23:04.187 1110 nwk_main.c:545	number of got passive acks 0 total 1
+06:23:04.187 1110 nwk_main.c:565	last retransmition for the entrie
+06:23:04.187 1110 zb_bufpool.c:217	zb_free_buf 0x4e3a90, ref 5, in buf 0 allocated in 0 out 0
+06:23:04.187 1110 zb_bufpool.c:246	free_buf: 3/2 buf 0x4e3a90, next 0x4e3b2c, head 0x4e3a90
+06:23:04.187 1110 nwk_main.c:609	broadcast transmition
+06:23:04.187 1110 zb_scheduler.c:254	0x4e3518 scheduled cb 0x4a972f param 3 (in_b 1)
+06:23:04.187 1110 nwk_main.c:652	<<nwk_broadcast_transmition
+06:23:04.187 1110 zb_scheduler.c:105	cb_q written 2, read_i 14, write_i 0
+06:23:04.187 1110 zb_scheduler.c:115	0x4e3510 calling cb 0x4c738b param 4 in_b 1 len 20
+06:23:04.187 1110 af_rx.c:70	apsde_data_ind: pkt 0x4e39f4 h 0x0 sz 20, dst endp 0
+06:23:04.187 1110 af_rx.c:76	call zdo
+06:23:04.187 1110 zb_scheduler.c:254	0x4e34a0 scheduled cb 0x4cc2fe param 4 (in_b 1)
+06:23:04.187 1110 zb_scheduler.c:105	cb_q written 2, read_i 15, write_i 1
+06:23:04.187 1110 zb_scheduler.c:115	0x4e3518 calling cb 0x4a972f param 3 in_b 1 len 28
+06:23:04.187 1110 mac_data.c:503	>>zb_mcps_data_request
+06:23:04.187 1110 zb_scheduler.c:207	0x4e3548 scheduled mac cb 0x4a98c0 param 3 (in_b 1)
+06:23:04.187 1110 mac_data.c:507	<<zb_mcps_data_request 
+06:23:04.187 1110 zb_scheduler.c:105	cb_q written 1, read_i 0, write_i 1
+06:23:04.187 1110 zb_scheduler.c:115	0x4e34a0 calling cb 0x4cc2fe param 4 in_b 1 len 20
+06:23:04.187 1110 zdo_rx.c:78	zdo_data_ind 4 clu 0x13
+06:23:04.187 1110 zdo_rx.c:354	>> zdo_device_annce_srv 0x4e3a4d
+06:23:04.187 1110 zb_address.c:329	>>zb_address_ieee ieee 0x4e3a50
+06:23:04.187 1110 zb_address.c:331	ieeeaddr e.8.0.0.0.0.0.0
+06:23:04.187 1110 zb_address.c:349	<< zb_address_ieee, ret -28
+06:23:04.187 1110 zb_address.c:595	short_addr 256 l 2 ZG->addr.short_sorted[l] 0 addr 0
+06:23:04.187 1110 zb_address.c:503	>>zb_address_ieee_lock ref 26
+06:23:04.187 1110 zb_address.c:509	<<zb_address_ieee_lock
+06:23:04.187 1110 zb_address.c:448	zb_address_update short 0x100 long e.8.0.0.0.0.0.0 ref 26 ret 0
+06:23:04.187 1110 mac_common.c:79	>>zb_parse_mhr mhr 0xbfb26da4, ptr 0x4e3a33
+06:23:04.187 1110 mac_common.c:89	dst addr mode: 2
+06:23:04.187 1110 mac_common.c:108	src addr mode: 2
+06:23:04.187 1110 mac_common.c:173	<< zb_parse_mhr, ret val 9
+06:23:04.187 1110 zdo_rx.c:438	seems device 256 is not our neighbor
+06:23:04.188 1110 zdo_rx.c:338	skip_free_buf 0
+06:23:04.188 1110 zb_bufpool.c:217	zb_free_buf 0x4e39f4, ref 4, in buf 20492 allocated in 0 out 1
+06:23:04.188 1110 zb_bufpool.c:246	free_buf: 2/2 buf 0x4e39f4, next 0x4e3a90, head 0x4e39f4
+06:23:04.188 1110 mac.c:276	tx callback called
+06:23:04.188 1110 mac_data.c:565	>> zb_handle_mcps_data_req
+06:23:04.188 1110 mac_data.c:572	is_unicast 0, dst_addr 0xffff
+06:23:04.188 1110 mac_data.c:579	msdu_handle 255 tx_options 0
+06:23:04.188 1110 mac_data.c:340	>> zb_mcps_data_request_fill_hdr p 0x4e3958
+06:23:04.188 1110 mac.c:571	>>mac_fill_mhr
+06:23:04.188 1110 mac.c:622	<<mac_fill_mhr
+06:23:04.188 1110 mac_data.c:488	<< zb_mcps_data_request_fill_hdr ret 0
+06:23:04.188 1110 mac_data.c:515	>> zb_mac_check_security data_buf 0x4e3958
+06:23:04.188 1110 mac_data.c:551	<< zb_mac_check_security ret 0
+06:23:04.188 1110 zb_mac_transport_linux_pipes.c:199	>>zb_mac_put_data buf 0x4e3958
+06:23:04.188 1110 zb_mac_transport_linux_pipes.c:149	>>zb_mac_traffic_dump #14 buf 0x4e3958 / 3 in_b 1 (size 40) is_w 1
+06:23:04.188 1110 zb_mac_transport_linux_pipes.c:182	t: start 1514431367; t 1514431384 188571, time 1123
+06:23:04.188 1110 zb_mac_transport_linux_pipes.c:192	<<zb_mac_traffic_dump
+06:23:04.188 1110 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:23:04.188 1110 zb_mac_transport_linux_pipes.c:79	written: len 40 total 40
+06:23:04.189 1110 zb_mac_transport_linux_pipes.c:86	28 41 88 7C 79 48 FF FF 00 00 48 00 FD FF 01 00 
+06:23:04.189 1110 zb_mac_transport_linux_pipes.c:86	09 00 08 00 13 00 00 00 00 99 01 01 00 01 00 00 
+06:23:04.189 1110 zb_mac_transport_linux_pipes.c:93	00 00 00 00 08 0E A2 00 
+06:23:04.189 1110 zb_mac_transport_linux_pipes.c:446	out buffer is sent
+06:23:04.189 1110 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 40
+06:23:04.189 1110 zb_mac_transport_linux_pipes.c:225	<<zb_mac_put_data ret
+06:23:04.189 1110 mac_data.c:659	<< zb_handle_mcps_data_req 0
+06:23:04.189 1110 zb_mac_transport_linux_pipes.c:477	>>zb_mac_wait_for_ext_event
+06:23:04.189 1110 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:23:04.189 1110 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 0
+06:23:04.189 1110 zb_mac_transport_linux_pipes.c:507	timer started = 1
+06:23:04.189 1110 zb_mac_transport_linux_pipes.c:513	timer stop 1175 timer 1110  tmo 65
+06:23:04.189 1110 zb_mac_transport_linux_pipes.c:529	select() timeout 0.994000
+06:23:04.197 1110 zb_mac_transport_linux_pipes.c:548	delta 15 (1)
+06:23:04.197 1111 zb_mac_transport_linux_pipes.c:569	timer 1111, delta_rest 0
+06:23:04.197 1111 zb_mac_transport_linux_pipes.c:265	>>read_from_pipe
+06:23:04.197 1111 zb_mac_transport_linux_pipes.c:269	no buffer available, call mac to get incoming buffer
+06:23:04.197 1111 zb_mac_transport_linux_pipes.c:273	<<read_from_pipe 1
+06:23:04.197 1111 zb_mac_transport_linux_pipes.c:600	Schedule mac main loop 2
+06:23:04.197 1111 zb_mac_transport_linux_pipes.c:603	<<zb_mac_wait_for_ext_event 1
+06:23:04.197 1111 mac.c:261	tx waiting callback called, func: 0x4a9b98
+06:23:04.197 1111 mac_data.c:668	>> zb_handle_mcps_data_req_continue
+06:23:04.197 1111 mac_data.c:697	mac status 0x0 0
+06:23:04.197 1111 zb_scheduler.c:254	0x4e34a8 scheduled cb 0x4adb16 param 3 (in_b 1)
+06:23:04.197 1111 mac_data.c:702	<< zb_handle_mcps_data_req_continue
+06:23:04.197 1111 zb_bufpool.c:137	zb_get_buf 1: buffer 0x4e39f4, ref 4, head 0x4e3a90, allocated 2 / 3
+06:23:04.197 1111 mac.c:177	>>zb_mac_recv_data
+06:23:04.197 1111 zb_mac_transport_linux_pipes.c:235	>>zb_mac_start_recv buf 0x4e39f4
+06:23:04.197 1111 zb_mac_transport_linux_pipes.c:249	<<zb_mac_start_recv ret 0
+06:23:04.197 1111 zb_mac_transport_linux_pipes.c:265	>>read_from_pipe
+06:23:04.197 1111 zb_mac_transport_linux_pipes.c:79	read: len 1 total 2
+06:23:04.197 1111 zb_mac_transport_linux_pipes.c:93	27 
+06:23:04.198 1111 zb_mac_transport_linux_pipes.c:79	read: len 38 total 39
+06:23:04.198 1111 zb_mac_transport_linux_pipes.c:86	61 88 9E 79 48 00 00 01 00 48 00 00 00 01 00 0A 
+06:23:04.198 1111 zb_mac_transport_linux_pipes.c:86	01 40 00 00 00 00 00 00 9A 02 00 00 00 00 00 00 
+06:23:04.198 1111 zb_mac_transport_linux_pipes.c:93	00 00 00 00 35 FA 
+06:23:04.198 1111 zb_mac_transport_linux_pipes.c:333	receive full buffer 4 len 39
+06:23:04.198 1111 zb_mac_transport_linux_pipes.c:356	<<read_from_pipe 39
+06:23:04.198 1111 mac.c:366	>>mac_parse_recv_dt
+06:23:04.198 1111 zb_mac_transport_linux_pipes.c:149	>>zb_mac_traffic_dump #15 buf 0x4e39f4 / 4 in_b 1 (size 48) is_w 0
+06:23:04.198 1111 zb_mac_transport_linux_pipes.c:182	t: start 1514431367; t 1514431384 198259, time 1124
+06:23:04.198 1111 zb_mac_transport_linux_pipes.c:192	<<zb_mac_traffic_dump
+06:23:04.198 1111 mac_common.c:79	>>zb_parse_mhr mhr 0xbfb26e24, ptr 0x4e3a33
+06:23:04.198 1111 mac_common.c:89	dst addr mode: 2
+06:23:04.198 1111 mac_common.c:108	src addr mode: 2
+06:23:04.198 1111 mac_common.c:173	<< zb_parse_mhr, ret val 9
+06:23:04.198 1111 mac.c:384	frame_control 61:88, seq_number 158, dst_pan_id 0x4879, src_pan_id 0x4879 dst mode 2 addr 0.0.0.0.0.0.0.0 src mode 2 addr 0.0.0.0.0.0.0.1
+06:23:04.198 1111 mac.c:389	set mac rx , frm 1 len 47
+06:23:04.198 1111 mac.c:234	<<can_accept_fr, ret 1
+06:23:04.198 1111 zb_scheduler.c:254	0x4e34b0 scheduled cb 0x4a9daa param 4 (in_b 1)
+06:23:04.198 1111 mac.c:491	<<mac_parse_recv_data 0
+06:23:04.198 1111 mac.c:200	<<zb_mac_recv_data
+06:23:04.198 1111 zb_scheduler.c:105	cb_q written 2, read_i 1, write_i 3
+06:23:04.198 1111 zb_scheduler.c:115	0x4e34a8 calling cb 0x4adb16 param 3 in_b 1 len 39
+06:23:04.198 1111 nwk_main.c:826	>>mcps_data_confirm param 3 handle 255 status 0
+06:23:04.198 1111 mac_common.c:79	>>zb_parse_mhr mhr 0xbfb26e84, ptr 0x4e3997
+06:23:04.198 1111 mac_common.c:89	dst addr mode: 2
+06:23:04.198 1111 mac_common.c:108	src addr mode: 2
+06:23:04.198 1111 mac_common.c:173	<< zb_parse_mhr, ret val 9
+06:23:04.198 1111 nwk_main.c:888	free confirm to internal nwk transmission
+06:23:04.198 1111 zb_bufpool.c:217	zb_free_buf 0x4e3958, ref 3, in buf 14119 allocated in 0 out 1
+06:23:04.198 1111 zb_bufpool.c:246	free_buf: 2/2 buf 0x4e3958, next 0x4e3a90, head 0x4e3958
+06:23:04.198 1111 nwk_main.c:908	<<mcps_data_confirm
+06:23:04.198 1111 zb_scheduler.c:105	cb_q written 1, read_i 2, write_i 3
+06:23:04.198 1111 zb_scheduler.c:115	0x4e34b0 calling cb 0x4a9daa param 4 in_b 1 len 47
+06:23:04.198 1111 mac_data.c:712	>> zb_handle_data_frame
+06:23:04.198 1111 mac_common.c:79	>>zb_parse_mhr mhr 0xbfb26e84, ptr 0x4e3a33
+06:23:04.198 1111 mac_common.c:89	dst addr mode: 2
+06:23:04.199 1111 mac_common.c:108	src addr mode: 2
+06:23:04.199 1111 mac_common.c:173	<< zb_parse_mhr, ret val 9
+06:23:04.199 1111 mac.c:873	>>mac_send_ack 158
+06:23:04.199 1111 mac.c:571	>>mac_fill_mhr
+06:23:04.199 1111 mac.c:622	<<mac_fill_mhr
+06:23:04.199 1111 zb_mac_transport_linux_pipes.c:199	>>zb_mac_put_data buf 0x4e3784
+06:23:04.199 1111 zb_mac_transport_linux_pipes.c:149	>>zb_mac_traffic_dump #16 buf 0x4e3784 / 0 in_b 0 (size 6) is_w 1
+06:23:04.199 1111 zb_mac_transport_linux_pipes.c:182	t: start 1514431367; t 1514431384 199173, time 1124
+06:23:04.199 1111 zb_mac_transport_linux_pipes.c:192	<<zb_mac_traffic_dump
+06:23:04.199 1111 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:23:04.199 1111 zb_mac_transport_linux_pipes.c:79	written: len 6 total 6
+06:23:04.200 1111 zb_mac_transport_linux_pipes.c:93	06 02 00 9E 4F C8 
+06:23:04.200 1111 zb_mac_transport_linux_pipes.c:446	out buffer is sent
+06:23:04.200 1111 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 6
+06:23:04.200 1111 zb_mac_transport_linux_pipes.c:225	<<zb_mac_put_data ret
+06:23:04.200 1111 mac.c:893	<<mac_send_ack ret 0
+06:23:04.200 1111 zb_scheduler.c:254	0x4e34b8 scheduled cb 0x4ae17a param 4 (in_b 1)
+06:23:04.200 1111 mac_data.c:748	<< zb_handle_data_frame, ret 0
+06:23:04.200 1111 zb_scheduler.c:105	cb_q written 1, read_i 3, write_i 4
+06:23:04.200 1111 zb_scheduler.c:115	0x4e34b8 calling cb 0x4ae17a param 4 in_b 1 len 47
+06:23:04.200 1111 nwk_main.c:983	>>zb_mcps_data_indication param 4
+06:23:04.200 1111 nwk_main.c:987	lqi 0
+06:23:04.200 1111 mac_common.c:79	>>zb_parse_mhr mhr 0xbfb26e74, ptr 0x4e3a33
+06:23:04.200 1111 mac_common.c:89	dst addr mode: 2
+06:23:04.200 1111 mac_common.c:108	src addr mode: 2
+06:23:04.200 1111 mac_common.c:173	<< zb_parse_mhr, ret val 9
+06:23:04.200 1111 nwk_main.c:1000	hdr_size 8 radius 10 frame type 0
+06:23:04.200 1111 nwk_main.c:1139	dst addr mac 0 nwk 0, src addr mac 1 nwk 1
+06:23:04.200 1111 nwk_main.c:1144	new radius 9, frame type 0
+06:23:04.200 1111 zb_address.c:595	short_addr 1 l 1 ZG->addr.short_sorted[l] 59 addr 1
+06:23:04.201 1111 zb_address.c:370	zb_address_by_short 1 ret 0 ref 59
+06:23:04.201 1111 nwk_neighbor.c:505	>>zb_nwk_neighbor_get addr_ref 59 cr 0 nbt 0xbfb26e38
+06:23:04.201 1111 nwk_neighbor.c:547	<<zb_nwk_neighbor_get 0
+06:23:04.201 1111 nwk_main.c:1200	update lqi for 1 to 10
+06:23:04.201 1111 zb_scheduler.c:254	0x4e34c0 scheduled cb 0x4aef16 param 4 (in_b 1)
+06:23:04.201 1111 nwk_main.c:1245	<<mcps_data_ind
+06:23:04.201 1111 zb_scheduler.c:105	cb_q written 1, read_i 4, write_i 5
+06:23:04.201 1111 zb_scheduler.c:115	0x4e34c0 calling cb 0x4aef16 param 4 in_b 1 len 27
+06:23:04.201 1111 nwk_main.c:1292	>> nwk_frame_indication 4
+06:23:04.201 1111 nwk_main.c:1295	frame type 0
+06:23:04.201 1111 zb_scheduler.c:254	0x4e34c8 scheduled cb 0x4c1f1c param 4 (in_b 1)
+06:23:04.201 1111 zb_scheduler.c:105	cb_q written 1, read_i 5, write_i 6
+06:23:04.201 1111 zb_scheduler.c:115	0x4e34c8 calling cb 0x4c1f1c param 4 in_b 1 len 27
+06:23:04.201 1111 aps_main.c:578	+nlde_data_ind 4
+06:23:04.201 1111 zb_bufpool.c:137	zb_get_buf 0: buffer 0x4e3958, ref 3, head 0x4e3a90, allocated 3 / 2
+06:23:04.201 1111 zb_scheduler.c:254	0x4e34d0 scheduled cb 0x4c20ea param 3 (in_b 0)
+06:23:04.201 1111 zb_scheduler.c:105	cb_q written 1, read_i 6, write_i 7
+06:23:04.201 1111 zb_scheduler.c:115	0x4e34d0 calling cb 0x4c20ea param 3 in_b 0 len 0
+06:23:04.201 1111 aps_main.c:631	+zb_nlde_data_indication_continue 4
+06:23:04.201 1111 aps_main.c:910	+aps_ack_send_handle 3
+06:23:04.201 1111 aps_main.c:953	clusterid 0
+06:23:04.201 1111 aps_main.c:959	src_endpoint 0
+06:23:04.201 1111 zb_scheduler.c:254	0x4e34d8 scheduled cb 0x4abf38 param 3 (in_b 0)
+06:23:04.201 1111 aps_main.c:969	-aps_ack_send_handle
+06:23:04.201 1111 zb_address.c:595	short_addr 1 l 1 ZG->addr.short_sorted[l] 59 addr 1
+06:23:04.201 1111 zb_address.c:370	zb_address_by_short 1 ret 0 ref 59
+06:23:04.201 1111 aps_dups.c:90	dup detection: is_dup 0 addr 0x1 ref 59 aps_counter 153 clock 3
+06:23:04.201 1111 aps_dups.c:103	-aps_check_dups ret 0
+06:23:04.201 1111 aps_main.c:673	data pkt
+06:23:04.201 1111 zb_scheduler.c:254	0x4e34e0 scheduled cb 0x4c738b param 4 (in_b 1)
+06:23:04.201 1111 aps_main.c:686	-zb_nlde_data_indication_continue
+06:23:04.201 1111 zb_scheduler.c:105	cb_q written 2, read_i 7, write_i 9
+06:23:04.202 1111 zb_scheduler.c:115	0x4e34d8 calling cb 0x4abf38 param 3 in_b 0 len 8
+06:23:04.202 1111 nwk_main.c:225	+nlde_data_request 0x4e39ec
+06:23:04.202 1111 nwk_main.c:243	security_enable 1 authenticated 1 secure_all_frames 1 security_level 0
+06:23:04.202 1111 zb_scheduler.c:254	0x4e34e8 scheduled cb 0x4ad2d1 param 3 (in_b 0)
+06:23:04.202 1111 nwk_main.c:267	-nlde_data_request
+06:23:04.202 1111 zb_scheduler.c:105	cb_q written 2, read_i 8, write_i 10
+06:23:04.202 1111 zb_scheduler.c:115	0x4e34e0 calling cb 0x4c738b param 4 in_b 1 len 19
+06:23:04.202 1111 af_rx.c:70	apsde_data_ind: pkt 0x4e39f4 h 0x0 sz 19, dst endp 0
+06:23:04.202 1111 af_rx.c:76	call zdo
+06:23:04.202 1111 zb_scheduler.c:254	0x4e34f0 scheduled cb 0x4cc2fe param 4 (in_b 1)
+06:23:04.202 1111 zb_scheduler.c:105	cb_q written 2, read_i 9, write_i 11
+06:23:04.202 1111 zb_scheduler.c:115	0x4e34e8 calling cb 0x4ad2d1 param 3 in_b 0 len 16
+06:23:04.202 1111 nwk_main.c:675	>>forward parm 3
+06:23:04.202 1111 nwk_main.c:306	>>calc_dest nsdu 0x4e3958 handle 0 mac_dst 0xbfb26e66 indir 0xbfb26e68 cmd_status 0xbfb26e6c
+06:23:04.202 1111 nwk_main.c:328	dest addr 1 dev type 2
+06:23:04.202 1111 zb_address.c:595	short_addr 1 l 1 ZG->addr.short_sorted[l] 59 addr 1
+06:23:04.202 1111 zb_address.c:370	zb_address_by_short 1 ret 0 ref 59
+06:23:04.202 1111 nwk_neighbor.c:505	>>zb_nwk_neighbor_get addr_ref 59 cr 0 nbt 0xbfb26e04
+06:23:04.202 1111 nwk_neighbor.c:547	<<zb_nwk_neighbor_get 0
+06:23:04.202 1111 nwk_main.c:342	dst is neighb, rx_on 1
+06:23:04.202 1111 nwk_main.c:447	<<calc_dest 0
+06:23:04.202 1111 nwk_main.c:709	mcps data req src 0 dst 1 indirect 0 h 0
+06:23:04.202 1111 nwk_main.c:720	dst 1 is_br 0 dev_t 2 brrt_cnt 0
+06:23:04.202 1111 zb_scheduler.c:254	0x4e34f8 scheduled cb 0x4a972f param 3 (in_b 0)
+06:23:04.202 1111 nwk_main.c:795	<<forward
+06:23:04.202 1111 zb_scheduler.c:105	cb_q written 2, read_i 10, write_i 12
+06:23:04.202 1111 zb_scheduler.c:115	0x4e34f0 calling cb 0x4cc2fe param 4 in_b 1 len 19
+06:23:04.202 1111 zdo_rx.c:78	zdo_data_ind 4 clu 0x0
+06:23:04.202 1111 zdo_disc_srv.c:274	zdo_dev_nwk_addr_res 4, fc 64
+06:23:04.202 1111 zdo_disc_srv.c:285	request_type 0, start_index 0
+06:23:04.202 1111 zdo_disc_srv.c:286	ieeeaddr 0.0.0.0.0.0.0.0
+06:23:04.202 1111 zdo_disc_srv.c:446	make response with error 129
+06:23:04.202 1111 zdo_common.c:124	zdo_send_resp_by_short, command_id 32768, param 4, tsn 2, addr 1
+06:23:04.202 1111 zb_scheduler.c:254	0x4e3500 scheduled cb 0x4c121f param 4 (in_b 1)
+06:23:04.202 1111 zdo_rx.c:338	skip_free_buf 1
+06:23:04.202 1111 zb_scheduler.c:105	cb_q written 2, read_i 11, write_i 13
+06:23:04.203 1111 zb_scheduler.c:115	0x4e34f8 calling cb 0x4a972f param 3 in_b 0 len 16
+06:23:04.203 1111 mac_data.c:503	>>zb_mcps_data_request
+06:23:04.203 1111 zb_scheduler.c:207	0x4e3530 scheduled mac cb 0x4a98c0 param 3 (in_b 0)
+06:23:04.203 1111 mac_data.c:507	<<zb_mcps_data_request 
+06:23:04.203 1111 zb_scheduler.c:105	cb_q written 1, read_i 12, write_i 13
+06:23:04.203 1111 zb_scheduler.c:115	0x4e3500 calling cb 0x4c121f param 4 in_b 1 len 12
+06:23:04.203 1111 aps_main.c:167	+apsde_data_req 4
+06:23:04.203 1111 aps_main.c:240	apsde_data unicast, dst 1, options 0x4
+06:23:04.203 1111 aps_main.c:979	+save_ack_data 4
+06:23:04.203 1111 aps_main.c:1011	save_ack_data  clusterid 32768 aps_counter 121 src_endpoint 0 src_endpoint 0, i 0
+06:23:04.203 1111 zb_scheduler.c:283	tm_freelist, get nent 0x4e360c
+06:23:04.203 1111 zb_scheduler.c:294	0x4e360c scheduled alarm 0x4c36bc, run_after 650, at 1761, param 0
+06:23:04.203 1111 zb_scheduler.c:349	cur t 1111, head t 1175
+06:23:04.203 1111 zb_scheduler.c:254	0x4e3508 scheduled cb 0x4abf38 param 4 (in_b 1)
+06:23:04.203 1111 aps_main.c:311	-apsde_data_req
+06:23:04.203 1111 zb_scheduler.c:105	cb_q written 1, read_i 13, write_i 14
+06:23:04.203 1111 zb_scheduler.c:115	0x4e3508 calling cb 0x4abf38 param 4 in_b 1 len 20
+06:23:04.203 1111 nwk_main.c:225	+nlde_data_request 0x4e3a88
+06:23:04.203 1111 nwk_main.c:243	security_enable 1 authenticated 1 secure_all_frames 1 security_level 0
+06:23:04.203 1111 zb_scheduler.c:254	0x4e3510 scheduled cb 0x4ad2d1 param 4 (in_b 1)
+06:23:04.203 1111 nwk_main.c:267	-nlde_data_request
+06:23:04.203 1111 zb_scheduler.c:105	cb_q written 1, read_i 14, write_i 15
+06:23:04.203 1111 zb_scheduler.c:115	0x4e3510 calling cb 0x4ad2d1 param 4 in_b 1 len 28
+06:23:04.203 1111 nwk_main.c:675	>>forward parm 4
+06:23:04.203 1111 nwk_main.c:306	>>calc_dest nsdu 0x4e39f4 handle 0 mac_dst 0xbfb26e66 indir 0xbfb26e68 cmd_status 0xbfb26e6c
+06:23:04.203 1111 nwk_main.c:328	dest addr 1 dev type 2
+06:23:04.203 1111 zb_address.c:595	short_addr 1 l 1 ZG->addr.short_sorted[l] 59 addr 1
+06:23:04.203 1111 zb_address.c:370	zb_address_by_short 1 ret 0 ref 59
+06:23:04.203 1111 nwk_neighbor.c:505	>>zb_nwk_neighbor_get addr_ref 59 cr 0 nbt 0xbfb26e04
+06:23:04.203 1111 nwk_neighbor.c:547	<<zb_nwk_neighbor_get 0
+06:23:04.203 1111 nwk_main.c:342	dst is neighb, rx_on 1
+06:23:04.203 1111 nwk_main.c:447	<<calc_dest 0
+06:23:04.203 1111 nwk_main.c:709	mcps data req src 0 dst 1 indirect 0 h 0
+06:23:04.203 1111 nwk_main.c:720	dst 1 is_br 0 dev_t 2 brrt_cnt 0
+06:23:04.203 1111 zb_scheduler.c:254	0x4e3518 scheduled cb 0x4a972f param 4 (in_b 1)
+06:23:04.203 1111 nwk_main.c:795	<<forward
+06:23:04.203 1111 zb_scheduler.c:105	cb_q written 1, read_i 15, write_i 0
+06:23:04.203 1111 zb_scheduler.c:115	0x4e3518 calling cb 0x4a972f param 4 in_b 1 len 28
+06:23:04.203 1111 mac_data.c:503	>>zb_mcps_data_request
+06:23:04.203 1111 zb_scheduler.c:207	0x4e3538 scheduled mac cb 0x4a98c0 param 4 (in_b 1)
+06:23:04.203 1111 mac_data.c:507	<<zb_mcps_data_request 
+06:23:04.203 1111 mac.c:276	tx callback called
+06:23:04.203 1111 mac_data.c:565	>> zb_handle_mcps_data_req
+06:23:04.204 1111 mac_data.c:572	is_unicast 1, dst_addr 0x1
+06:23:04.204 1111 mac_data.c:579	msdu_handle 0 tx_options 1
+06:23:04.204 1111 mac_data.c:340	>> zb_mcps_data_request_fill_hdr p 0x4e3958
+06:23:04.204 1111 mac.c:571	>>mac_fill_mhr
+06:23:04.204 1111 mac.c:622	<<mac_fill_mhr
+06:23:04.204 1111 mac_data.c:488	<< zb_mcps_data_request_fill_hdr ret 0
+06:23:04.204 1111 mac_data.c:515	>> zb_mac_check_security data_buf 0x4e3958
+06:23:04.204 1111 mac_data.c:551	<< zb_mac_check_security ret 0
+06:23:04.204 1111 mac_common.c:181	tx_total 2
+06:23:04.204 1111 zb_mac_transport_linux_pipes.c:199	>>zb_mac_put_data buf 0x4e3958
+06:23:04.204 1111 zb_mac_transport_linux_pipes.c:149	>>zb_mac_traffic_dump #17 buf 0x4e3958 / 3 in_b 0 (size 28) is_w 1
+06:23:04.204 1111 zb_mac_transport_linux_pipes.c:182	t: start 1514431367; t 1514431384 204302, time 1124
+06:23:04.204 1111 zb_mac_transport_linux_pipes.c:192	<<zb_mac_traffic_dump
+06:23:04.204 1111 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:23:04.204 1111 zb_mac_transport_linux_pipes.c:79	written: len 28 total 28
+06:23:04.204 1111 zb_mac_transport_linux_pipes.c:86	1C 61 88 7D 79 48 01 00 00 00 48 00 01 00 00 00 
+06:23:04.204 1111 zb_mac_transport_linux_pipes.c:93	05 00 02 00 00 00 00 00 00 9A F8 09 
+06:23:04.204 1111 zb_mac_transport_linux_pipes.c:446	out buffer is sent
+06:23:04.204 1111 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 28
+06:23:04.204 1111 zb_mac_transport_linux_pipes.c:225	<<zb_mac_put_data ret
+06:23:04.204 1111 mac_data.c:187	>> zb_mac_check_ack
+06:23:04.204 1111 zb_scheduler.c:283	tm_freelist, get nent 0x4e35fc
+06:23:04.204 1111 zb_scheduler.c:294	0x4e35fc scheduled alarm 0x4a62c8, run_after 88, at 1199, param 0
+06:23:04.204 1111 zb_scheduler.c:349	cur t 1111, head t 1175
+06:23:04.204 1111 zb_bufpool.c:137	zb_get_buf 1: buffer 0x4e3a90, ref 5, head 0x4e3b2c, allocated 3 / 3
+06:23:04.204 1111 mac.c:177	>>zb_mac_recv_data
+06:23:04.205 1111 zb_mac_transport_linux_pipes.c:235	>>zb_mac_start_recv buf 0x4e3a90
+06:23:04.205 1111 zb_mac_transport_linux_pipes.c:249	<<zb_mac_start_recv ret 0
+06:23:04.205 1111 zb_mac_transport_linux_pipes.c:265	>>read_from_pipe
+06:23:04.207 1111 zb_mac_transport_linux_pipes.c:79	read: len 1 total 2
+06:23:04.207 1111 zb_mac_transport_linux_pipes.c:93	06 
+06:23:04.207 1111 zb_mac_transport_linux_pipes.c:79	read: len 5 total 6
+06:23:04.207 1111 zb_mac_transport_linux_pipes.c:93	02 00 7D DA 1D 
+06:23:04.207 1111 zb_mac_transport_linux_pipes.c:333	receive full buffer 5 len 6
+06:23:04.207 1111 zb_mac_transport_linux_pipes.c:356	<<read_from_pipe 6
+06:23:04.207 1111 mac.c:366	>>mac_parse_recv_dt
+06:23:04.207 1111 zb_mac_transport_linux_pipes.c:149	>>zb_mac_traffic_dump #18 buf 0x4e3a90 / 5 in_b 1 (size 15) is_w 0
+06:23:04.207 1111 zb_mac_transport_linux_pipes.c:182	t: start 1514431367; t 1514431384 207608, time 1124
+06:23:04.207 1111 zb_mac_transport_linux_pipes.c:192	<<zb_mac_traffic_dump
+06:23:04.207 1111 mac_common.c:79	>>zb_parse_mhr mhr 0xbfb26dc4, ptr 0x4e3ae0
+06:23:04.207 1111 mac_common.c:89	dst addr mode: 0
+06:23:04.207 1111 mac_common.c:108	src addr mode: 0
+06:23:04.207 1111 mac_common.c:173	<< zb_parse_mhr, ret val 3
+06:23:04.207 1111 mac.c:384	frame_control 2:0, seq_number 125, dst_pan_id 0x0, src_pan_id 0x0 dst mode 0 addr 0.0.0.0.0.0.0.0 src mode 0 addr 0.0.0.0.0.0.0.0
+06:23:04.207 1111 mac.c:389	set mac rx , frm 2 len 14
+06:23:04.207 1111 mac.c:234	<<can_accept_fr, ret 1
+06:23:04.208 1111 mac.c:471	Ack acccepted
+06:23:04.208 1111 mac.c:808	>>mlme_ack_acc 0x4e3a90
+06:23:04.208 1111 mac_common.c:79	>>zb_parse_mhr mhr 0xbfb26d24, ptr 0x4e3ae0
+06:23:04.208 1111 mac_common.c:89	dst addr mode: 0
+06:23:04.208 1111 mac_common.c:108	src addr mode: 0
+06:23:04.208 1111 mac_common.c:173	<< zb_parse_mhr, ret val 3
+06:23:04.208 1111 mac.c:825	ack ok dsn 125, frame_pending_bit 0, frame_ctrl 2 0
+06:23:04.208 1111 mac.c:836	Pending data clear
+06:23:04.208 1111 zb_scheduler.c:376	0x4e35fc alarm cancel func 0x4a62c8, param 0
+06:23:04.208 1111 zb_scheduler.c:380	tm_queue -> tm_freelist, ent 0x4e35fc
+06:23:04.208 1111 mac.c:851	free buf 0x4e3a90
+06:23:04.208 1111 zb_bufpool.c:217	zb_free_buf 0x4e3a90, ref 5, in buf 18446 allocated in 0 out 1
+06:23:04.208 1111 zb_bufpool.c:246	free_buf: 2/3 buf 0x4e3a90, next 0x4e3b2c, head 0x4e3a90
+06:23:04.208 1111 mac.c:854	<<mlme_ack_acc
+06:23:04.208 1111 mac.c:491	<<mac_parse_recv_data 0
+06:23:04.208 1111 mac.c:200	<<zb_mac_recv_data
+06:23:04.208 1111 mac_data.c:243	<< zb_mac_check_ack ret 0
+06:23:04.208 1111 mac_data.c:659	<< zb_handle_mcps_data_req 0
+06:23:04.208 1111 zb_mac_transport_linux_pipes.c:477	>>zb_mac_wait_for_ext_event
+06:23:04.208 1111 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:23:04.208 1111 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 0
+06:23:04.208 1111 zb_mac_transport_linux_pipes.c:507	timer started = 1
+06:23:04.208 1111 zb_mac_transport_linux_pipes.c:513	timer stop 1175 timer 1111  tmo 64
+06:23:04.208 1111 zb_mac_transport_linux_pipes.c:529	select() timeout 0.979000
+06:23:04.209 1111 zb_mac_transport_linux_pipes.c:548	delta 12 (0)
+06:23:04.210 1111 zb_mac_transport_linux_pipes.c:569	timer 1111, delta_rest 12
+06:23:04.210 1111 zb_mac_transport_linux_pipes.c:265	>>read_from_pipe
+06:23:04.210 1111 zb_mac_transport_linux_pipes.c:269	no buffer available, call mac to get incoming buffer
+06:23:04.210 1111 zb_mac_transport_linux_pipes.c:273	<<read_from_pipe 1
+06:23:04.210 1111 zb_mac_transport_linux_pipes.c:600	Schedule mac main loop 2
+06:23:04.210 1111 zb_mac_transport_linux_pipes.c:603	<<zb_mac_wait_for_ext_event 1
+06:23:04.210 1111 mac.c:261	tx waiting callback called, func: 0x4a9b98
+06:23:04.210 1111 mac_data.c:668	>> zb_handle_mcps_data_req_continue
+06:23:04.210 1111 mac_data.c:697	mac status 0x0 0
+06:23:04.210 1111 zb_scheduler.c:254	0x4e34a0 scheduled cb 0x4adb16 param 3 (in_b 0)
+06:23:04.210 1111 mac_data.c:702	<< zb_handle_mcps_data_req_continue
+06:23:04.210 1111 zb_bufpool.c:137	zb_get_buf 1: buffer 0x4e3a90, ref 5, head 0x4e3b2c, allocated 3 / 3
+06:23:04.210 1111 mac.c:177	>>zb_mac_recv_data
+06:23:04.210 1111 zb_mac_transport_linux_pipes.c:235	>>zb_mac_start_recv buf 0x4e3a90
+06:23:04.210 1111 zb_mac_transport_linux_pipes.c:249	<<zb_mac_start_recv ret 0
+06:23:04.210 1111 zb_mac_transport_linux_pipes.c:265	>>read_from_pipe
+06:23:04.210 1111 zb_mac_transport_linux_pipes.c:79	read: len 1 total 2
+06:23:04.210 1111 zb_mac_transport_linux_pipes.c:93	21 
+06:23:04.210 1111 zb_mac_transport_linux_pipes.c:79	read: len 32 total 33
+06:23:04.210 1111 zb_mac_transport_linux_pipes.c:86	61 88 9F 79 48 00 00 01 00 48 00 00 00 01 00 0A 
+06:23:04.210 1111 zb_mac_transport_linux_pipes.c:86	02 40 00 01 00 00 00 00 9B 03 00 00 00 00 DF E9 
+06:23:04.210 1111 zb_mac_transport_linux_pipes.c:333	receive full buffer 5 len 33
+06:23:04.210 1111 zb_mac_transport_linux_pipes.c:356	<<read_from_pipe 33
+06:23:04.210 1111 mac.c:366	>>mac_parse_recv_dt
+06:23:04.210 1111 zb_mac_transport_linux_pipes.c:149	>>zb_mac_traffic_dump #19 buf 0x4e3a90 / 5 in_b 1 (size 42) is_w 0
+06:23:04.210 1111 zb_mac_transport_linux_pipes.c:182	t: start 1514431367; t 1514431384 210851, time 1124
+06:23:04.210 1111 zb_mac_transport_linux_pipes.c:192	<<zb_mac_traffic_dump
+06:23:04.210 1111 mac_common.c:79	>>zb_parse_mhr mhr 0xbfb26e24, ptr 0x4e3ad2
+06:23:04.210 1111 mac_common.c:89	dst addr mode: 2
+06:23:04.210 1111 mac_common.c:108	src addr mode: 2
+06:23:04.210 1111 mac_common.c:173	<< zb_parse_mhr, ret val 9
+06:23:04.211 1111 mac.c:384	frame_control 61:88, seq_number 159, dst_pan_id 0x4879, src_pan_id 0x4879 dst mode 2 addr 0.0.0.0.0.0.0.0 src mode 2 addr 0.0.0.0.0.0.0.1
+06:23:04.211 1111 mac.c:389	set mac rx , frm 1 len 41
+06:23:04.211 1111 mac.c:234	<<can_accept_fr, ret 1
+06:23:04.211 1111 zb_scheduler.c:254	0x4e34a8 scheduled cb 0x4a9daa param 5 (in_b 1)
+06:23:04.211 1111 mac.c:491	<<mac_parse_recv_data 0
+06:23:04.211 1111 mac.c:200	<<zb_mac_recv_data
+06:23:04.211 1111 zb_scheduler.c:105	cb_q written 2, read_i 0, write_i 2
+06:23:04.211 1111 zb_scheduler.c:115	0x4e34a0 calling cb 0x4adb16 param 3 in_b 0 len 27
+06:23:04.211 1111 nwk_main.c:826	>>mcps_data_confirm param 3 handle 0 status 0
+06:23:04.211 1111 mac_common.c:79	>>zb_parse_mhr mhr 0xbfb26e84, ptr 0x4e3995
+06:23:04.211 1111 mac_common.c:89	dst addr mode: 2
+06:23:04.211 1111 mac_common.c:108	src addr mode: 2
+06:23:04.211 1111 mac_common.c:173	<< zb_parse_mhr, ret val 9
+06:23:04.211 1111 nwk_main.c:894	schedule nlde-data.confirm
+06:23:04.211 1111 zb_scheduler.c:254	0x4e34b0 scheduled cb 0x4c1bed param 3 (in_b 0)
+06:23:04.211 1111 nwk_main.c:908	<<mcps_data_confirm
+06:23:04.211 1111 zb_scheduler.c:105	cb_q written 2, read_i 1, write_i 3
+06:23:04.211 1111 zb_scheduler.c:115	0x4e34a8 calling cb 0x4a9daa param 5 in_b 1 len 41
+06:23:04.211 1111 mac_data.c:712	>> zb_handle_data_frame
+06:23:04.211 1111 mac_common.c:79	>>zb_parse_mhr mhr 0xbfb26e84, ptr 0x4e3ad2
+06:23:04.211 1111 mac_common.c:89	dst addr mode: 2
+06:23:04.211 1111 mac_common.c:108	src addr mode: 2
+06:23:04.211 1111 mac_common.c:173	<< zb_parse_mhr, ret val 9
+06:23:04.211 1111 mac.c:873	>>mac_send_ack 159
+06:23:04.211 1111 mac.c:571	>>mac_fill_mhr
+06:23:04.211 1111 mac.c:622	<<mac_fill_mhr
+06:23:04.211 1111 zb_mac_transport_linux_pipes.c:199	>>zb_mac_put_data buf 0x4e3784
+06:23:04.211 1111 zb_mac_transport_linux_pipes.c:149	>>zb_mac_traffic_dump #20 buf 0x4e3784 / 0 in_b 0 (size 6) is_w 1
+06:23:04.211 1111 zb_mac_transport_linux_pipes.c:182	t: start 1514431367; t 1514431384 211775, time 1124
+06:23:04.211 1111 zb_mac_transport_linux_pipes.c:192	<<zb_mac_traffic_dump
+06:23:04.211 1111 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:23:04.212 1111 zb_mac_transport_linux_pipes.c:79	written: len 6 total 6
+06:23:04.212 1111 zb_mac_transport_linux_pipes.c:93	06 02 00 9F C6 D9 
+06:23:04.212 1111 zb_mac_transport_linux_pipes.c:446	out buffer is sent
+06:23:04.212 1111 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 6
+06:23:04.212 1111 zb_mac_transport_linux_pipes.c:225	<<zb_mac_put_data ret
+06:23:04.212 1111 mac.c:893	<<mac_send_ack ret 0
+06:23:04.212 1111 zb_scheduler.c:254	0x4e34b8 scheduled cb 0x4ae17a param 5 (in_b 1)
+06:23:04.212 1111 mac_data.c:748	<< zb_handle_data_frame, ret 0
+06:23:04.212 1111 zb_scheduler.c:105	cb_q written 2, read_i 2, write_i 4
+06:23:04.212 1111 zb_scheduler.c:115	0x4e34b0 calling cb 0x4c1bed param 3 in_b 0 len 27
+06:23:04.212 1111 aps_main.c:500	+zb_nlde_data_confirm 3 status 0
+06:23:04.212 1111 zb_bufpool.c:217	zb_free_buf 0x4e3958, ref 3, in buf 17928 allocated in 0 out 0
+06:23:04.212 1111 zb_bufpool.c:246	free_buf: 3/2 buf 0x4e3958, next 0x4e3b2c, head 0x4e3958
+06:23:04.212 1111 aps_main.c:561	-nlde_data_conf
+06:23:04.212 1111 zb_scheduler.c:105	cb_q written 1, read_i 3, write_i 4
+06:23:04.212 1111 zb_scheduler.c:115	0x4e34b8 calling cb 0x4ae17a param 5 in_b 1 len 41
+06:23:04.212 1111 nwk_main.c:983	>>zb_mcps_data_indication param 5
+06:23:04.212 1111 nwk_main.c:987	lqi 0
+06:23:04.212 1111 mac_common.c:79	>>zb_parse_mhr mhr 0xbfb26e74, ptr 0x4e3ad2
+06:23:04.212 1111 mac_common.c:89	dst addr mode: 2
+06:23:04.212 1111 mac_common.c:108	src addr mode: 2
+06:23:04.212 1111 mac_common.c:173	<< zb_parse_mhr, ret val 9
+06:23:04.212 1111 nwk_main.c:1000	hdr_size 8 radius 10 frame type 0
+06:23:04.212 1111 nwk_main.c:1139	dst addr mac 0 nwk 0, src addr mac 1 nwk 1
+06:23:04.213 1111 nwk_main.c:1144	new radius 9, frame type 0
+06:23:04.213 1111 zb_address.c:595	short_addr 1 l 1 ZG->addr.short_sorted[l] 59 addr 1
+06:23:04.213 1111 zb_address.c:370	zb_address_by_short 1 ret 0 ref 59
+06:23:04.213 1111 nwk_neighbor.c:505	>>zb_nwk_neighbor_get addr_ref 59 cr 0 nbt 0xbfb26e38
+06:23:04.213 1111 nwk_neighbor.c:547	<<zb_nwk_neighbor_get 0
+06:23:04.213 1111 nwk_main.c:1200	update lqi for 1 to 10
+06:23:04.213 1111 zb_scheduler.c:254	0x4e34c0 scheduled cb 0x4aef16 param 5 (in_b 1)
+06:23:04.213 1111 nwk_main.c:1245	<<mcps_data_ind
+06:23:04.213 1111 zb_scheduler.c:105	cb_q written 1, read_i 4, write_i 5
+06:23:04.213 1111 zb_scheduler.c:115	0x4e34c0 calling cb 0x4aef16 param 5 in_b 1 len 21
+06:23:04.213 1111 nwk_main.c:1292	>> nwk_frame_indication 5
+06:23:04.213 1111 nwk_main.c:1295	frame type 0
+06:23:04.213 1111 zb_scheduler.c:254	0x4e34c8 scheduled cb 0x4c1f1c param 5 (in_b 1)
+06:23:04.213 1111 zb_scheduler.c:105	cb_q written 1, read_i 5, write_i 6
+06:23:04.213 1111 zb_scheduler.c:115	0x4e34c8 calling cb 0x4c1f1c param 5 in_b 1 len 21
+06:23:04.213 1111 aps_main.c:578	+nlde_data_ind 5
+06:23:04.213 1111 zb_bufpool.c:137	zb_get_buf 0: buffer 0x4e3958, ref 3, head 0x4e3b2c, allocated 3 / 3
+06:23:04.213 1111 zb_scheduler.c:254	0x4e34d0 scheduled cb 0x4c20ea param 3 (in_b 0)
+06:23:04.213 1111 zb_scheduler.c:105	cb_q written 1, read_i 6, write_i 7
+06:23:04.213 1111 zb_scheduler.c:115	0x4e34d0 calling cb 0x4c20ea param 3 in_b 0 len 0
+06:23:04.213 1111 aps_main.c:631	+zb_nlde_data_indication_continue 5
+06:23:04.213 1111 aps_main.c:910	+aps_ack_send_handle 3
+06:23:04.213 1111 aps_main.c:953	clusterid 1
+06:23:04.213 1111 aps_main.c:959	src_endpoint 0
+06:23:04.213 1111 zb_scheduler.c:254	0x4e34d8 scheduled cb 0x4abf38 param 3 (in_b 0)
+06:23:04.213 1111 aps_main.c:969	-aps_ack_send_handle
+06:23:04.213 1111 zb_address.c:595	short_addr 1 l 1 ZG->addr.short_sorted[l] 59 addr 1
+06:23:04.213 1111 zb_address.c:370	zb_address_by_short 1 ret 0 ref 59
+06:23:04.213 1111 aps_dups.c:90	dup detection: is_dup 0 addr 0x1 ref 59 aps_counter 154 clock 3
+06:23:04.213 1111 aps_dups.c:103	-aps_check_dups ret 0
+06:23:04.213 1111 aps_main.c:673	data pkt
+06:23:04.213 1111 zb_scheduler.c:254	0x4e34e0 scheduled cb 0x4c738b param 5 (in_b 1)
+06:23:04.213 1111 aps_main.c:686	-zb_nlde_data_indication_continue
+06:23:04.213 1111 zb_scheduler.c:105	cb_q written 2, read_i 7, write_i 9
+06:23:04.213 1111 zb_scheduler.c:115	0x4e34d8 calling cb 0x4abf38 param 3 in_b 0 len 8
+06:23:04.214 1111 nwk_main.c:225	+nlde_data_request 0x4e39ec
+06:23:04.214 1111 nwk_main.c:243	security_enable 1 authenticated 1 secure_all_frames 1 security_level 0
+06:23:04.214 1111 zb_scheduler.c:254	0x4e34e8 scheduled cb 0x4ad2d1 param 3 (in_b 0)
+06:23:04.214 1111 nwk_main.c:267	-nlde_data_request
+06:23:04.214 1111 zb_scheduler.c:105	cb_q written 2, read_i 8, write_i 10
+06:23:04.214 1111 zb_scheduler.c:115	0x4e34e0 calling cb 0x4c738b param 5 in_b 1 len 13
+06:23:04.214 1111 af_rx.c:70	apsde_data_ind: pkt 0x4e3a90 h 0x0 sz 13, dst endp 0
+06:23:04.214 1111 af_rx.c:76	call zdo
+06:23:04.214 1111 zb_scheduler.c:254	0x4e34f0 scheduled cb 0x4cc2fe param 5 (in_b 1)
+06:23:04.214 1111 zb_scheduler.c:105	cb_q written 2, read_i 9, write_i 11
+06:23:04.214 1111 zb_scheduler.c:115	0x4e34e8 calling cb 0x4ad2d1 param 3 in_b 0 len 16
+06:23:04.214 1111 nwk_main.c:675	>>forward parm 3
+06:23:04.214 1111 nwk_main.c:306	>>calc_dest nsdu 0x4e3958 handle 0 mac_dst 0xbfb26e66 indir 0xbfb26e68 cmd_status 0xbfb26e6c
+06:23:04.214 1111 nwk_main.c:328	dest addr 1 dev type 2
+06:23:04.214 1111 zb_address.c:595	short_addr 1 l 1 ZG->addr.short_sorted[l] 59 addr 1
+06:23:04.214 1111 zb_address.c:370	zb_address_by_short 1 ret 0 ref 59
+06:23:04.214 1111 nwk_neighbor.c:505	>>zb_nwk_neighbor_get addr_ref 59 cr 0 nbt 0xbfb26e04
+06:23:04.214 1111 nwk_neighbor.c:547	<<zb_nwk_neighbor_get 0
+06:23:04.214 1111 nwk_main.c:342	dst is neighb, rx_on 1
+06:23:04.214 1111 nwk_main.c:447	<<calc_dest 0
+06:23:04.214 1111 nwk_main.c:709	mcps data req src 0 dst 1 indirect 0 h 0
+06:23:04.214 1111 nwk_main.c:720	dst 1 is_br 0 dev_t 2 brrt_cnt 0
+06:23:04.214 1111 zb_scheduler.c:254	0x4e34f8 scheduled cb 0x4a972f param 3 (in_b 0)
+06:23:04.214 1111 nwk_main.c:795	<<forward
+06:23:04.214 1111 zb_scheduler.c:105	cb_q written 2, read_i 10, write_i 12
+06:23:04.214 1111 zb_scheduler.c:115	0x4e34f0 calling cb 0x4cc2fe param 5 in_b 1 len 13
+06:23:04.214 1111 zdo_rx.c:78	zdo_data_ind 5 clu 0x1
+06:23:04.214 1111 zdo_disc_srv.c:468	zdo_dev_ieee_addr_res 5, fc 64
+06:23:04.214 1111 zdo_common.c:124	zdo_send_resp_by_short, command_id 32769, param 5, tsn 3, addr 1
+06:23:04.214 1111 zb_scheduler.c:254	0x4e3500 scheduled cb 0x4c121f param 5 (in_b 1)
+06:23:04.214 1111 zdo_rx.c:338	skip_free_buf 1
+06:23:04.214 1111 zb_scheduler.c:105	cb_q written 2, read_i 11, write_i 13
+06:23:04.214 1111 zb_scheduler.c:115	0x4e34f8 calling cb 0x4a972f param 3 in_b 0 len 16
+06:23:04.214 1111 mac_data.c:503	>>zb_mcps_data_request
+06:23:04.214 1111 zb_scheduler.c:207	0x4e3540 scheduled mac cb 0x4a98c0 param 3 (in_b 0)
+06:23:04.214 1111 mac_data.c:507	<<zb_mcps_data_request 
+06:23:04.215 1111 zb_scheduler.c:105	cb_q written 1, read_i 12, write_i 13
+06:23:04.215 1111 zb_scheduler.c:115	0x4e3500 calling cb 0x4c121f param 5 in_b 1 len 12
+06:23:04.215 1111 aps_main.c:167	+apsde_data_req 5
+06:23:04.215 1111 aps_main.c:240	apsde_data unicast, dst 1, options 0x4
+06:23:04.215 1111 aps_main.c:979	+save_ack_data 5
+06:23:04.215 1111 aps_main.c:1011	save_ack_data  clusterid 32769 aps_counter 122 src_endpoint 0 src_endpoint 0, i 1
+06:23:04.215 1111 zb_scheduler.c:283	tm_freelist, get nent 0x4e35fc
+06:23:04.215 1111 zb_scheduler.c:294	0x4e35fc scheduled alarm 0x4c36bc, run_after 650, at 1761, param 1
+06:23:04.215 1111 zb_scheduler.c:349	cur t 1111, head t 1175
+06:23:04.215 1111 zb_scheduler.c:254	0x4e3508 scheduled cb 0x4abf38 param 5 (in_b 1)
+06:23:04.215 1111 aps_main.c:311	-apsde_data_req
+06:23:04.215 1111 zb_scheduler.c:105	cb_q written 1, read_i 13, write_i 14
+06:23:04.215 1111 zb_scheduler.c:115	0x4e3508 calling cb 0x4abf38 param 5 in_b 1 len 20
+06:23:04.215 1111 nwk_main.c:225	+nlde_data_request 0x4e3b24
+06:23:04.215 1111 nwk_main.c:243	security_enable 1 authenticated 1 secure_all_frames 1 security_level 0
+06:23:04.215 1111 zb_scheduler.c:254	0x4e3510 scheduled cb 0x4ad2d1 param 5 (in_b 1)
+06:23:04.215 1111 nwk_main.c:267	-nlde_data_request
+06:23:04.215 1111 zb_scheduler.c:105	cb_q written 1, read_i 14, write_i 15
+06:23:04.215 1111 zb_scheduler.c:115	0x4e3510 calling cb 0x4ad2d1 param 5 in_b 1 len 28
+06:23:04.215 1111 nwk_main.c:675	>>forward parm 5
+06:23:04.215 1111 nwk_main.c:306	>>calc_dest nsdu 0x4e3a90 handle 0 mac_dst 0xbfb26e66 indir 0xbfb26e68 cmd_status 0xbfb26e6c
+06:23:04.215 1111 nwk_main.c:328	dest addr 1 dev type 2
+06:23:04.215 1111 zb_address.c:595	short_addr 1 l 1 ZG->addr.short_sorted[l] 59 addr 1
+06:23:04.215 1111 zb_address.c:370	zb_address_by_short 1 ret 0 ref 59
+06:23:04.215 1111 nwk_neighbor.c:505	>>zb_nwk_neighbor_get addr_ref 59 cr 0 nbt 0xbfb26e04
+06:23:04.215 1111 nwk_neighbor.c:547	<<zb_nwk_neighbor_get 0
+06:23:04.215 1111 nwk_main.c:342	dst is neighb, rx_on 1
+06:23:04.215 1111 nwk_main.c:447	<<calc_dest 0
+06:23:04.215 1111 nwk_main.c:709	mcps data req src 0 dst 1 indirect 0 h 0
+06:23:04.215 1111 nwk_main.c:720	dst 1 is_br 0 dev_t 2 brrt_cnt 0
+06:23:04.215 1111 zb_scheduler.c:254	0x4e3518 scheduled cb 0x4a972f param 5 (in_b 1)
+06:23:04.215 1111 nwk_main.c:795	<<forward
+06:23:04.215 1111 zb_scheduler.c:105	cb_q written 1, read_i 15, write_i 0
+06:23:04.215 1111 zb_scheduler.c:115	0x4e3518 calling cb 0x4a972f param 5 in_b 1 len 28
+06:23:04.215 1111 mac_data.c:503	>>zb_mcps_data_request
+06:23:04.215 1111 zb_scheduler.c:207	0x4e3548 scheduled mac cb 0x4a98c0 param 5 (in_b 1)
+06:23:04.215 1111 mac_data.c:507	<<zb_mcps_data_request 
+06:23:04.216 1111 mac.c:276	tx callback called
+06:23:04.216 1111 mac_data.c:565	>> zb_handle_mcps_data_req
+06:23:04.216 1111 mac_data.c:572	is_unicast 1, dst_addr 0x1
+06:23:04.216 1111 mac_data.c:579	msdu_handle 0 tx_options 1
+06:23:04.216 1111 mac_data.c:340	>> zb_mcps_data_request_fill_hdr p 0x4e39f4
+06:23:04.216 1111 mac.c:571	>>mac_fill_mhr
+06:23:04.216 1111 mac.c:622	<<mac_fill_mhr
+06:23:04.216 1111 mac_data.c:488	<< zb_mcps_data_request_fill_hdr ret 0
+06:23:04.216 1111 mac_data.c:515	>> zb_mac_check_security data_buf 0x4e39f4
+06:23:04.216 1111 mac_data.c:551	<< zb_mac_check_security ret 0
+06:23:04.216 1111 mac_common.c:181	tx_total 3
+06:23:04.216 1111 zb_mac_transport_linux_pipes.c:199	>>zb_mac_put_data buf 0x4e39f4
+06:23:04.216 1111 zb_mac_transport_linux_pipes.c:149	>>zb_mac_traffic_dump #21 buf 0x4e39f4 / 4 in_b 1 (size 40) is_w 1
+06:23:04.216 1111 zb_mac_transport_linux_pipes.c:182	t: start 1514431367; t 1514431384 216433, time 1125
+06:23:04.216 1111 zb_mac_transport_linux_pipes.c:192	<<zb_mac_traffic_dump
+06:23:04.216 1111 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:23:04.216 1111 zb_mac_transport_linux_pipes.c:79	written: len 40 total 40
+06:23:04.216 1111 zb_mac_transport_linux_pipes.c:86	28 61 88 7E 79 48 01 00 00 00 48 00 01 00 00 00 
+06:23:04.216 1111 zb_mac_transport_linux_pipes.c:86	0A 01 40 00 00 80 00 00 00 79 02 81 00 00 00 00 
+06:23:04.216 1111 zb_mac_transport_linux_pipes.c:93	00 00 00 00 00 00 D3 6C 
+06:23:04.216 1111 zb_mac_transport_linux_pipes.c:446	out buffer is sent
+06:23:04.216 1111 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 40
+06:23:04.216 1111 zb_mac_transport_linux_pipes.c:225	<<zb_mac_put_data ret
+06:23:04.217 1111 mac_data.c:187	>> zb_mac_check_ack
+06:23:04.217 1111 zb_scheduler.c:283	tm_freelist, get nent 0x4e35ec
+06:23:04.217 1111 zb_scheduler.c:294	0x4e35ec scheduled alarm 0x4a62c8, run_after 88, at 1199, param 0
+06:23:04.217 1111 zb_scheduler.c:349	cur t 1111, head t 1175
+06:23:04.217 1111 zb_bufpool.c:137	zb_get_buf 1: buffer 0x4e3b2c, ref 6, head 0x4e3bc8, allocated 3 / 4
+06:23:04.217 1111 mac.c:177	>>zb_mac_recv_data
+06:23:04.217 1111 zb_mac_transport_linux_pipes.c:235	>>zb_mac_start_recv buf 0x4e3b2c
+06:23:04.217 1111 zb_mac_transport_linux_pipes.c:249	<<zb_mac_start_recv ret 0
+06:23:04.217 1111 zb_mac_transport_linux_pipes.c:265	>>read_from_pipe
+06:23:04.219 1111 zb_mac_transport_linux_pipes.c:79	read: len 1 total 2
+06:23:04.219 1111 zb_mac_transport_linux_pipes.c:93	06 
+06:23:04.219 1111 zb_mac_transport_linux_pipes.c:79	read: len 5 total 6
+06:23:04.219 1111 zb_mac_transport_linux_pipes.c:93	02 00 7E 41 2F 
+06:23:04.219 1111 zb_mac_transport_linux_pipes.c:333	receive full buffer 6 len 6
+06:23:04.219 1111 zb_mac_transport_linux_pipes.c:356	<<read_from_pipe 6
+06:23:04.219 1111 mac.c:366	>>mac_parse_recv_dt
+06:23:04.219 1111 zb_mac_transport_linux_pipes.c:149	>>zb_mac_traffic_dump #22 buf 0x4e3b2c / 6 in_b 1 (size 15) is_w 0
+06:23:04.219 1111 zb_mac_transport_linux_pipes.c:182	t: start 1514431367; t 1514431384 219295, time 1125
+06:23:04.219 1111 zb_mac_transport_linux_pipes.c:192	<<zb_mac_traffic_dump
+06:23:04.219 1111 mac_common.c:79	>>zb_parse_mhr mhr 0xbfb26dc4, ptr 0x4e3b7c
+06:23:04.219 1111 mac_common.c:89	dst addr mode: 0
+06:23:04.219 1111 mac_common.c:108	src addr mode: 0
+06:23:04.219 1111 mac_common.c:173	<< zb_parse_mhr, ret val 3
+06:23:04.219 1111 mac.c:384	frame_control 2:0, seq_number 126, dst_pan_id 0x0, src_pan_id 0x0 dst mode 0 addr 0.0.0.0.0.0.0.0 src mode 0 addr 0.0.0.0.0.0.0.0
+06:23:04.219 1111 mac.c:389	set mac rx , frm 2 len 14
+06:23:04.219 1111 mac.c:234	<<can_accept_fr, ret 1
+06:23:04.219 1111 mac.c:471	Ack acccepted
+06:23:04.219 1111 mac.c:808	>>mlme_ack_acc 0x4e3b2c
+06:23:04.219 1111 mac_common.c:79	>>zb_parse_mhr mhr 0xbfb26d24, ptr 0x4e3b7c
+06:23:04.219 1111 mac_common.c:89	dst addr mode: 0
+06:23:04.219 1111 mac_common.c:108	src addr mode: 0
+06:23:04.219 1111 mac_common.c:173	<< zb_parse_mhr, ret val 3
+06:23:04.219 1111 mac.c:825	ack ok dsn 126, frame_pending_bit 0, frame_ctrl 2 0
+06:23:04.219 1111 mac.c:836	Pending data clear
+06:23:04.219 1111 zb_scheduler.c:376	0x4e35ec alarm cancel func 0x4a62c8, param 0
+06:23:04.219 1111 zb_scheduler.c:380	tm_queue -> tm_freelist, ent 0x4e35ec
+06:23:04.220 1111 mac.c:851	free buf 0x4e3b2c
+06:23:04.220 1111 zb_bufpool.c:217	zb_free_buf 0x4e3b2c, ref 6, in buf 18446 allocated in 0 out 1
+06:23:04.220 1111 zb_bufpool.c:246	free_buf: 3/3 buf 0x4e3b2c, next 0x4e3bc8, head 0x4e3b2c
+06:23:04.220 1111 mac.c:854	<<mlme_ack_acc
+06:23:04.220 1111 mac.c:491	<<mac_parse_recv_data 0
+06:23:04.220 1111 mac.c:200	<<zb_mac_recv_data
+06:23:04.220 1111 mac_data.c:243	<< zb_mac_check_ack ret 0
+06:23:04.220 1111 mac_data.c:659	<< zb_handle_mcps_data_req 0
+06:23:04.220 1111 zb_mac_transport_linux_pipes.c:477	>>zb_mac_wait_for_ext_event
+06:23:04.220 1111 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:23:04.220 1111 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 0
+06:23:04.220 1111 zb_mac_transport_linux_pipes.c:507	timer started = 1
+06:23:04.220 1111 zb_mac_transport_linux_pipes.c:513	timer stop 1175 timer 1111  tmo 64
+06:23:04.220 1111 zb_mac_transport_linux_pipes.c:529	select() timeout 0.979000
+06:23:04.222 1111 zb_mac_transport_linux_pipes.c:548	delta 12 (0)
+06:23:04.222 1113 zb_mac_transport_linux_pipes.c:569	timer 1113, delta_rest 0
+06:23:04.223 1113 zb_mac_transport_linux_pipes.c:265	>>read_from_pipe
+06:23:04.223 1113 zb_mac_transport_linux_pipes.c:269	no buffer available, call mac to get incoming buffer
+06:23:04.223 1113 zb_mac_transport_linux_pipes.c:273	<<read_from_pipe 1
+06:23:04.223 1113 zb_mac_transport_linux_pipes.c:600	Schedule mac main loop 2
+06:23:04.223 1113 zb_mac_transport_linux_pipes.c:603	<<zb_mac_wait_for_ext_event 1
+06:23:04.223 1113 mac.c:261	tx waiting callback called, func: 0x4a9b98
+06:23:04.223 1113 mac_data.c:668	>> zb_handle_mcps_data_req_continue
+06:23:04.223 1113 mac_data.c:697	mac status 0x0 0
+06:23:04.223 1113 zb_scheduler.c:254	0x4e34a0 scheduled cb 0x4adb16 param 4 (in_b 1)
+06:23:04.223 1113 mac_data.c:702	<< zb_handle_mcps_data_req_continue
+06:23:04.223 1113 zb_bufpool.c:137	zb_get_buf 1: buffer 0x4e3b2c, ref 6, head 0x4e3bc8, allocated 3 / 4
+06:23:04.223 1113 mac.c:177	>>zb_mac_recv_data
+06:23:04.223 1113 zb_mac_transport_linux_pipes.c:235	>>zb_mac_start_recv buf 0x4e3b2c
+06:23:04.223 1113 zb_mac_transport_linux_pipes.c:249	<<zb_mac_start_recv ret 0
+06:23:04.223 1113 zb_mac_transport_linux_pipes.c:265	>>read_from_pipe
+06:23:04.223 1113 zb_mac_transport_linux_pipes.c:79	read: len 1 total 2
+06:23:04.223 1113 zb_mac_transport_linux_pipes.c:93	1C 
+06:23:04.223 1113 zb_mac_transport_linux_pipes.c:79	read: len 27 total 28
+06:23:04.223 1113 zb_mac_transport_linux_pipes.c:86	61 88 A0 79 48 00 00 01 00 48 00 00 00 01 00 05 
+06:23:04.223 1113 zb_mac_transport_linux_pipes.c:93	03 02 00 00 80 00 00 00 79 1F E8 
+06:23:04.223 1113 zb_mac_transport_linux_pipes.c:333	receive full buffer 6 len 28
+06:23:04.223 1113 zb_mac_transport_linux_pipes.c:356	<<read_from_pipe 28
+06:23:04.223 1113 mac.c:366	>>mac_parse_recv_dt
+06:23:04.223 1113 zb_mac_transport_linux_pipes.c:149	>>zb_mac_traffic_dump #23 buf 0x4e3b2c / 6 in_b 1 (size 37) is_w 0
+06:23:04.224 1113 zb_mac_transport_linux_pipes.c:182	t: start 1514431367; t 1514431384 224031, time 1125
+06:23:04.224 1113 zb_mac_transport_linux_pipes.c:192	<<zb_mac_traffic_dump
+06:23:04.224 1113 mac_common.c:79	>>zb_parse_mhr mhr 0xbfb26e24, ptr 0x4e3b71
+06:23:04.224 1113 mac_common.c:89	dst addr mode: 2
+06:23:04.224 1113 mac_common.c:108	src addr mode: 2
+06:23:04.224 1113 mac_common.c:173	<< zb_parse_mhr, ret val 9
+06:23:04.224 1113 mac.c:384	frame_control 61:88, seq_number 160, dst_pan_id 0x4879, src_pan_id 0x4879 dst mode 2 addr 0.0.0.0.0.0.0.0 src mode 2 addr 0.0.0.0.0.0.0.1
+06:23:04.224 1113 mac.c:389	set mac rx , frm 1 len 36
+06:23:04.224 1113 mac.c:234	<<can_accept_fr, ret 1
+06:23:04.224 1113 zb_scheduler.c:254	0x4e34a8 scheduled cb 0x4a9daa param 6 (in_b 1)
+06:23:04.224 1113 mac.c:491	<<mac_parse_recv_data 0
+06:23:04.224 1113 mac.c:200	<<zb_mac_recv_data
+06:23:04.224 1113 zb_scheduler.c:105	cb_q written 2, read_i 0, write_i 2
+06:23:04.224 1113 zb_scheduler.c:115	0x4e34a0 calling cb 0x4adb16 param 4 in_b 1 len 39
+06:23:04.224 1113 nwk_main.c:826	>>mcps_data_confirm param 4 handle 0 status 0
+06:23:04.224 1113 mac_common.c:79	>>zb_parse_mhr mhr 0xbfb26e84, ptr 0x4e3a26
+06:23:04.224 1113 mac_common.c:89	dst addr mode: 2
+06:23:04.224 1113 mac_common.c:108	src addr mode: 2
+06:23:04.224 1113 mac_common.c:173	<< zb_parse_mhr, ret val 9
+06:23:04.224 1113 nwk_main.c:894	schedule nlde-data.confirm
+06:23:04.224 1113 zb_scheduler.c:254	0x4e34b0 scheduled cb 0x4c1bed param 4 (in_b 1)
+06:23:04.224 1113 nwk_main.c:908	<<mcps_data_confirm
+06:23:04.224 1113 zb_scheduler.c:105	cb_q written 2, read_i 1, write_i 3
+06:23:04.224 1113 zb_scheduler.c:115	0x4e34a8 calling cb 0x4a9daa param 6 in_b 1 len 36
+06:23:04.224 1113 mac_data.c:712	>> zb_handle_data_frame
+06:23:04.225 1113 mac_common.c:79	>>zb_parse_mhr mhr 0xbfb26e84, ptr 0x4e3b71
+06:23:04.225 1113 mac_common.c:89	dst addr mode: 2
+06:23:04.225 1113 mac_common.c:108	src addr mode: 2
+06:23:04.225 1113 mac_common.c:173	<< zb_parse_mhr, ret val 9
+06:23:04.225 1113 mac.c:873	>>mac_send_ack 160
+06:23:04.225 1113 mac.c:571	>>mac_fill_mhr
+06:23:04.225 1113 mac.c:622	<<mac_fill_mhr
+06:23:04.225 1113 zb_mac_transport_linux_pipes.c:199	>>zb_mac_put_data buf 0x4e3784
+06:23:04.225 1113 zb_mac_transport_linux_pipes.c:149	>>zb_mac_traffic_dump #24 buf 0x4e3784 / 0 in_b 0 (size 6) is_w 1
+06:23:04.225 1113 zb_mac_transport_linux_pipes.c:182	t: start 1514431367; t 1514431384 225256, time 1125
+06:23:04.225 1113 zb_mac_transport_linux_pipes.c:192	<<zb_mac_traffic_dump
+06:23:04.225 1113 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:23:04.225 1113 zb_mac_transport_linux_pipes.c:79	written: len 6 total 6
+06:23:04.225 1113 zb_mac_transport_linux_pipes.c:93	06 02 00 A0 B2 10 
+06:23:04.225 1113 zb_mac_transport_linux_pipes.c:446	out buffer is sent
+06:23:04.225 1113 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 6
+06:23:04.225 1113 zb_mac_transport_linux_pipes.c:225	<<zb_mac_put_data ret
+06:23:04.225 1113 mac.c:893	<<mac_send_ack ret 0
+06:23:04.225 1113 zb_scheduler.c:254	0x4e34b8 scheduled cb 0x4ae17a param 6 (in_b 1)
+06:23:04.225 1113 mac_data.c:748	<< zb_handle_data_frame, ret 0
+06:23:04.225 1113 zb_scheduler.c:105	cb_q written 2, read_i 2, write_i 4
+06:23:04.225 1113 zb_scheduler.c:115	0x4e34b0 calling cb 0x4c1bed param 4 in_b 1 len 39
+06:23:04.225 1113 aps_main.c:500	+zb_nlde_data_confirm 4 status 0
+06:23:04.225 1113 aps_main.c:544	packet 4 len 20 confirm state 1, set st 3, still wait for ack
+06:23:04.225 1113 aps_main.c:561	-nlde_data_conf
+06:23:04.225 1113 zb_scheduler.c:105	cb_q written 1, read_i 3, write_i 4
+06:23:04.225 1113 zb_scheduler.c:115	0x4e34b8 calling cb 0x4ae17a param 6 in_b 1 len 36
+06:23:04.225 1113 nwk_main.c:983	>>zb_mcps_data_indication param 6
+06:23:04.225 1113 nwk_main.c:987	lqi 0
+06:23:04.226 1113 mac_common.c:79	>>zb_parse_mhr mhr 0xbfb26e74, ptr 0x4e3b71
+06:23:04.226 1113 mac_common.c:89	dst addr mode: 2
+06:23:04.226 1113 mac_common.c:108	src addr mode: 2
+06:23:04.226 1113 mac_common.c:173	<< zb_parse_mhr, ret val 9
+06:23:04.226 1113 nwk_main.c:1000	hdr_size 8 radius 5 frame type 0
+06:23:04.226 1113 nwk_main.c:1139	dst addr mac 0 nwk 0, src addr mac 1 nwk 1
+06:23:04.226 1113 nwk_main.c:1144	new radius 4, frame type 0
+06:23:04.226 1113 zb_address.c:595	short_addr 1 l 1 ZG->addr.short_sorted[l] 59 addr 1
+06:23:04.226 1113 zb_address.c:370	zb_address_by_short 1 ret 0 ref 59
+06:23:04.226 1113 nwk_neighbor.c:505	>>zb_nwk_neighbor_get addr_ref 59 cr 0 nbt 0xbfb26e38
+06:23:04.226 1113 nwk_neighbor.c:547	<<zb_nwk_neighbor_get 0
+06:23:04.226 1113 nwk_main.c:1200	update lqi for 1 to 10
+06:23:04.226 1113 zb_scheduler.c:254	0x4e34c0 scheduled cb 0x4aef16 param 6 (in_b 1)
+06:23:04.226 1113 nwk_main.c:1245	<<mcps_data_ind
+06:23:04.226 1113 zb_scheduler.c:105	cb_q written 1, read_i 4, write_i 5
+06:23:04.226 1113 zb_scheduler.c:115	0x4e34c0 calling cb 0x4aef16 param 6 in_b 1 len 16
+06:23:04.226 1113 nwk_main.c:1292	>> nwk_frame_indication 6
+06:23:04.226 1113 nwk_main.c:1295	frame type 0
+06:23:04.226 1113 zb_scheduler.c:254	0x4e34c8 scheduled cb 0x4c1f1c param 6 (in_b 1)
+06:23:04.226 1113 zb_scheduler.c:105	cb_q written 1, read_i 5, write_i 6
+06:23:04.226 1113 zb_scheduler.c:115	0x4e34c8 calling cb 0x4c1f1c param 6 in_b 1 len 16
+06:23:04.226 1113 aps_main.c:578	+nlde_data_ind 6
+06:23:04.226 1113 aps_main.c:1034	aps_ack_check_handle addr 1, src_addr 1
+06:23:04.226 1113 aps_main.c:1037	retrans.hash i 0, clusterid 32768 aps_counter 121 src_endpoint 0 dst_endpoint 0
+06:23:04.226 1113 aps_main.c:1053	found ent 0
+06:23:04.226 1113 aps_main.c:1061	packet 4 acked ok
+06:23:04.226 1113 aps_main.c:1084	finally done with this data pkt i 0
+06:23:04.226 1113 zb_scheduler.c:254	0x4e34d0 scheduled cb 0x4c65c8 param 4 (in_b 1)
+06:23:04.226 1113 zb_scheduler.c:376	0x4e360c alarm cancel func 0x4c36bc, param 0
+06:23:04.226 1113 zb_scheduler.c:380	tm_queue -> tm_freelist, ent 0x4e360c
+06:23:04.226 1113 aps_main.c:1070	-aps_ack_frame_handle
+06:23:04.226 1113 zb_bufpool.c:217	zb_free_buf 0x4e3b2c, ref 6, in buf 19976 allocated in 0 out 1
+06:23:04.227 1113 zb_bufpool.c:246	free_buf: 3/3 buf 0x4e3b2c, next 0x4e3bc8, head 0x4e3b2c
+06:23:04.227 1113 zb_scheduler.c:105	cb_q written 1, read_i 6, write_i 7
+06:23:04.227 1113 zb_scheduler.c:115	0x4e34d0 calling cb 0x4c65c8 param 4 in_b 1 len 20
+06:23:04.227 1113 zdo_app.c:589	apsde_data_conf: param 4 status 0 dev_annce 0 key_sw 0
+06:23:04.227 1113 zdo_app.c:622	buffer status 0 - call zb_apsde_data_acknowledged
+06:23:04.227 1113 zb_scheduler.c:254	0x4e34d8 scheduled cb 0x4c754a param 4 (in_b 1)
+06:23:04.227 1113 zb_scheduler.c:105	cb_q written 1, read_i 7, write_i 8
+06:23:04.227 1113 zb_scheduler.c:115	0x4e34d8 calling cb 0x4c754a param 4 in_b 1 len 20
+06:23:04.227 1113 af_rx.c:115	>>apsde_data_acked: param 4
+06:23:04.227 1113 zb_bufpool.c:217	zb_free_buf 0x4e39f4, ref 4, in buf 15124 allocated in 0 out 1
+06:23:04.227 1113 zb_bufpool.c:246	free_buf: 2/3 buf 0x4e39f4, next 0x4e3b2c, head 0x4e39f4
+06:23:04.227 1113 af_rx.c:182	<<apsde_data_acked
+06:23:04.227 1113 mac.c:276	tx callback called
+06:23:04.227 1113 mac_data.c:565	>> zb_handle_mcps_data_req
+06:23:04.227 1113 mac_data.c:572	is_unicast 1, dst_addr 0x1
+06:23:04.227 1113 mac_data.c:579	msdu_handle 0 tx_options 1
+06:23:04.227 1113 mac_data.c:340	>> zb_mcps_data_request_fill_hdr p 0x4e3958
+06:23:04.227 1113 mac.c:571	>>mac_fill_mhr
+06:23:04.227 1113 mac.c:622	<<mac_fill_mhr
+06:23:04.227 1113 mac_data.c:488	<< zb_mcps_data_request_fill_hdr ret 0
+06:23:04.227 1113 mac_data.c:515	>> zb_mac_check_security data_buf 0x4e3958
+06:23:04.227 1113 mac_data.c:551	<< zb_mac_check_security ret 0
+06:23:04.227 1113 mac_common.c:181	tx_total 4
+06:23:04.227 1113 zb_mac_transport_linux_pipes.c:199	>>zb_mac_put_data buf 0x4e3958
+06:23:04.227 1113 zb_mac_transport_linux_pipes.c:149	>>zb_mac_traffic_dump #25 buf 0x4e3958 / 3 in_b 0 (size 28) is_w 1
+06:23:04.227 1113 zb_mac_transport_linux_pipes.c:182	t: start 1514431367; t 1514431384 227708, time 1125
+06:23:04.227 1113 zb_mac_transport_linux_pipes.c:192	<<zb_mac_traffic_dump
+06:23:04.227 1113 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:23:04.228 1113 zb_mac_transport_linux_pipes.c:79	written: len 28 total 28
+06:23:04.228 1113 zb_mac_transport_linux_pipes.c:86	1C 61 88 7F 79 48 01 00 00 00 48 00 01 00 00 00 
+06:23:04.228 1113 zb_mac_transport_linux_pipes.c:93	05 02 02 00 01 00 00 00 00 9B 23 9C 
+06:23:04.228 1113 zb_mac_transport_linux_pipes.c:446	out buffer is sent
+06:23:04.228 1113 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 28
+06:23:04.228 1113 zb_mac_transport_linux_pipes.c:225	<<zb_mac_put_data ret
+06:23:04.228 1113 mac_data.c:187	>> zb_mac_check_ack
+06:23:04.228 1113 zb_scheduler.c:283	tm_freelist, get nent 0x4e360c
+06:23:04.228 1113 zb_scheduler.c:294	0x4e360c scheduled alarm 0x4a62c8, run_after 88, at 1201, param 0
+06:23:04.229 1113 zb_scheduler.c:349	cur t 1113, head t 1175
+06:23:04.229 1113 zb_bufpool.c:137	zb_get_buf 1: buffer 0x4e39f4, ref 4, head 0x4e3b2c, allocated 3 / 3
+06:23:04.229 1113 mac.c:177	>>zb_mac_recv_data
+06:23:04.229 1113 zb_mac_transport_linux_pipes.c:235	>>zb_mac_start_recv buf 0x4e39f4
+06:23:04.229 1113 zb_mac_transport_linux_pipes.c:249	<<zb_mac_start_recv ret 0
+06:23:04.229 1113 zb_mac_transport_linux_pipes.c:265	>>read_from_pipe
+06:23:04.230 1113 zb_mac_transport_linux_pipes.c:79	read: len 1 total 2
+06:23:04.230 1113 zb_mac_transport_linux_pipes.c:93	06 
+06:23:04.230 1113 zb_mac_transport_linux_pipes.c:79	read: len 5 total 6
+06:23:04.230 1113 zb_mac_transport_linux_pipes.c:93	02 00 7F C8 3E 
+06:23:04.230 1113 zb_mac_transport_linux_pipes.c:333	receive full buffer 4 len 6
+06:23:04.230 1113 zb_mac_transport_linux_pipes.c:356	<<read_from_pipe 6
+06:23:04.230 1113 mac.c:366	>>mac_parse_recv_dt
+06:23:04.230 1113 zb_mac_transport_linux_pipes.c:149	>>zb_mac_traffic_dump #26 buf 0x4e39f4 / 4 in_b 1 (size 15) is_w 0
+06:23:04.230 1113 zb_mac_transport_linux_pipes.c:182	t: start 1514431367; t 1514431384 230764, time 1126
+06:23:04.230 1113 zb_mac_transport_linux_pipes.c:192	<<zb_mac_traffic_dump
+06:23:04.230 1113 mac_common.c:79	>>zb_parse_mhr mhr 0xbfb26dc4, ptr 0x4e3a44
+06:23:04.230 1113 mac_common.c:89	dst addr mode: 0
+06:23:04.230 1113 mac_common.c:108	src addr mode: 0
+06:23:04.230 1113 mac_common.c:173	<< zb_parse_mhr, ret val 3
+06:23:04.230 1113 mac.c:384	frame_control 2:0, seq_number 127, dst_pan_id 0x0, src_pan_id 0x0 dst mode 0 addr 0.0.0.0.0.0.0.0 src mode 0 addr 0.0.0.0.0.0.0.0
+06:23:04.230 1113 mac.c:389	set mac rx , frm 2 len 14
+06:23:04.231 1113 mac.c:234	<<can_accept_fr, ret 1
+06:23:04.231 1113 mac.c:471	Ack acccepted
+06:23:04.231 1113 mac.c:808	>>mlme_ack_acc 0x4e39f4
+06:23:04.231 1113 mac_common.c:79	>>zb_parse_mhr mhr 0xbfb26d24, ptr 0x4e3a44
+06:23:04.231 1113 mac_common.c:89	dst addr mode: 0
+06:23:04.231 1113 mac_common.c:108	src addr mode: 0
+06:23:04.231 1113 mac_common.c:173	<< zb_parse_mhr, ret val 3
+06:23:04.231 1113 mac.c:825	ack ok dsn 127, frame_pending_bit 0, frame_ctrl 2 0
+06:23:04.231 1113 mac.c:836	Pending data clear
+06:23:04.231 1113 zb_scheduler.c:376	0x4e360c alarm cancel func 0x4a62c8, param 0
+06:23:04.231 1113 zb_scheduler.c:380	tm_queue -> tm_freelist, ent 0x4e360c
+06:23:04.231 1113 mac.c:851	free buf 0x4e39f4
+06:23:04.231 1113 zb_bufpool.c:217	zb_free_buf 0x4e39f4, ref 4, in buf 18446 allocated in 0 out 1
+06:23:04.231 1113 zb_bufpool.c:246	free_buf: 2/3 buf 0x4e39f4, next 0x4e3b2c, head 0x4e39f4
+06:23:04.231 1113 mac.c:854	<<mlme_ack_acc
+06:23:04.231 1113 mac.c:491	<<mac_parse_recv_data 0
+06:23:04.231 1113 mac.c:200	<<zb_mac_recv_data
+06:23:04.231 1113 mac_data.c:243	<< zb_mac_check_ack ret 0
+06:23:04.231 1113 mac_data.c:659	<< zb_handle_mcps_data_req 0
+06:23:04.231 1113 zb_mac_transport_linux_pipes.c:477	>>zb_mac_wait_for_ext_event
+06:23:04.231 1113 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:23:04.231 1113 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 0
+06:23:04.231 1113 zb_mac_transport_linux_pipes.c:507	timer started = 1
+06:23:04.231 1113 zb_mac_transport_linux_pipes.c:513	timer stop 1175 timer 1113  tmo 62
+06:23:04.231 1113 zb_mac_transport_linux_pipes.c:529	select() timeout 0.948000
+06:23:05.182 1113 zb_mac_transport_linux_pipes.c:548	delta 960 (62)
+06:23:05.182 1175 zb_mac_transport_linux_pipes.c:569	timer 1175, delta_rest 0
+06:23:05.182 1175 zb_mac_transport_linux_pipes.c:590	timeout
+06:23:05.182 1175 zb_mac_transport_linux_pipes.c:603	<<zb_mac_wait_for_ext_event 0
+06:23:05.182 1175 mac.c:261	tx waiting callback called, func: 0x4a9b98
+06:23:05.182 1175 mac_data.c:668	>> zb_handle_mcps_data_req_continue
+06:23:05.182 1175 mac_data.c:697	mac status 0x0 0
+06:23:05.182 1175 zb_scheduler.c:254	0x4e34e0 scheduled cb 0x4adb16 param 3 (in_b 0)
+06:23:05.182 1175 mac_data.c:702	<< zb_handle_mcps_data_req_continue
+06:23:05.182 1175 zb_scheduler.c:105	cb_q written 1, read_i 8, write_i 9
+06:23:05.183 1175 zb_scheduler.c:115	0x4e34e0 calling cb 0x4adb16 param 3 in_b 0 len 27
+06:23:05.183 1175 nwk_main.c:826	>>mcps_data_confirm param 3 handle 0 status 0
+06:23:05.183 1175 mac_common.c:79	>>zb_parse_mhr mhr 0xbfb26e84, ptr 0x4e3995
+06:23:05.183 1175 mac_common.c:89	dst addr mode: 2
+06:23:05.183 1175 mac_common.c:108	src addr mode: 2
+06:23:05.183 1175 mac_common.c:173	<< zb_parse_mhr, ret val 9
+06:23:05.183 1175 nwk_main.c:894	schedule nlde-data.confirm
+06:23:05.183 1175 zb_scheduler.c:254	0x4e34e8 scheduled cb 0x4c1bed param 3 (in_b 0)
+06:23:05.183 1175 nwk_main.c:908	<<mcps_data_confirm
+06:23:05.183 1175 zb_scheduler.c:105	cb_q written 1, read_i 9, write_i 10
+06:23:05.183 1175 zb_scheduler.c:115	0x4e34e8 calling cb 0x4c1bed param 3 in_b 0 len 27
+06:23:05.183 1175 aps_main.c:500	+zb_nlde_data_confirm 3 status 0
+06:23:05.183 1175 zb_bufpool.c:217	zb_free_buf 0x4e3958, ref 3, in buf 17928 allocated in 0 out 0
+06:23:05.183 1175 zb_bufpool.c:246	free_buf: 2/2 buf 0x4e3958, next 0x4e39f4, head 0x4e3958
+06:23:05.183 1175 aps_main.c:561	-nlde_data_conf
+06:23:05.183 1175 zb_scheduler.c:145	0x4e361c calling alarm cb 0x4c4262 param 0
+06:23:05.183 1175 zb_scheduler.c:283	tm_freelist, get nent 0x4e360c
+06:23:05.183 1175 zb_scheduler.c:294	0x4e360c scheduled alarm 0x4c4262, run_after 65, at 1240, param 0
+06:23:05.184 1175 zb_scheduler.c:349	cur t 1175, head t 1175
+06:23:05.184 1175 zb_scheduler.c:145	0x4e363c calling alarm cb 0x4af4b1 param 0
+06:23:05.184 1175 nwk_main.c:1406	>>nwk_btr_expiry 0
+06:23:05.184 1175 nwk_main.c:1412	btt cnt 1
+06:23:05.184 1175 zb_scheduler.c:283	tm_freelist, get nent 0x4e361c
+06:23:05.184 1175 zb_scheduler.c:294	0x4e361c scheduled alarm 0x4af4b1, run_after 65, at 1240, param 0
+06:23:05.184 1175 zb_scheduler.c:349	cur t 1175, head t 1235
+06:23:05.184 1175 nwk_main.c:1436	<<nwk_btr_expiry
+06:23:05.184 1175 mac.c:276	tx callback called
+06:23:05.184 1175 mac_data.c:565	>> zb_handle_mcps_data_req
+06:23:05.184 1175 mac_data.c:572	is_unicast 1, dst_addr 0x1
+06:23:05.184 1175 mac_data.c:579	msdu_handle 0 tx_options 1
+06:23:05.184 1175 mac_data.c:340	>> zb_mcps_data_request_fill_hdr p 0x4e3a90
+06:23:05.184 1175 mac.c:571	>>mac_fill_mhr
+06:23:05.184 1175 mac.c:622	<<mac_fill_mhr
+06:23:05.184 1175 mac_data.c:488	<< zb_mcps_data_request_fill_hdr ret 0
+06:23:05.184 1175 mac_data.c:515	>> zb_mac_check_security data_buf 0x4e3a90
+06:23:05.184 1175 mac_data.c:551	<< zb_mac_check_security ret 0
+06:23:05.184 1175 mac_common.c:181	tx_total 5
+06:23:05.184 1175 zb_mac_transport_linux_pipes.c:199	>>zb_mac_put_data buf 0x4e3a90
+06:23:05.184 1175 zb_mac_transport_linux_pipes.c:149	>>zb_mac_traffic_dump #27 buf 0x4e3a90 / 5 in_b 1 (size 40) is_w 1
+06:23:05.184 1175 zb_mac_transport_linux_pipes.c:182	t: start 1514431367; t 1514431385 184914, time 1188
+06:23:05.184 1175 zb_mac_transport_linux_pipes.c:192	<<zb_mac_traffic_dump
+06:23:05.185 1175 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:23:05.185 1175 zb_mac_transport_linux_pipes.c:79	written: len 40 total 40
+06:23:05.185 1175 zb_mac_transport_linux_pipes.c:86	28 61 88 80 79 48 01 00 00 00 48 00 01 00 00 00 
+06:23:05.185 1175 zb_mac_transport_linux_pipes.c:86	0A 03 40 00 01 80 00 00 00 7A 03 00 00 00 00 00 
+06:23:05.185 1175 zb_mac_transport_linux_pipes.c:93	08 07 06 05 00 00 0D 14 
+06:23:05.185 1175 zb_mac_transport_linux_pipes.c:446	out buffer is sent
+06:23:05.185 1175 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 40
+06:23:05.185 1175 zb_mac_transport_linux_pipes.c:225	<<zb_mac_put_data ret
+06:23:05.185 1175 mac_data.c:187	>> zb_mac_check_ack
+06:23:05.185 1175 zb_scheduler.c:283	tm_freelist, get nent 0x4e363c
+06:23:05.185 1175 zb_scheduler.c:294	0x4e363c scheduled alarm 0x4a62c8, run_after 88, at 1263, param 0
+06:23:05.185 1175 zb_scheduler.c:349	cur t 1175, head t 1235
+06:23:05.185 1175 zb_bufpool.c:137	zb_get_buf 1: buffer 0x4e3958, ref 3, head 0x4e39f4, allocated 2 / 3
+06:23:05.185 1175 mac.c:177	>>zb_mac_recv_data
+06:23:05.185 1175 zb_mac_transport_linux_pipes.c:235	>>zb_mac_start_recv buf 0x4e3958
+06:23:05.185 1175 zb_mac_transport_linux_pipes.c:249	<<zb_mac_start_recv ret 0
+06:23:05.185 1175 zb_mac_transport_linux_pipes.c:265	>>read_from_pipe
+06:23:05.195 1175 zb_mac_transport_linux_pipes.c:79	read: len 1 total 2
+06:23:05.195 1175 zb_mac_transport_linux_pipes.c:93	06 
+06:23:05.195 1175 zb_mac_transport_linux_pipes.c:79	read: len 5 total 6
+06:23:05.195 1175 zb_mac_transport_linux_pipes.c:93	02 00 80 B0 31 
+06:23:05.195 1175 zb_mac_transport_linux_pipes.c:333	receive full buffer 3 len 6
+06:23:05.195 1175 zb_mac_transport_linux_pipes.c:356	<<read_from_pipe 6
+06:23:05.195 1175 mac.c:366	>>mac_parse_recv_dt
+06:23:05.195 1175 zb_mac_transport_linux_pipes.c:149	>>zb_mac_traffic_dump #28 buf 0x4e3958 / 3 in_b 1 (size 15) is_w 0
+06:23:05.195 1175 zb_mac_transport_linux_pipes.c:182	t: start 1514431367; t 1514431385 195927, time 1189
+06:23:05.195 1175 zb_mac_transport_linux_pipes.c:192	<<zb_mac_traffic_dump
+06:23:05.196 1175 mac_common.c:79	>>zb_parse_mhr mhr 0xbfb26dc4, ptr 0x4e39a8
+06:23:05.196 1175 mac_common.c:89	dst addr mode: 0
+06:23:05.196 1175 mac_common.c:108	src addr mode: 0
+06:23:05.196 1175 mac_common.c:173	<< zb_parse_mhr, ret val 3
+06:23:05.196 1175 mac.c:384	frame_control 2:0, seq_number 128, dst_pan_id 0x0, src_pan_id 0x0 dst mode 0 addr 0.0.0.0.0.0.0.0 src mode 0 addr 0.0.0.0.0.0.0.0
+06:23:05.196 1175 mac.c:389	set mac rx , frm 2 len 14
+06:23:05.196 1175 mac.c:234	<<can_accept_fr, ret 1
+06:23:05.196 1175 mac.c:471	Ack acccepted
+06:23:05.196 1175 mac.c:808	>>mlme_ack_acc 0x4e3958
+06:23:05.196 1175 mac_common.c:79	>>zb_parse_mhr mhr 0xbfb26d24, ptr 0x4e39a8
+06:23:05.196 1175 mac_common.c:89	dst addr mode: 0
+06:23:05.196 1175 mac_common.c:108	src addr mode: 0
+06:23:05.196 1175 mac_common.c:173	<< zb_parse_mhr, ret val 3
+06:23:05.196 1175 mac.c:825	ack ok dsn 128, frame_pending_bit 0, frame_ctrl 2 0
+06:23:05.196 1175 mac.c:836	Pending data clear
+06:23:05.196 1175 zb_scheduler.c:376	0x4e363c alarm cancel func 0x4a62c8, param 0
+06:23:05.196 1175 zb_scheduler.c:380	tm_queue -> tm_freelist, ent 0x4e363c
+06:23:05.196 1175 mac.c:851	free buf 0x4e3958
+06:23:05.196 1175 zb_bufpool.c:217	zb_free_buf 0x4e3958, ref 3, in buf 18446 allocated in 0 out 1
+06:23:05.196 1175 zb_bufpool.c:246	free_buf: 2/2 buf 0x4e3958, next 0x4e39f4, head 0x4e3958
+06:23:05.196 1175 mac.c:854	<<mlme_ack_acc
+06:23:05.196 1175 mac.c:491	<<mac_parse_recv_data 0
+06:23:05.196 1175 mac.c:200	<<zb_mac_recv_data
+06:23:05.197 1175 mac_data.c:243	<< zb_mac_check_ack ret 0
+06:23:05.197 1175 mac_data.c:659	<< zb_handle_mcps_data_req 0
+06:23:05.197 1175 zb_mac_transport_linux_pipes.c:477	>>zb_mac_wait_for_ext_event
+06:23:05.197 1175 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:23:05.197 1175 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 0
+06:23:05.197 1175 zb_mac_transport_linux_pipes.c:507	timer started = 1
+06:23:05.197 1175 zb_mac_transport_linux_pipes.c:524	default timeout 1
+06:23:05.197 1175 zb_mac_transport_linux_pipes.c:529	select() timeout 1.0
+06:23:05.199 1175 zb_mac_transport_linux_pipes.c:548	delta 17 (1)
+06:23:05.200 1176 zb_mac_transport_linux_pipes.c:569	timer 1176, delta_rest 0
+06:23:05.200 1176 zb_mac_transport_linux_pipes.c:265	>>read_from_pipe
+06:23:05.200 1176 zb_mac_transport_linux_pipes.c:269	no buffer available, call mac to get incoming buffer
+06:23:05.200 1176 zb_mac_transport_linux_pipes.c:273	<<read_from_pipe 1
+06:23:05.200 1176 zb_mac_transport_linux_pipes.c:600	Schedule mac main loop 2
+06:23:05.200 1176 zb_mac_transport_linux_pipes.c:603	<<zb_mac_wait_for_ext_event 1
+06:23:05.200 1176 mac.c:261	tx waiting callback called, func: 0x4a9b98
+06:23:05.200 1176 mac_data.c:668	>> zb_handle_mcps_data_req_continue
+06:23:05.200 1176 mac_data.c:697	mac status 0x0 0
+06:23:05.200 1176 zb_scheduler.c:254	0x4e34f0 scheduled cb 0x4adb16 param 5 (in_b 1)
+06:23:05.200 1176 mac_data.c:702	<< zb_handle_mcps_data_req_continue
+06:23:05.200 1176 zb_bufpool.c:137	zb_get_buf 1: buffer 0x4e3958, ref 3, head 0x4e39f4, allocated 2 / 3
+06:23:05.200 1176 mac.c:177	>>zb_mac_recv_data
+06:23:05.200 1176 zb_mac_transport_linux_pipes.c:235	>>zb_mac_start_recv buf 0x4e3958
+06:23:05.200 1176 zb_mac_transport_linux_pipes.c:249	<<zb_mac_start_recv ret 0
+06:23:05.200 1176 zb_mac_transport_linux_pipes.c:265	>>read_from_pipe
+06:23:05.200 1176 zb_mac_transport_linux_pipes.c:79	read: len 1 total 2
+06:23:05.200 1176 zb_mac_transport_linux_pipes.c:93	1C 
+06:23:05.200 1176 zb_mac_transport_linux_pipes.c:79	read: len 27 total 28
+06:23:05.200 1176 zb_mac_transport_linux_pipes.c:86	61 88 A1 79 48 00 00 01 00 48 00 00 00 01 00 05 
+06:23:05.200 1176 zb_mac_transport_linux_pipes.c:93	04 02 00 01 80 00 00 00 7A 84 BE 
+06:23:05.200 1176 zb_mac_transport_linux_pipes.c:333	receive full buffer 3 len 28
+06:23:05.200 1176 zb_mac_transport_linux_pipes.c:356	<<read_from_pipe 28
+06:23:05.200 1176 mac.c:366	>>mac_parse_recv_dt
+06:23:05.200 1176 zb_mac_transport_linux_pipes.c:149	>>zb_mac_traffic_dump #29 buf 0x4e3958 / 3 in_b 1 (size 37) is_w 0
+06:23:05.200 1176 zb_mac_transport_linux_pipes.c:182	t: start 1514431367; t 1514431385 200801, time 1189
+06:23:05.200 1176 zb_mac_transport_linux_pipes.c:192	<<zb_mac_traffic_dump
+06:23:05.200 1176 mac_common.c:79	>>zb_parse_mhr mhr 0xbfb26e24, ptr 0x4e399d
+06:23:05.200 1176 mac_common.c:89	dst addr mode: 2
+06:23:05.200 1176 mac_common.c:108	src addr mode: 2
+06:23:05.200 1176 mac_common.c:173	<< zb_parse_mhr, ret val 9
+06:23:05.200 1176 mac.c:384	frame_control 61:88, seq_number 161, dst_pan_id 0x4879, src_pan_id 0x4879 dst mode 2 addr 0.0.0.0.0.0.0.0 src mode 2 addr 0.0.0.0.0.0.0.1
+06:23:05.200 1176 mac.c:389	set mac rx , frm 1 len 36
+06:23:05.201 1176 mac.c:234	<<can_accept_fr, ret 1
+06:23:05.201 1176 zb_scheduler.c:254	0x4e34f8 scheduled cb 0x4a9daa param 3 (in_b 1)
+06:23:05.201 1176 mac.c:491	<<mac_parse_recv_data 0
+06:23:05.201 1176 mac.c:200	<<zb_mac_recv_data
+06:23:05.201 1176 zb_scheduler.c:105	cb_q written 2, read_i 10, write_i 12
+06:23:05.201 1176 zb_scheduler.c:115	0x4e34f0 calling cb 0x4adb16 param 5 in_b 1 len 39
+06:23:05.201 1176 nwk_main.c:826	>>mcps_data_confirm param 5 handle 0 status 0
+06:23:05.201 1176 mac_common.c:79	>>zb_parse_mhr mhr 0xbfb26e84, ptr 0x4e3ac2
+06:23:05.201 1176 mac_common.c:89	dst addr mode: 2
+06:23:05.201 1176 mac_common.c:108	src addr mode: 2
+06:23:05.201 1176 mac_common.c:173	<< zb_parse_mhr, ret val 9
+06:23:05.201 1176 nwk_main.c:894	schedule nlde-data.confirm
+06:23:05.201 1176 zb_scheduler.c:254	0x4e3500 scheduled cb 0x4c1bed param 5 (in_b 1)
+06:23:05.201 1176 nwk_main.c:908	<<mcps_data_confirm
+06:23:05.201 1176 zb_scheduler.c:105	cb_q written 2, read_i 11, write_i 13
+06:23:05.201 1176 zb_scheduler.c:115	0x4e34f8 calling cb 0x4a9daa param 3 in_b 1 len 36
+06:23:05.201 1176 mac_data.c:712	>> zb_handle_data_frame
+06:23:05.201 1176 mac_common.c:79	>>zb_parse_mhr mhr 0xbfb26e84, ptr 0x4e399d
+06:23:05.201 1176 mac_common.c:89	dst addr mode: 2
+06:23:05.201 1176 mac_common.c:108	src addr mode: 2
+06:23:05.201 1176 mac_common.c:173	<< zb_parse_mhr, ret val 9
+06:23:05.201 1176 mac.c:873	>>mac_send_ack 161
+06:23:05.201 1176 mac.c:571	>>mac_fill_mhr
+06:23:05.202 1176 mac.c:622	<<mac_fill_mhr
+06:23:05.202 1176 zb_mac_transport_linux_pipes.c:199	>>zb_mac_put_data buf 0x4e3784
+06:23:05.202 1176 zb_mac_transport_linux_pipes.c:149	>>zb_mac_traffic_dump #30 buf 0x4e3784 / 0 in_b 0 (size 6) is_w 1
+06:23:05.202 1176 zb_mac_transport_linux_pipes.c:182	t: start 1514431367; t 1514431385 202147, time 1189
+06:23:05.202 1176 zb_mac_transport_linux_pipes.c:192	<<zb_mac_traffic_dump
+06:23:05.202 1176 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:23:05.202 1176 zb_mac_transport_linux_pipes.c:79	written: len 6 total 6
+06:23:05.202 1176 zb_mac_transport_linux_pipes.c:93	06 02 00 A1 3B 01 
+06:23:05.202 1176 zb_mac_transport_linux_pipes.c:446	out buffer is sent
+06:23:05.202 1176 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 6
+06:23:05.203 1176 zb_mac_transport_linux_pipes.c:225	<<zb_mac_put_data ret
+06:23:05.203 1176 mac.c:893	<<mac_send_ack ret 0
+06:23:05.203 1176 zb_scheduler.c:254	0x4e3508 scheduled cb 0x4ae17a param 3 (in_b 1)
+06:23:05.203 1176 mac_data.c:748	<< zb_handle_data_frame, ret 0
+06:23:05.203 1176 zb_scheduler.c:105	cb_q written 2, read_i 12, write_i 14
+06:23:05.203 1176 zb_scheduler.c:115	0x4e3500 calling cb 0x4c1bed param 5 in_b 1 len 39
+06:23:05.203 1176 aps_main.c:500	+zb_nlde_data_confirm 5 status 0
+06:23:05.203 1176 aps_main.c:544	packet 5 len 20 confirm state 1, set st 3, still wait for ack
+06:23:05.203 1176 aps_main.c:561	-nlde_data_conf
+06:23:05.203 1176 zb_scheduler.c:105	cb_q written 1, read_i 13, write_i 14
+06:23:05.203 1176 zb_scheduler.c:115	0x4e3508 calling cb 0x4ae17a param 3 in_b 1 len 36
+06:23:05.203 1176 nwk_main.c:983	>>zb_mcps_data_indication param 3
+06:23:05.203 1176 nwk_main.c:987	lqi 0
+06:23:05.203 1176 mac_common.c:79	>>zb_parse_mhr mhr 0xbfb26e74, ptr 0x4e399d
+06:23:05.203 1176 mac_common.c:89	dst addr mode: 2
+06:23:05.203 1176 mac_common.c:108	src addr mode: 2
+06:23:05.203 1176 mac_common.c:173	<< zb_parse_mhr, ret val 9
+06:23:05.203 1176 nwk_main.c:1000	hdr_size 8 radius 5 frame type 0
+06:23:05.203 1176 nwk_main.c:1139	dst addr mac 0 nwk 0, src addr mac 1 nwk 1
+06:23:05.203 1176 nwk_main.c:1144	new radius 4, frame type 0
+06:23:05.203 1176 zb_address.c:595	short_addr 1 l 1 ZG->addr.short_sorted[l] 59 addr 1
+06:23:05.203 1176 zb_address.c:370	zb_address_by_short 1 ret 0 ref 59
+06:23:05.203 1176 nwk_neighbor.c:505	>>zb_nwk_neighbor_get addr_ref 59 cr 0 nbt 0xbfb26e38
+06:23:05.203 1176 nwk_neighbor.c:547	<<zb_nwk_neighbor_get 0
+06:23:05.203 1176 nwk_main.c:1200	update lqi for 1 to 10
+06:23:05.203 1176 zb_scheduler.c:254	0x4e3510 scheduled cb 0x4aef16 param 3 (in_b 1)
+06:23:05.203 1176 nwk_main.c:1245	<<mcps_data_ind
+06:23:05.204 1176 zb_scheduler.c:105	cb_q written 1, read_i 14, write_i 15
+06:23:05.204 1176 zb_scheduler.c:115	0x4e3510 calling cb 0x4aef16 param 3 in_b 1 len 16
+06:23:05.204 1176 nwk_main.c:1292	>> nwk_frame_indication 3
+06:23:05.204 1176 nwk_main.c:1295	frame type 0
+06:23:05.204 1176 zb_scheduler.c:254	0x4e3518 scheduled cb 0x4c1f1c param 3 (in_b 1)
+06:23:05.204 1176 zb_scheduler.c:105	cb_q written 1, read_i 15, write_i 0
+06:23:05.204 1176 zb_scheduler.c:115	0x4e3518 calling cb 0x4c1f1c param 3 in_b 1 len 16
+06:23:05.204 1176 aps_main.c:578	+nlde_data_ind 3
+06:23:05.204 1176 aps_main.c:1034	aps_ack_check_handle addr 65535, src_addr 1
+06:23:05.204 1176 aps_main.c:1037	retrans.hash i 0, clusterid 32768 aps_counter 121 src_endpoint 0 dst_endpoint 0
+06:23:05.204 1176 aps_main.c:1034	aps_ack_check_handle addr 1, src_addr 1
+06:23:05.204 1176 aps_main.c:1037	retrans.hash i 1, clusterid 32769 aps_counter 122 src_endpoint 0 dst_endpoint 0
+06:23:05.204 1176 aps_main.c:1053	found ent 1
+06:23:05.204 1176 aps_main.c:1061	packet 5 acked ok
+06:23:05.204 1176 aps_main.c:1084	finally done with this data pkt i 1
+06:23:05.204 1176 zb_scheduler.c:254	0x4e34a0 scheduled cb 0x4c65c8 param 5 (in_b 1)
+06:23:05.204 1176 zb_scheduler.c:376	0x4e35fc alarm cancel func 0x4c36bc, param 1
+06:23:05.204 1176 zb_scheduler.c:380	tm_queue -> tm_freelist, ent 0x4e35fc
+06:23:05.204 1176 aps_main.c:1070	-aps_ack_frame_handle
+06:23:05.204 1176 zb_bufpool.c:217	zb_free_buf 0x4e3958, ref 3, in buf 19976 allocated in 0 out 1
+06:23:05.204 1176 zb_bufpool.c:246	free_buf: 2/2 buf 0x4e3958, next 0x4e39f4, head 0x4e3958
+06:23:05.204 1176 zb_scheduler.c:105	cb_q written 1, read_i 0, write_i 1
+06:23:05.204 1176 zb_scheduler.c:115	0x4e34a0 calling cb 0x4c65c8 param 5 in_b 1 len 20
+06:23:05.204 1176 zdo_app.c:589	apsde_data_conf: param 5 status 0 dev_annce 0 key_sw 0
+06:23:05.204 1176 zdo_app.c:622	buffer status 0 - call zb_apsde_data_acknowledged
+06:23:05.204 1176 zb_scheduler.c:254	0x4e34a8 scheduled cb 0x4c754a param 5 (in_b 1)
+06:23:05.204 1176 zb_scheduler.c:105	cb_q written 1, read_i 1, write_i 2
+06:23:05.204 1176 zb_scheduler.c:115	0x4e34a8 calling cb 0x4c754a param 5 in_b 1 len 20
+06:23:05.204 1176 af_rx.c:115	>>apsde_data_acked: param 5
+06:23:05.204 1176 zb_bufpool.c:217	zb_free_buf 0x4e3a90, ref 5, in buf 15124 allocated in 0 out 1
+06:23:05.204 1176 zb_bufpool.c:246	free_buf: 1/2 buf 0x4e3a90, next 0x4e3958, head 0x4e3a90
+06:23:05.205 1176 af_rx.c:182	<<apsde_data_acked
+06:23:05.205 1176 zb_mac_transport_linux_pipes.c:477	>>zb_mac_wait_for_ext_event
+06:23:05.205 1176 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:23:05.205 1176 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 0
+06:23:05.205 1176 zb_mac_transport_linux_pipes.c:507	timer started = 1
+06:23:05.205 1176 zb_mac_transport_linux_pipes.c:513	timer stop 1235 timer 1176  tmo 59
+06:23:05.205 1176 zb_mac_transport_linux_pipes.c:529	select() timeout 0.902000
+06:23:06.108 1176 zb_mac_transport_linux_pipes.c:548	delta 909 (59)
+06:23:06.108 1235 zb_mac_transport_linux_pipes.c:569	timer 1235, delta_rest 0
+06:23:06.108 1235 zb_mac_transport_linux_pipes.c:590	timeout
+06:23:06.108 1235 zb_mac_transport_linux_pipes.c:603	<<zb_mac_wait_for_ext_event 0
+06:23:06.108 1235 zb_scheduler.c:145	0x4e362c calling alarm cb 0x4bb40c param 0
+06:23:06.108 1235 nwk_cr_mesh_routing.c:732	>> exp_r_disc
+06:23:06.108 1235 zb_scheduler.c:283	tm_freelist, get nent 0x4e35fc
+06:23:06.108 1235 zb_scheduler.c:294	0x4e35fc scheduled alarm 0x4bb40c, run_after 130, at 1365, param 0
+06:23:06.108 1235 zb_scheduler.c:349	cur t 1235, head t 1240
+06:23:06.108 1235 nwk_cr_mesh_routing.c:780	<< exp_r_disc
+06:23:06.108 1235 zb_mac_transport_linux_pipes.c:477	>>zb_mac_wait_for_ext_event
+06:23:06.108 1235 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:23:06.108 1235 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 0
+06:23:06.108 1235 zb_mac_transport_linux_pipes.c:507	timer started = 1
+06:23:06.108 1235 zb_mac_transport_linux_pipes.c:524	default timeout 1
+06:23:06.108 1235 zb_mac_transport_linux_pipes.c:529	select() timeout 1.0
+06:23:07.111 1235 zb_mac_transport_linux_pipes.c:548	delta 1002 (65)
+06:23:07.111 1300 zb_mac_transport_linux_pipes.c:569	timer 1300, delta_rest 0
+06:23:07.111 1300 zb_mac_transport_linux_pipes.c:590	timeout
+06:23:07.111 1300 zb_mac_transport_linux_pipes.c:603	<<zb_mac_wait_for_ext_event 0
+06:23:07.111 1300 zb_scheduler.c:145	0x4e360c calling alarm cb 0x4c4262 param 0
+06:23:07.111 1300 zb_scheduler.c:283	tm_freelist, get nent 0x4e362c
+06:23:07.112 1300 zb_scheduler.c:294	0x4e362c scheduled alarm 0x4c4262, run_after 65, at 1365, param 0
+06:23:07.112 1300 zb_scheduler.c:349	cur t 1300, head t 1240
+06:23:07.112 1300 zb_scheduler.c:145	0x4e361c calling alarm cb 0x4af4b1 param 0
+06:23:07.112 1300 nwk_main.c:1406	>>nwk_btr_expiry 0
+06:23:07.112 1300 nwk_main.c:1412	btt cnt 1
+06:23:07.112 1300 zb_scheduler.c:283	tm_freelist, get nent 0x4e360c
+06:23:07.112 1300 zb_scheduler.c:294	0x4e360c scheduled alarm 0x4af4b1, run_after 65, at 1365, param 0
+06:23:07.112 1300 zb_scheduler.c:349	cur t 1300, head t 1300
+06:23:07.112 1300 nwk_main.c:1436	<<nwk_btr_expiry
+06:23:07.112 1300 zb_scheduler.c:145	0x4e364c calling alarm cb 0x4bb74d param 0
+06:23:07.112 1300 nwk_cr_mesh_routing.c:787	>> exp_pend
+06:23:07.112 1300 zb_scheduler.c:283	tm_freelist, get nent 0x4e361c
+06:23:07.112 1300 zb_scheduler.c:294	0x4e361c scheduled alarm 0x4bb74d, run_after 325, at 1625, param 0
+06:23:07.112 1300 zb_scheduler.c:349	cur t 1300, head t 1365
+06:23:07.112 1300 nwk_cr_mesh_routing.c:816	<< exp_pend
+06:23:07.112 1300 zb_mac_transport_linux_pipes.c:477	>>zb_mac_wait_for_ext_event
+06:23:07.112 1300 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:23:07.112 1300 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 0
+06:23:07.113 1300 zb_mac_transport_linux_pipes.c:507	timer started = 1
+06:23:07.113 1300 zb_mac_transport_linux_pipes.c:513	timer stop 1365 timer 1300  tmo 65
+06:23:07.113 1300 zb_mac_transport_linux_pipes.c:529	select() timeout 0.994000
+06:23:08.109 1300 zb_mac_transport_linux_pipes.c:548	delta 999 (65)
+06:23:08.109 1365 zb_mac_transport_linux_pipes.c:569	timer 1365, delta_rest 0
+06:23:08.109 1365 zb_mac_transport_linux_pipes.c:590	timeout
+06:23:08.109 1365 zb_mac_transport_linux_pipes.c:603	<<zb_mac_wait_for_ext_event 0
+06:23:08.109 1365 zb_scheduler.c:145	0x4e35fc calling alarm cb 0x4bb40c param 0
+06:23:08.109 1365 nwk_cr_mesh_routing.c:732	>> exp_r_disc
+06:23:08.109 1365 zb_scheduler.c:283	tm_freelist, get nent 0x4e364c
+06:23:08.110 1365 zb_scheduler.c:294	0x4e364c scheduled alarm 0x4bb40c, run_after 130, at 1495, param 0
+06:23:08.110 1365 zb_scheduler.c:349	cur t 1365, head t 1365
+06:23:08.110 1365 nwk_cr_mesh_routing.c:780	<< exp_r_disc
+06:23:08.110 1365 zb_scheduler.c:145	0x4e362c calling alarm cb 0x4c4262 param 0
+06:23:08.110 1365 zb_scheduler.c:145	0x4e360c calling alarm cb 0x4af4b1 param 0
+06:23:08.110 1365 nwk_main.c:1406	>>nwk_btr_expiry 0
+06:23:08.110 1365 nwk_main.c:1412	btt cnt 1
+06:23:08.110 1365 zb_scheduler.c:283	tm_freelist, get nent 0x4e362c
+06:23:08.110 1365 zb_scheduler.c:294	0x4e362c scheduled alarm 0x4af4b1, run_after 65, at 1430, param 0
+06:23:08.110 1365 zb_scheduler.c:349	cur t 1365, head t 1430
+06:23:08.110 1365 nwk_main.c:1436	<<nwk_btr_expiry
+06:23:08.110 1365 zb_mac_transport_linux_pipes.c:477	>>zb_mac_wait_for_ext_event
+06:23:08.110 1365 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:23:08.110 1365 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 0
+06:23:08.110 1365 zb_mac_transport_linux_pipes.c:507	timer started = 1
+06:23:08.110 1365 zb_mac_transport_linux_pipes.c:524	default timeout 1
+06:23:08.110 1365 zb_mac_transport_linux_pipes.c:529	select() timeout 1.0
+06:23:09.111 1365 zb_mac_transport_linux_pipes.c:548	delta 1002 (65)
+06:23:09.111 1430 zb_mac_transport_linux_pipes.c:569	timer 1430, delta_rest 0
+06:23:09.111 1430 zb_mac_transport_linux_pipes.c:590	timeout
+06:23:09.111 1430 zb_mac_transport_linux_pipes.c:603	<<zb_mac_wait_for_ext_event 0
+06:23:09.112 1430 zb_scheduler.c:145	0x4e362c calling alarm cb 0x4af4b1 param 0
+06:23:09.112 1430 nwk_main.c:1406	>>nwk_btr_expiry 0
+06:23:09.112 1430 nwk_main.c:1412	btt cnt 1
+06:23:09.112 1430 zb_scheduler.c:283	tm_freelist, get nent 0x4e360c
+06:23:09.112 1430 zb_scheduler.c:294	0x4e360c scheduled alarm 0x4af4b1, run_after 65, at 1495, param 0
+06:23:09.112 1430 zb_scheduler.c:349	cur t 1430, head t 1495
+06:23:09.112 1430 nwk_main.c:1436	<<nwk_btr_expiry
+06:23:09.112 1430 zb_mac_transport_linux_pipes.c:477	>>zb_mac_wait_for_ext_event
+06:23:09.112 1430 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:23:09.112 1430 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 0
+06:23:09.112 1430 zb_mac_transport_linux_pipes.c:507	timer started = 1
+06:23:09.112 1430 zb_mac_transport_linux_pipes.c:513	timer stop 1495 timer 1430  tmo 65
+06:23:09.112 1430 zb_mac_transport_linux_pipes.c:529	select() timeout 0.994000
+06:23:10.108 1430 zb_mac_transport_linux_pipes.c:548	delta 997 (65)
+06:23:10.108 1495 zb_mac_transport_linux_pipes.c:569	timer 1495, delta_rest 0
+06:23:10.108 1495 zb_mac_transport_linux_pipes.c:590	timeout
+06:23:10.108 1495 zb_mac_transport_linux_pipes.c:603	<<zb_mac_wait_for_ext_event 0
+06:23:10.108 1495 zb_scheduler.c:145	0x4e360c calling alarm cb 0x4af4b1 param 0
+06:23:10.108 1495 nwk_main.c:1406	>>nwk_btr_expiry 0
+06:23:10.108 1495 nwk_main.c:1412	btt cnt 1
+06:23:10.108 1495 zb_scheduler.c:283	tm_freelist, get nent 0x4e362c
+06:23:10.108 1495 zb_scheduler.c:294	0x4e362c scheduled alarm 0x4af4b1, run_after 65, at 1560, param 0
+06:23:10.108 1495 zb_scheduler.c:349	cur t 1495, head t 1495
+06:23:10.108 1495 nwk_main.c:1436	<<nwk_btr_expiry
+06:23:10.108 1495 zb_scheduler.c:145	0x4e364c calling alarm cb 0x4bb40c param 0
+06:23:10.108 1495 nwk_cr_mesh_routing.c:732	>> exp_r_disc
+06:23:10.108 1495 zb_scheduler.c:283	tm_freelist, get nent 0x4e360c
+06:23:10.108 1495 zb_scheduler.c:294	0x4e360c scheduled alarm 0x4bb40c, run_after 130, at 1625, param 0
+06:23:10.108 1495 zb_scheduler.c:349	cur t 1495, head t 1560
+06:23:10.108 1495 nwk_cr_mesh_routing.c:780	<< exp_r_disc
+06:23:10.108 1495 zb_mac_transport_linux_pipes.c:477	>>zb_mac_wait_for_ext_event
+06:23:10.108 1495 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:23:10.108 1495 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 0
+06:23:10.108 1495 zb_mac_transport_linux_pipes.c:507	timer started = 1
+06:23:10.108 1495 zb_mac_transport_linux_pipes.c:524	default timeout 1
+06:23:10.108 1495 zb_mac_transport_linux_pipes.c:529	select() timeout 1.0
+06:23:11.110 1495 zb_mac_transport_linux_pipes.c:548	delta 1002 (65)
+06:23:11.110 1560 zb_mac_transport_linux_pipes.c:569	timer 1560, delta_rest 0
+06:23:11.110 1560 zb_mac_transport_linux_pipes.c:590	timeout
+06:23:11.110 1560 zb_mac_transport_linux_pipes.c:603	<<zb_mac_wait_for_ext_event 0
+06:23:11.110 1560 zb_scheduler.c:145	0x4e362c calling alarm cb 0x4af4b1 param 0
+06:23:11.110 1560 nwk_main.c:1406	>>nwk_btr_expiry 0
+06:23:11.110 1560 nwk_main.c:1412	btt cnt 1
+06:23:11.110 1560 zb_scheduler.c:283	tm_freelist, get nent 0x4e364c
+06:23:11.110 1560 zb_scheduler.c:294	0x4e364c scheduled alarm 0x4af4b1, run_after 65, at 1625, param 0
+06:23:11.110 1560 zb_scheduler.c:349	cur t 1560, head t 1625
+06:23:11.110 1560 nwk_main.c:1436	<<nwk_btr_expiry
+06:23:11.110 1560 zb_mac_transport_linux_pipes.c:477	>>zb_mac_wait_for_ext_event
+06:23:11.111 1560 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:23:11.111 1560 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 0
+06:23:11.111 1560 zb_mac_transport_linux_pipes.c:507	timer started = 1
+06:23:11.111 1560 zb_mac_transport_linux_pipes.c:513	timer stop 1625 timer 1560  tmo 65
+06:23:11.111 1560 zb_mac_transport_linux_pipes.c:529	select() timeout 0.994000
+06:23:12.106 1560 zb_mac_transport_linux_pipes.c:548	delta 997 (65)
+06:23:12.106 1625 zb_mac_transport_linux_pipes.c:569	timer 1625, delta_rest 0
+06:23:12.106 1625 zb_mac_transport_linux_pipes.c:590	timeout
+06:23:12.106 1625 zb_mac_transport_linux_pipes.c:603	<<zb_mac_wait_for_ext_event 0
+06:23:12.106 1625 zb_scheduler.c:145	0x4e364c calling alarm cb 0x4af4b1 param 0
+06:23:12.106 1625 nwk_main.c:1406	>>nwk_btr_expiry 0
+06:23:12.106 1625 nwk_main.c:1412	btt cnt 1
+06:23:12.106 1625 zb_scheduler.c:283	tm_freelist, get nent 0x4e362c
+06:23:12.106 1625 zb_scheduler.c:294	0x4e362c scheduled alarm 0x4af4b1, run_after 65, at 1690, param 0
+06:23:12.106 1625 zb_scheduler.c:349	cur t 1625, head t 1625
+06:23:12.106 1625 nwk_main.c:1436	<<nwk_btr_expiry
+06:23:12.106 1625 zb_scheduler.c:145	0x4e361c calling alarm cb 0x4bb74d param 0
+06:23:12.107 1625 nwk_cr_mesh_routing.c:787	>> exp_pend
+06:23:12.107 1625 zb_scheduler.c:283	tm_freelist, get nent 0x4e364c
+06:23:12.107 1625 zb_scheduler.c:294	0x4e364c scheduled alarm 0x4bb74d, run_after 325, at 1950, param 0
+06:23:12.107 1625 zb_scheduler.c:349	cur t 1625, head t 1625
+06:23:12.107 1625 nwk_cr_mesh_routing.c:816	<< exp_pend
+06:23:12.107 1625 zb_scheduler.c:145	0x4e360c calling alarm cb 0x4bb40c param 0
+06:23:12.107 1625 nwk_cr_mesh_routing.c:732	>> exp_r_disc
+06:23:12.107 1625 zb_scheduler.c:283	tm_freelist, get nent 0x4e361c
+06:23:12.107 1625 zb_scheduler.c:294	0x4e361c scheduled alarm 0x4bb40c, run_after 130, at 1755, param 0
+06:23:12.107 1625 zb_scheduler.c:349	cur t 1625, head t 1690
+06:23:12.107 1625 nwk_cr_mesh_routing.c:780	<< exp_r_disc
+06:23:12.107 1625 zb_mac_transport_linux_pipes.c:477	>>zb_mac_wait_for_ext_event
+06:23:12.107 1625 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:23:12.107 1625 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 0
+06:23:12.107 1625 zb_mac_transport_linux_pipes.c:507	timer started = 1
+06:23:12.107 1625 zb_mac_transport_linux_pipes.c:524	default timeout 1
+06:23:12.107 1625 zb_mac_transport_linux_pipes.c:529	select() timeout 1.0
+06:23:13.109 1625 zb_mac_transport_linux_pipes.c:548	delta 1002 (65)
+06:23:13.109 1690 zb_mac_transport_linux_pipes.c:569	timer 1690, delta_rest 0
+06:23:13.109 1690 zb_mac_transport_linux_pipes.c:590	timeout
+06:23:13.109 1690 zb_mac_transport_linux_pipes.c:603	<<zb_mac_wait_for_ext_event 0
+06:23:13.109 1690 zb_scheduler.c:145	0x4e362c calling alarm cb 0x4af4b1 param 0
+06:23:13.109 1690 nwk_main.c:1406	>>nwk_btr_expiry 0
+06:23:13.109 1690 nwk_main.c:1412	btt cnt 1
+06:23:13.109 1690 zb_scheduler.c:283	tm_freelist, get nent 0x4e360c
+06:23:13.109 1690 zb_scheduler.c:294	0x4e360c scheduled alarm 0x4af4b1, run_after 65, at 1755, param 0
+06:23:13.109 1690 zb_scheduler.c:349	cur t 1690, head t 1755
+06:23:13.109 1690 nwk_main.c:1436	<<nwk_btr_expiry
+06:23:13.109 1690 zb_mac_transport_linux_pipes.c:477	>>zb_mac_wait_for_ext_event
+06:23:13.109 1690 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:23:13.109 1690 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 0
+06:23:13.109 1690 zb_mac_transport_linux_pipes.c:507	timer started = 1
+06:23:13.109 1690 zb_mac_transport_linux_pipes.c:513	timer stop 1755 timer 1690  tmo 65
+06:23:13.109 1690 zb_mac_transport_linux_pipes.c:529	select() timeout 0.994000
+06:23:14.108 1690 zb_mac_transport_linux_pipes.c:548	delta 999 (65)
+06:23:14.108 1755 zb_mac_transport_linux_pipes.c:569	timer 1755, delta_rest 0
+06:23:14.108 1755 zb_mac_transport_linux_pipes.c:590	timeout
+06:23:14.108 1755 zb_mac_transport_linux_pipes.c:603	<<zb_mac_wait_for_ext_event 0
+06:23:14.108 1755 zb_scheduler.c:145	0x4e360c calling alarm cb 0x4af4b1 param 0
+06:23:14.108 1755 nwk_main.c:1406	>>nwk_btr_expiry 0
+06:23:14.108 1755 nwk_main.c:1412	btt cnt 1
+06:23:14.108 1755 zb_scheduler.c:283	tm_freelist, get nent 0x4e362c
+06:23:14.108 1755 zb_scheduler.c:294	0x4e362c scheduled alarm 0x4af4b1, run_after 65, at 1820, param 0
+06:23:14.108 1755 zb_scheduler.c:349	cur t 1755, head t 1755
+06:23:14.108 1755 nwk_main.c:1436	<<nwk_btr_expiry
+06:23:14.108 1755 zb_scheduler.c:145	0x4e361c calling alarm cb 0x4bb40c param 0
+06:23:14.108 1755 nwk_cr_mesh_routing.c:732	>> exp_r_disc
+06:23:14.108 1755 zb_scheduler.c:283	tm_freelist, get nent 0x4e360c
+06:23:14.108 1755 zb_scheduler.c:294	0x4e360c scheduled alarm 0x4bb40c, run_after 130, at 1885, param 0
+06:23:14.108 1755 zb_scheduler.c:349	cur t 1755, head t 1820
+06:23:14.108 1755 nwk_cr_mesh_routing.c:780	<< exp_r_disc
+06:23:14.108 1755 zb_mac_transport_linux_pipes.c:477	>>zb_mac_wait_for_ext_event
+06:23:14.108 1755 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:23:14.108 1755 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 0
+06:23:14.108 1755 zb_mac_transport_linux_pipes.c:507	timer started = 1
+06:23:14.108 1755 zb_mac_transport_linux_pipes.c:524	default timeout 1
+06:23:14.108 1755 zb_mac_transport_linux_pipes.c:529	select() timeout 1.0
+06:23:15.110 1755 zb_mac_transport_linux_pipes.c:548	delta 1002 (65)
+06:23:15.110 1820 zb_mac_transport_linux_pipes.c:569	timer 1820, delta_rest 0
+06:23:15.110 1820 zb_mac_transport_linux_pipes.c:590	timeout
+06:23:15.110 1820 zb_mac_transport_linux_pipes.c:603	<<zb_mac_wait_for_ext_event 0
+06:23:15.110 1820 zb_scheduler.c:145	0x4e362c calling alarm cb 0x4af4b1 param 0
+06:23:15.111 1820 nwk_main.c:1406	>>nwk_btr_expiry 0
+06:23:15.111 1820 nwk_main.c:1412	btt cnt 1
+06:23:15.111 1820 zb_scheduler.c:283	tm_freelist, get nent 0x4e361c
+06:23:15.111 1820 zb_scheduler.c:294	0x4e361c scheduled alarm 0x4af4b1, run_after 65, at 1885, param 0
+06:23:15.111 1820 zb_scheduler.c:349	cur t 1820, head t 1885
+06:23:15.111 1820 nwk_main.c:1436	<<nwk_btr_expiry
+06:23:15.111 1820 zb_mac_transport_linux_pipes.c:477	>>zb_mac_wait_for_ext_event
+06:23:15.111 1820 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:23:15.111 1820 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 0
+06:23:15.111 1820 zb_mac_transport_linux_pipes.c:507	timer started = 1
+06:23:15.111 1820 zb_mac_transport_linux_pipes.c:513	timer stop 1885 timer 1820  tmo 65
+06:23:15.111 1820 zb_mac_transport_linux_pipes.c:529	select() timeout 0.994000
+06:23:16.107 1820 zb_mac_transport_linux_pipes.c:548	delta 997 (65)
+06:23:16.107 1885 zb_mac_transport_linux_pipes.c:569	timer 1885, delta_rest 0
+06:23:16.107 1885 zb_mac_transport_linux_pipes.c:590	timeout
+06:23:16.107 1885 zb_mac_transport_linux_pipes.c:603	<<zb_mac_wait_for_ext_event 0
+06:23:16.107 1885 zb_scheduler.c:145	0x4e361c calling alarm cb 0x4af4b1 param 0
+06:23:16.107 1885 nwk_main.c:1406	>>nwk_btr_expiry 0
+06:23:16.107 1885 nwk_main.c:1436	<<nwk_btr_expiry
+06:23:16.107 1885 zb_scheduler.c:145	0x4e360c calling alarm cb 0x4bb40c param 0
+06:23:16.107 1885 nwk_cr_mesh_routing.c:732	>> exp_r_disc
+06:23:16.107 1885 zb_scheduler.c:283	tm_freelist, get nent 0x4e361c
+06:23:16.107 1885 zb_scheduler.c:294	0x4e361c scheduled alarm 0x4bb40c, run_after 130, at 2015, param 0
+06:23:16.107 1885 zb_scheduler.c:349	cur t 1885, head t 1950
+06:23:16.108 1885 nwk_cr_mesh_routing.c:780	<< exp_r_disc
+06:23:16.108 1885 zb_mac_transport_linux_pipes.c:477	>>zb_mac_wait_for_ext_event
+06:23:16.108 1885 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:23:16.108 1885 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 0
+06:23:16.108 1885 zb_mac_transport_linux_pipes.c:507	timer started = 1
+06:23:16.108 1885 zb_mac_transport_linux_pipes.c:524	default timeout 1
+06:23:16.108 1885 zb_mac_transport_linux_pipes.c:529	select() timeout 1.0
+06:23:17.109 1885 zb_mac_transport_linux_pipes.c:548	delta 1002 (65)
+06:23:17.109 1950 zb_mac_transport_linux_pipes.c:569	timer 1950, delta_rest 0
+06:23:17.109 1950 zb_mac_transport_linux_pipes.c:590	timeout
+06:23:17.109 1950 zb_mac_transport_linux_pipes.c:603	<<zb_mac_wait_for_ext_event 0
+06:23:17.109 1950 zb_scheduler.c:145	0x4e364c calling alarm cb 0x4bb74d param 0
+06:23:17.109 1950 nwk_cr_mesh_routing.c:787	>> exp_pend
+06:23:17.109 1950 zb_scheduler.c:283	tm_freelist, get nent 0x4e360c
+06:23:17.109 1950 zb_scheduler.c:294	0x4e360c scheduled alarm 0x4bb74d, run_after 325, at 2275, param 0
+06:23:17.110 1950 zb_scheduler.c:349	cur t 1950, head t 2015
+06:23:17.110 1950 nwk_cr_mesh_routing.c:816	<< exp_pend
+06:23:17.110 1950 zb_mac_transport_linux_pipes.c:477	>>zb_mac_wait_for_ext_event
+06:23:17.110 1950 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:23:17.110 1950 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 0
+06:23:17.110 1950 zb_mac_transport_linux_pipes.c:507	timer started = 1
+06:23:17.110 1950 zb_mac_transport_linux_pipes.c:513	timer stop 2015 timer 1950  tmo 65
+06:23:17.110 1950 zb_mac_transport_linux_pipes.c:529	select() timeout 0.994000
+06:23:18.105 1950 zb_mac_transport_linux_pipes.c:548	delta 996 (65)
+06:23:18.105 2015 zb_mac_transport_linux_pipes.c:569	timer 2015, delta_rest 0
+06:23:18.105 2015 zb_mac_transport_linux_pipes.c:590	timeout
+06:23:18.105 2015 zb_mac_transport_linux_pipes.c:603	<<zb_mac_wait_for_ext_event 0
+06:23:18.105 2015 zb_scheduler.c:145	0x4e361c calling alarm cb 0x4bb40c param 0
+06:23:18.105 2015 nwk_cr_mesh_routing.c:732	>> exp_r_disc
+06:23:18.105 2015 zb_scheduler.c:283	tm_freelist, get nent 0x4e364c
+06:23:18.105 2015 zb_scheduler.c:294	0x4e364c scheduled alarm 0x4bb40c, run_after 130, at 2145, param 0
+06:23:18.105 2015 zb_scheduler.c:349	cur t 2015, head t 2145
+06:23:18.105 2015 nwk_cr_mesh_routing.c:780	<< exp_r_disc
+06:23:18.106 2015 zb_mac_transport_linux_pipes.c:477	>>zb_mac_wait_for_ext_event
+06:23:18.106 2015 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:23:18.106 2015 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 0
+06:23:18.106 2015 zb_mac_transport_linux_pipes.c:507	timer started = 1
+06:23:18.106 2015 zb_mac_transport_linux_pipes.c:524	default timeout 1
+06:23:18.106 2015 zb_mac_transport_linux_pipes.c:529	select() timeout 1.0
+06:23:19.109 2015 zb_mac_transport_linux_pipes.c:548	delta 1003 (65)
+06:23:19.109 2080 zb_mac_transport_linux_pipes.c:569	timer 2080, delta_rest 0
+06:23:19.109 2080 zb_mac_transport_linux_pipes.c:590	timeout
+06:23:19.109 2080 zb_mac_transport_linux_pipes.c:603	<<zb_mac_wait_for_ext_event 0
+06:23:19.109 2080 zb_mac_transport_linux_pipes.c:477	>>zb_mac_wait_for_ext_event
+06:23:19.109 2080 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:23:19.109 2080 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 0
+06:23:19.110 2080 zb_mac_transport_linux_pipes.c:507	timer started = 1
+06:23:19.110 2080 zb_mac_transport_linux_pipes.c:513	timer stop 2145 timer 2080  tmo 65
+06:23:19.110 2080 zb_mac_transport_linux_pipes.c:529	select() timeout 0.994000
+06:23:20.106 2080 zb_mac_transport_linux_pipes.c:548	delta 997 (65)
+06:23:20.106 2145 zb_mac_transport_linux_pipes.c:569	timer 2145, delta_rest 0
+06:23:20.106 2145 zb_mac_transport_linux_pipes.c:590	timeout
+06:23:20.106 2145 zb_mac_transport_linux_pipes.c:603	<<zb_mac_wait_for_ext_event 0
+06:23:20.106 2145 zb_scheduler.c:145	0x4e364c calling alarm cb 0x4bb40c param 0
+06:23:20.106 2145 nwk_cr_mesh_routing.c:732	>> exp_r_disc
+06:23:20.106 2145 zb_scheduler.c:283	tm_freelist, get nent 0x4e361c
+06:23:20.106 2145 zb_scheduler.c:294	0x4e361c scheduled alarm 0x4bb40c, run_after 130, at 2275, param 0
+06:23:20.106 2145 zb_scheduler.c:349	cur t 2145, head t 2275
+06:23:20.106 2145 nwk_cr_mesh_routing.c:780	<< exp_r_disc
+06:23:20.106 2145 zb_mac_transport_linux_pipes.c:477	>>zb_mac_wait_for_ext_event
+06:23:20.106 2145 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:23:20.106 2145 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 0
+06:23:20.107 2145 zb_mac_transport_linux_pipes.c:507	timer started = 1
+06:23:20.107 2145 zb_mac_transport_linux_pipes.c:524	default timeout 1
+06:23:20.107 2145 zb_mac_transport_linux_pipes.c:529	select() timeout 1.0
+06:23:21.108 2145 zb_mac_transport_linux_pipes.c:548	delta 1002 (65)
+06:23:21.108 2210 zb_mac_transport_linux_pipes.c:569	timer 2210, delta_rest 0
+06:23:21.108 2210 zb_mac_transport_linux_pipes.c:590	timeout
+06:23:21.108 2210 zb_mac_transport_linux_pipes.c:603	<<zb_mac_wait_for_ext_event 0
+06:23:21.108 2210 zb_mac_transport_linux_pipes.c:477	>>zb_mac_wait_for_ext_event
+06:23:21.108 2210 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:23:21.108 2210 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 0
+06:23:21.108 2210 zb_mac_transport_linux_pipes.c:507	timer started = 1
+06:23:21.108 2210 zb_mac_transport_linux_pipes.c:513	timer stop 2275 timer 2210  tmo 65
+06:23:21.108 2210 zb_mac_transport_linux_pipes.c:529	select() timeout 0.994000
+06:23:22.103 2210 zb_mac_transport_linux_pipes.c:548	delta 996 (65)
+06:23:22.104 2275 zb_mac_transport_linux_pipes.c:569	timer 2275, delta_rest 0
+06:23:22.104 2275 zb_mac_transport_linux_pipes.c:590	timeout
+06:23:22.104 2275 zb_mac_transport_linux_pipes.c:603	<<zb_mac_wait_for_ext_event 0
+06:23:22.104 2275 zb_scheduler.c:145	0x4e361c calling alarm cb 0x4bb40c param 0
+06:23:22.104 2275 nwk_cr_mesh_routing.c:732	>> exp_r_disc
+06:23:22.104 2275 zb_scheduler.c:283	tm_freelist, get nent 0x4e364c
+06:23:22.104 2275 zb_scheduler.c:294	0x4e364c scheduled alarm 0x4bb40c, run_after 130, at 2405, param 0
+06:23:22.104 2275 zb_scheduler.c:349	cur t 2275, head t 2275
+06:23:22.104 2275 nwk_cr_mesh_routing.c:780	<< exp_r_disc
+06:23:22.104 2275 zb_scheduler.c:145	0x4e360c calling alarm cb 0x4bb74d param 0
+06:23:22.104 2275 nwk_cr_mesh_routing.c:787	>> exp_pend
+06:23:22.104 2275 zb_scheduler.c:283	tm_freelist, get nent 0x4e361c
+06:23:22.104 2275 zb_scheduler.c:294	0x4e361c scheduled alarm 0x4bb74d, run_after 325, at 2600, param 0
+06:23:22.104 2275 zb_scheduler.c:349	cur t 2275, head t 2405
+06:23:22.104 2275 nwk_cr_mesh_routing.c:816	<< exp_pend
+06:23:22.104 2275 zb_mac_transport_linux_pipes.c:477	>>zb_mac_wait_for_ext_event
+06:23:22.104 2275 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:23:22.104 2275 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 0
+06:23:22.104 2275 zb_mac_transport_linux_pipes.c:507	timer started = 1
+06:23:22.104 2275 zb_mac_transport_linux_pipes.c:524	default timeout 1
+06:23:22.104 2275 zb_mac_transport_linux_pipes.c:529	select() timeout 1.0
+06:23:23.107 2275 zb_mac_transport_linux_pipes.c:548	delta 1003 (65)
+06:23:23.107 2340 zb_mac_transport_linux_pipes.c:569	timer 2340, delta_rest 0
+06:23:23.107 2340 zb_mac_transport_linux_pipes.c:590	timeout
+06:23:23.107 2340 zb_mac_transport_linux_pipes.c:603	<<zb_mac_wait_for_ext_event 0
+06:23:23.107 2340 zb_mac_transport_linux_pipes.c:477	>>zb_mac_wait_for_ext_event
+06:23:23.108 2340 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:23:23.108 2340 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 0
+06:23:23.108 2340 zb_mac_transport_linux_pipes.c:507	timer started = 1
+06:23:23.108 2340 zb_mac_transport_linux_pipes.c:513	timer stop 2405 timer 2340  tmo 65
+06:23:23.108 2340 zb_mac_transport_linux_pipes.c:529	select() timeout 0.994000
+06:23:24.105 2340 zb_mac_transport_linux_pipes.c:548	delta 998 (65)
+06:23:24.105 2405 zb_mac_transport_linux_pipes.c:569	timer 2405, delta_rest 0
+06:23:24.105 2405 zb_mac_transport_linux_pipes.c:590	timeout
+06:23:24.105 2405 zb_mac_transport_linux_pipes.c:603	<<zb_mac_wait_for_ext_event 0
+06:23:24.105 2405 zb_scheduler.c:145	0x4e364c calling alarm cb 0x4bb40c param 0
+06:23:24.105 2405 nwk_cr_mesh_routing.c:732	>> exp_r_disc
+06:23:24.105 2405 zb_scheduler.c:283	tm_freelist, get nent 0x4e360c
+06:23:24.105 2405 zb_scheduler.c:294	0x4e360c scheduled alarm 0x4bb40c, run_after 130, at 2535, param 0
+06:23:24.105 2405 zb_scheduler.c:349	cur t 2405, head t 2535
+06:23:24.105 2405 nwk_cr_mesh_routing.c:780	<< exp_r_disc
+06:23:24.105 2405 zb_mac_transport_linux_pipes.c:477	>>zb_mac_wait_for_ext_event
+06:23:24.105 2405 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+06:23:24.105 2405 zb_mac_transport_linux_pipes.c:458	<<write_to_pipe 0
+06:23:24.105 2405 zb_mac_transport_linux_pipes.c:507	timer started = 1
+06:23:24.105 2405 zb_mac_transport_linux_pipes.c:524	default timeout 1
+06:23:24.105 2405 zb_mac_transport_linux_pipes.c:529	select() timeout 1.0

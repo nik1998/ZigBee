@@ -147,11 +147,9 @@ void zb_get_sh(zb_uint8_t param)
    resp=( zb_zdo_nwk_addr_resp_head_t*)ZB_BUF_BEGIN(buf);
    TRACE_MSG(TRACE_ZDO2,"bbbbbbb %hd %d",(FMT__H_D , resp->status,resp->nwk_addr));
 }
-
-static void zc_send_data(zb_uint8_t param)
+void zd_nwk(zb_uint8_t param)
 {
-
-    zb_buf_t *buf =zb_get_out_buf();// ZB_BUF_FROM_REF(param);
+   zb_buf_t *buf =zb_get_out_buf();// ZB_BUF_FROM_REF(param);
     param=ZB_REF_FROM_BUF(buf);
     zb_zdo_nwk_addr_req_param_t *req_param=ZB_GET_BUF_PARAM(buf,zb_zdo_nwk_addr_req_param_t);
     req_param->dst_addr=0x0000;
@@ -159,8 +157,35 @@ static void zc_send_data(zb_uint8_t param)
     req_param->request_type=ZB_ZDO_SINGLE_DEVICE_RESP;
     req_param->start_index=0;
     zb_zdo_nwk_addr_req(param,zb_get_sh);
-    TRACE_MSG(TRACE_APS1, "Recall fuction", (FMT__0)); 
-    ZB_SCHEDULE_ALARM(zc_send_data,0,5*ZB_TIME_ONE_SECOND);
+}
+void ieee_addr(zb_uint8_t param)
+{
+  zb_buf_t *buf = ZB_BUF_FROM_REF(param);
+  zb_zdo_nwk_addr_resp_head_t * resp;
+  //zb_ieee_addr_t ieee_addr;
+ // zb_uint16_t nwk_addr;
+  //zb_address_ieee_ref_t addr_ref;
+  resp=(zb_zdo_nwk_addr_resp_head_t *)ZB_BUF_BEGIN(buf);
+  TRACE_MSG(TRACE_ZDO2,"ieee_address %d",(FMT__D,resp->ieee_addr));
+  zb_free_buf(buf);
+}
+void zd_ieee_addr(zb_uint8_t param)
+{
+    zb_zdo_ieee_addr_req_t *req = NULL;
+    zb_buf_t *buf =zb_get_out_buf();// ZB_BUF_FROM_REF(param);
+    param=ZB_REF_FROM_BUF(buf);
+    ZB_BUF_INITIAL_ALLOC(buf, sizeof(zb_zdo_ieee_addr_req_t),req);
+    req->nwk_addr=0x0000;
+    req->request_type=ZB_ZDO_SINGLE_DEV_RESPONSE;
+    req->start_index=0;
+    zb_zdo_ieee_addr_req(param,ieee_addr);
+}
+static void zc_send_data(zb_uint8_t param)
+{
+   zd_nwk(param);
+   zd_ieee_addr(param);
+   /* TRACE_MSG(TRACE_APS1, "Recall fuction", (FMT__0)); 
+    ZB_SCHEDULE_ALARM(zc_send_data,0,5*ZB_TIME_ONE_SECOND);*/
 }
 
 void zb_zdo_startup_complete(zb_uint8_t param) ZB_CALLBACK
