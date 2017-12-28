@@ -108,7 +108,7 @@ wait_for_start zr
 
 echo ZR STARTED OK
 
-sleep 20
+sleep 30
 
 if [ -f core ]
 then
