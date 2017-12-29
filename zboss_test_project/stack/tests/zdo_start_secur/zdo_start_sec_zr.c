@@ -62,7 +62,12 @@ PURPOSE:
 #ifndef ZB_SECURITY
 #error Define ZB_SECURITY
 #endif
-
+#define dOn 1
+#define dOff 0
+#define dToggle 2
+#define dLevelSet 3
+#define dLevelDown 5
+#define dLevelUp 4
 
 /*! \addtogroup ZB_TESTS */
 /*! @{ */
@@ -148,7 +153,6 @@ void zb_zdo_startup_complete(zb_uint8_t param) ZB_CALLBACK
 
 
 #ifndef APS_RETRANSMIT_TEST
-zb_uint8_t a[10]={1,0,3,4,5,2,1,2,1,0};
 zb_uint8_t inn=0;
 void sent_data (zb_uint8_t param)
 {
@@ -184,7 +188,7 @@ void  On (zb_uint8_t param)
     zb_uint8_t *ptr = NULL;
    zb_buf_t *buf = ZB_BUF_FROM_REF(param);
    ZB_BUF_INITIAL_ALLOC(buf, ZB_TEST_DATA_SIZE, ptr);
-   ptr[0]=1;
+   ptr[0]=dOn;
    ptr[1]=0;
    sent_data(param);
 }
@@ -193,7 +197,7 @@ void  Off (zb_uint8_t param)
     zb_uint8_t *ptr = NULL;
    zb_buf_t *buf = ZB_BUF_FROM_REF(param);
    ZB_BUF_INITIAL_ALLOC(buf, ZB_TEST_DATA_SIZE, ptr);
-   ptr[0]=0;
+   ptr[0]=dOff;
    ptr[1]=0;
    sent_data(param);
 }
@@ -202,7 +206,7 @@ void  Toggle (zb_uint8_t param)
     zb_uint8_t *ptr = NULL;
    zb_buf_t *buf = ZB_BUF_FROM_REF(param);
    ZB_BUF_INITIAL_ALLOC(buf, ZB_TEST_DATA_SIZE, ptr);
-   ptr[0]=2;
+   ptr[0]=dToggle;
    ptr[1]=0;
    sent_data(param);
 }
@@ -214,7 +218,7 @@ void  LevelSet (zb_uint8_t param)
    zb_uint8_t f=*p; 
    ZB_BUF_INITIAL_ALLOC(buf, ZB_TEST_DATA_SIZE, ptr);
    ptr[1]=f;
-   ptr[0]=3;
+   ptr[0]=dLevelSet;
    sent_data(param);
 }
 void  LevelUp (zb_uint8_t param)
@@ -223,7 +227,7 @@ void  LevelUp (zb_uint8_t param)
    zb_buf_t *buf = ZB_BUF_FROM_REF(param);
    ZB_BUF_INITIAL_ALLOC(buf, ZB_TEST_DATA_SIZE, ptr);
    ptr[1]=0;
-   ptr[0]=4;
+   ptr[0]= dLevelUp ;
    sent_data(param);
 }
 void  LevelDown (zb_uint8_t param)
@@ -232,7 +236,7 @@ void  LevelDown (zb_uint8_t param)
    zb_buf_t *buf = ZB_BUF_FROM_REF(param);
    ZB_BUF_INITIAL_ALLOC(buf, ZB_TEST_DATA_SIZE, ptr);
    ptr[1]=0;
-   ptr[0]=5;
+   ptr[0]= dLevelDown; 
    sent_data(param);
 }
 
@@ -268,54 +272,51 @@ static void zc_send_data(zb_uint8_t param)
       ptr[i] =0 ;
     }
     TRACE_MSG(TRACE_APS3, "Sending apsde_data.request%hd", (FMT__H,inn));  */
-    if(inn<10)
-    {
-       switch(a[inn])
+       switch(inn)
        {
-         case 0:
+         case dOff:
          {
 
            Off(param);
            break;
          }
-         case 1:
+         case dOn:
          {
 
            On(param);
            break;
          }
-         case 2:
+         case dToggle:
          {
  
            Toggle(param);
            break;
          }
-         case 3:
+         case dLevelSet:
          {
            zb_uint8_t *p= ZB_GET_BUF_PARAM(buf,zb_uint8_t);
            *p=70;
            LevelSet(param);
            break;
          }
-         case 4:
+         case dLevelUp:
          {
            LevelUp(param);
            break;
          }
-         case 5:
+         case dLevelDown:
          {
            LevelDown(param);
            break;
          }
          default:break;
-       }
+        }
         inn++;
        TRACE_MSG(TRACE_APS1, "Recall fuction", (FMT__0)); 
 
        ZB_SCHEDULE_ALARM(zc_send_data,0,5*ZB_TIME_ONE_SECOND);
       // ZB_SCHEDULE_CALLBACK(zc_send_data, ZB_REF_FROM_BUF(buf));
 
-    }
       /*TRACE_MSG(TRACE_APS1, "Sending apsde_data.request", (FMT__0)); 
       // zb_apsde_data_request(1);
        ZB_SCHEDULE_CALLBACK(zb_apsde_data_request, ZB_REF_FROM_BUF(buf));*/
