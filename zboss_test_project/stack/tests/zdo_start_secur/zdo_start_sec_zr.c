@@ -1,3 +1,4 @@
+
 /***************************************************************************
 *                      ZBOSS ZigBee Pro 2007 stack                         *
 *                                                                          *
@@ -182,7 +183,7 @@ void zc_respond(zb_uint8_t param)
    {
     TRACE_MSG(TRACE_ZDO2, "ianswer %x %c", (FMT__D_C, (int)ptr[i], ptr[i]));
    }
-
+   zb_free_buf(asdu);
 }
 void checkf(zb_uint8_t param)
 {
@@ -200,10 +201,13 @@ void zb_get_sh(zb_uint8_t param)
   // zb_ieee_addr_t ieee_addr;
    resp=( zb_zdo_nwk_addr_resp_head_t*)ZB_BUF_BEGIN(buf);
    TRACE_MSG(TRACE_ZDO2,"Nwk_addr %hd %d",(FMT__H_D , resp->status,resp->nwk_addr));
+   // zb_free_buf(buf);
+   ZB_SCHEDULE_CALLBACK(zc_ieee_addr,param);
 }
 void zc_nwk(zb_uint8_t param)
 {
-   zb_buf_t *buf =zb_get_out_buf();// ZB_BUF_FROM_REF(param);
+
+    zb_buf_t *buf = ZB_BUF_FROM_REF(param);
     param=ZB_REF_FROM_BUF(buf);
     zb_zdo_nwk_addr_req_param_t *req_param=ZB_GET_BUF_PARAM(buf,zb_zdo_nwk_addr_req_param_t);
     req_param->dst_addr=0x0000;
@@ -211,7 +215,7 @@ void zc_nwk(zb_uint8_t param)
     req_param->request_type=ZB_ZDO_SINGLE_DEVICE_RESP;
     req_param->start_index=0;
     zb_zdo_nwk_addr_req(param,zb_get_sh);
-    ZB_SCHEDULE_ALARM(zc_ieee_addr,param,1*ZB_TIME_ONE_SECOND);
+    //ZB_SCHEDULE_ALARM(zc_ieee_addr,param,1*ZB_TIME_ONE_SECOND);
 }
 void ieee_addr(zb_uint8_t param)
 {
@@ -222,19 +226,20 @@ void ieee_addr(zb_uint8_t param)
   //zb_address_ieee_ref_t addr_ref;
   resp=(zb_zdo_nwk_addr_resp_head_t *)ZB_BUF_BEGIN(buf);
   TRACE_MSG(TRACE_ZDO2,"ieee_address %d",(FMT__D,resp->ieee_addr));
-  zb_free_buf(buf);
+  //zb_free_buf(buf);
+  ZB_SCHEDULE_CALLBACK(zc_power_req,param);
 }
 void zc_ieee_addr(zb_uint8_t param)
 {
     zb_zdo_ieee_addr_req_t *req = NULL;
-    zb_buf_t *buf =zb_get_out_buf();// ZB_BUF_FROM_REF(param);
+    zb_buf_t *buf =ZB_BUF_FROM_REF(param);
     param=ZB_REF_FROM_BUF(buf);
     ZB_BUF_INITIAL_ALLOC(buf, sizeof(zb_zdo_ieee_addr_req_t),req);
     req->nwk_addr=0x0000;
     req->request_type=ZB_ZDO_SINGLE_DEV_RESPONSE;
     req->start_index=0;
     zb_zdo_ieee_addr_req(param,ieee_addr);
-    ZB_SCHEDULE_ALARM(zc_power_req,param,1*ZB_TIME_ONE_SECOND);
+   // ZB_SCHEDULE_ALARM(zc_power_req,param,1*ZB_TIME_ONE_SECOND);
 }
 zb_uint8_t* endpoint;
 void simple_desc(zb_uint8_t param)
@@ -251,8 +256,10 @@ void simple_desc(zb_uint8_t param)
  /* for(zb_uint_t i=0;i<resp->simple_desc.app_input_cluster_count; i++)
   {
     TRACE_MSG(TRACE_APS1, "icluster  %hx", (FMT__H , resp->simple_desc.app_cluster_list[i]));
-  }*/
+  }*/ 
   zb_free_buf(buf);
+  ZB_SCHEDULE_CALLBACK(send_data,param);
+ 
 }
 void zc_simple_req(zb_uint8_t param)
 { 
@@ -262,7 +269,7 @@ void zc_simple_req(zb_uint8_t param)
   req->endpoint =*endpoint;
   req->nwk_addr=0;
   zb_zdo_simple_desc_req(ZB_REF_FROM_BUF(buf),simple_desc);
-  ZB_SCHEDULE_ALARM(send_data,param,1*ZB_TIME_ONE_SECOND);
+ // ZB_SCHEDULE_ALARM(send_data,param,1*ZB_TIME_ONE_SECOND);
 }
 void power_req(zb_uint8_t param)
 {
@@ -273,18 +280,21 @@ void power_req(zb_uint8_t param)
   //zb_address_ieee_ref_t addr_ref
   resp=(zb_zdo_power_desc_resp_t *)ZB_BUF_BEGIN(buf);
   TRACE_MSG(TRACE_ZDO2,"Power_mode %hd",(FMT__H,ZB_GET_POWER_DESC_CUR_POWER_MODE(&resp->power_desc)));
+ // zb_free_buf(buf);
+  ZB_SCHEDULE_CALLBACK(zc_active_ep,param);
+
 }
 void zc_power_req(zb_uint8_t param)
 {
     zb_zdo_power_desc_req_t *req = NULL;
-    zb_buf_t *buf =zb_get_out_buf();// ZB_BUF_FROM_REF(param);
+    zb_buf_t *buf =ZB_BUF_FROM_REF(param);
     param=ZB_REF_FROM_BUF(buf);
     ZB_BUF_INITIAL_ALLOC(buf, sizeof(zb_zdo_active_ep_req_t),req);
     req->nwk_addr=0x0000;
    // req->request_type=ZB_ZDO_SINGLE_DEV_RESPONSE;
    // req->start_index=0;
     zb_zdo_power_desc_req(param,power_req);
-    ZB_SCHEDULE_ALARM(zc_active_ep,param,1*ZB_TIME_ONE_SECOND);
+    //ZB_SCHEDULE_ALARM(zc_active_ep,param,1*ZB_TIME_ONE_SECOND);
 }
 
 void active_ep(zb_uint8_t param)
@@ -297,18 +307,20 @@ void active_ep(zb_uint8_t param)
     resp=(zb_zdo_ep_resp_t *)ZB_BUF_BEGIN(buf);
     endpoint=ZB_BUF_BEGIN(buf)+sizeof(zb_zdo_ep_resp_t);
     TRACE_MSG(TRACE_ZDO2,"Endpoint %hd",(FMT__H,*endpoint));
+   // zb_free_buf(buf);
+    ZB_SCHEDULE_CALLBACK(zc_simple_req,param);
 }
 void zc_active_ep(zb_uint8_t param)
 {
     zb_zdo_active_ep_req_t *req = NULL;
-    zb_buf_t *buf =zb_get_out_buf();// ZB_BUF_FROM_REF(param);
+    zb_buf_t *buf =ZB_BUF_FROM_REF(param);
     param=ZB_REF_FROM_BUF(buf);
     ZB_BUF_INITIAL_ALLOC(buf, sizeof(zb_zdo_active_ep_req_t),req);
     req->nwk_addr=0x0000;
    // req->request_type=ZB_ZDO_SINGLE_DEV_RESPONSE;
    // req->start_index=0;
     zb_zdo_active_ep_req(param,active_ep);
-    ZB_SCHEDULE_ALARM(zc_simple_req,param,1*ZB_TIME_ONE_SECOND);
+    //ZB_SCHEDULE_ALARM(zc_simple_req,param,1*ZB_TIME_ONE_SECOND);
 }
 /*static void zc_send_data(zb_uint8_t param)
 {
@@ -316,7 +328,8 @@ void zc_active_ep(zb_uint8_t param)
     zc_ieee_addr(param);
     zc_active_ep(param);
    // zc_simple_req(param);
-   // zc_power_req(param);
+   // 
+   // c_power_req(param);
     ZB_SCHEDULE_ALARM(zc_simple_req,param,2*ZB_TIME_ONE_SECOND);
     ZB_SCHEDULE_ALARM(zc_power_req,param,4*ZB_TIME_ONE_SECOND);
     TRACE_MSG(TRACE_APS1, "Recall fuction", (FMT__0)); 
