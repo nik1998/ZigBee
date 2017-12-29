@@ -237,7 +237,7 @@ void checkf(zb_uint8_t param)
   zb_buf_t *asdu = (zb_buf_t *)ZB_BUF_FROM_REF(param);
   zb_uint8_t *ptr;
   ZB_APS_HDR_CUT_P(asdu, ptr);
-  TRACE_MSG(TRACE_APS2, "aaaaaaaaaa", (FMT__0));
+ // TRACE_MSG(TRACE_APS2, "aaaaaaaaaa", (FMT__0));
   switch(*ptr)
   {
      case On:
