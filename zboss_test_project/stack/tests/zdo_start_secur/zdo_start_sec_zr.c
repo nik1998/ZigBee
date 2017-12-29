@@ -67,7 +67,7 @@ PURPOSE:
 /*! \addtogroup ZB_TESTS */
 /*! @{ */
 
-static void zc_send_data(zb_uint8_t param);
+void send_data(zb_uint8_t param);
 #ifndef APS_RETRANSMIT_TEST
 void data_indication(zb_uint8_t param) ZB_CALLBACK;
 #endif
@@ -77,6 +77,10 @@ void data_indication(zb_uint8_t param) ZB_CALLBACK;
  */
 void checkf(zb_uint8_t param);
 void zc_respond(zb_uint8_t param);
+void zc_active_ep(zb_uint8_t param);
+void zc_ieee_addr(zb_uint8_t param);
+void zc_power_req(zb_uint8_t param);
+void zc_nwk(zb_uint8_t param);
 
 MAIN()
 {
@@ -130,8 +134,12 @@ MAIN()
   TRACE_DEINIT();
   MAIN_RETURN(0);
 }
-static void send_data(zb_buf_t *buf)
+void send_data(zb_uint8_t param)
 {
+  zb_buf_t *buf =zb_get_out_buf();// ZB_BUF_FROM_REF(param);
+  param=ZB_REF_FROM_BUF(buf);
+
+  //zb_buf_t *buf = ZB_BUF_FROM_REF(param);
   zb_apsde_data_req_t *req;
   zb_uint8_t *ptr = NULL;
   //zb_short_t i;
@@ -156,33 +164,34 @@ static void send_data(zb_buf_t *buf)
   ZB_UPDATE_PAN_ID();
   TRACE_MSG(TRACE_APS2, "Sending apsde_data.request", (FMT__0));
   //ZB_SCHEDULE_CALLBACK(zb_apsde_data_request, ZB_REF_FROM_BUF(buf));
-  ZB_SCHEDULE_ALARM(zb_apsde_data_request,ZB_REF_FROM_BUF(buf),6*ZB_TIME_ONE_SECOND);
+  ZB_SCHEDULE_ALARM(zb_apsde_data_request,param,1*ZB_TIME_ONE_SECOND);
 }
 
 void zc_respond(zb_uint8_t param)
 {
-   TRACE_MSG(TRACE_APS2, "answer", (FMT__0));
+   TRACE_MSG(TRACE_ZDO2, "Answer", (FMT__0));
    zb_ushort_t i;
    zb_uint8_t *ptr;
    zb_buf_t *asdu = (zb_buf_t *)ZB_BUF_FROM_REF(param);
   //Remove APS header from the packet
    ZB_APS_HDR_CUT_P(asdu, ptr);
 
-   TRACE_MSG(TRACE_APS2, "answer packet %p len %d handle 0x%x", (FMT__P_D_D,
+   TRACE_MSG(TRACE_ZDO2, "answer packet %p len %d handle 0x%x", (FMT__P_D_D,
                          asdu, (int)ZB_BUF_LEN(asdu), asdu->u.hdr.status));
-   for (i = 0 ; i < ZB_BUF_LEN(asdu) ; ++i)
+   for (i = 0 ; i <46/* ZB_BUF_LEN(asdu)*/ ; ++i)
    {
-    TRACE_MSG(TRACE_APS2, "ianswer %x %c", (FMT__D_C, (int)ptr[i], ptr[i]));
+    TRACE_MSG(TRACE_ZDO2, "ianswer %x %c", (FMT__D_C, (int)ptr[i], ptr[i]));
    }
 
 }
 void checkf(zb_uint8_t param)
 {
     TRACE_MSG(TRACE_APS2, "checkf", (FMT__H));
-    zc_send_data(param);
+   // zc_send_data(param);
     zb_buf_t *buf =zb_get_out_buf();// ZB_BUF_FROM_REF(param);
     param=ZB_REF_FROM_BUF(buf);
-    send_data(ZB_BUF_FROM_REF(param));
+    //send_data(ZB_BUF_FROM_REF(param));
+    zc_nwk(param);
 }
 void zb_get_sh(zb_uint8_t param)
 {
@@ -202,6 +211,7 @@ void zc_nwk(zb_uint8_t param)
     req_param->request_type=ZB_ZDO_SINGLE_DEVICE_RESP;
     req_param->start_index=0;
     zb_zdo_nwk_addr_req(param,zb_get_sh);
+    ZB_SCHEDULE_ALARM(zc_ieee_addr,param,1*ZB_TIME_ONE_SECOND);
 }
 void ieee_addr(zb_uint8_t param)
 {
@@ -224,6 +234,7 @@ void zc_ieee_addr(zb_uint8_t param)
     req->request_type=ZB_ZDO_SINGLE_DEV_RESPONSE;
     req->start_index=0;
     zb_zdo_ieee_addr_req(param,ieee_addr);
+    ZB_SCHEDULE_ALARM(zc_power_req,param,1*ZB_TIME_ONE_SECOND);
 }
 zb_uint8_t* endpoint;
 void simple_desc(zb_uint8_t param)
@@ -237,10 +248,10 @@ void simple_desc(zb_uint8_t param)
   TRACE_MSG(TRACE_ZDO2,"Endpoint %hd Profile %d",(FMT__H_D,resp->simple_desc.endpoint,resp->simple_desc.app_profile_id));
   TRACE_MSG(TRACE_ZDO2,"DeviceID %hd DeviceVer %d",(FMT__D_H,resp->simple_desc.app_device_id,resp->simple_desc.app_device_version));
   TRACE_MSG(TRACE_APS1,"clusters: %hd, %hd",(FMT__H_H, resp->simple_desc.app_input_cluster_count,resp->simple_desc.app_output_cluster_count));
-  for(zb_uint_t i=0;i<resp->simple_desc.app_input_cluster_count; i++)
+ /* for(zb_uint_t i=0;i<resp->simple_desc.app_input_cluster_count; i++)
   {
     TRACE_MSG(TRACE_APS1, "icluster  %hx", (FMT__H , resp->simple_desc.app_cluster_list[i]));
-  }
+  }*/
   zb_free_buf(buf);
 }
 void zc_simple_req(zb_uint8_t param)
@@ -251,6 +262,7 @@ void zc_simple_req(zb_uint8_t param)
   req->endpoint =*endpoint;
   req->nwk_addr=0;
   zb_zdo_simple_desc_req(ZB_REF_FROM_BUF(buf),simple_desc);
+  ZB_SCHEDULE_ALARM(send_data,param,1*ZB_TIME_ONE_SECOND);
 }
 void power_req(zb_uint8_t param)
 {
@@ -272,6 +284,7 @@ void zc_power_req(zb_uint8_t param)
    // req->request_type=ZB_ZDO_SINGLE_DEV_RESPONSE;
    // req->start_index=0;
     zb_zdo_power_desc_req(param,power_req);
+    ZB_SCHEDULE_ALARM(zc_active_ep,param,1*ZB_TIME_ONE_SECOND);
 }
 
 void active_ep(zb_uint8_t param)
@@ -295,9 +308,9 @@ void zc_active_ep(zb_uint8_t param)
    // req->request_type=ZB_ZDO_SINGLE_DEV_RESPONSE;
    // req->start_index=0;
     zb_zdo_active_ep_req(param,active_ep);
-
+    ZB_SCHEDULE_ALARM(zc_simple_req,param,1*ZB_TIME_ONE_SECOND);
 }
-static void zc_send_data(zb_uint8_t param)
+/*static void zc_send_data(zb_uint8_t param)
 {
     zc_nwk(param);
     zc_ieee_addr(param);
@@ -306,9 +319,9 @@ static void zc_send_data(zb_uint8_t param)
    // zc_power_req(param);
     ZB_SCHEDULE_ALARM(zc_simple_req,param,2*ZB_TIME_ONE_SECOND);
     ZB_SCHEDULE_ALARM(zc_power_req,param,4*ZB_TIME_ONE_SECOND);
-   /* TRACE_MSG(TRACE_APS1, "Recall fuction", (FMT__0)); 
-    ZB_SCHEDULE_ALARM(zc_send_data,0,5*ZB_TIME_ONE_SECOND);*/
-}
+    TRACE_MSG(TRACE_APS1, "Recall fuction", (FMT__0)); 
+    ZB_SCHEDULE_ALARM(zc_send_data,0,5*ZB_TIME_ONE_SECOND);
+}*/
 
 void zb_zdo_startup_complete(zb_uint8_t param) ZB_CALLBACK
 {
