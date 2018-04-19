@@ -62,12 +62,9 @@ PURPOSE:
 #ifndef ZB_SECURITY
 #error Define ZB_SECURITY
 #endif
-#define dOn 1
-#define dOff 0
 #define dToggle 2
-#define dLevelSet 3
-#define dLevelDown 5
-#define dLevelUp 4
+#define dStepUp 3
+#define dChangeColor 1
 
 /*! \addtogroup ZB_TESTS */
 /*! @{ */
@@ -151,8 +148,6 @@ void zb_zdo_startup_complete(zb_uint8_t param) ZB_CALLBACK
 }
 
 
-
-#ifndef APS_RETRANSMIT_TEST
 zb_uint8_t inn=0;
 void sent_data (zb_uint8_t param)
 {
@@ -177,29 +172,10 @@ void sent_data (zb_uint8_t param)
     }
     ptr[0]=stat;
     ptr[1]=val;*/
-    TRACE_MSG(TRACE_APS1, "Sending apsde_data.request", (FMT__0)); 
+   // TRACE_MSG(TRACE_APS1, "Sending apsde_data.request", (FMT__0)); 
    // ZB_SCHEDULE_ALARM(zb_apsde_data_request, ZB_REF_FROM_BUF(buf),5*ZB_TIME_ONE_SECOND);
     ZB_SCHEDULE_CALLBACK(zb_apsde_data_request, ZB_REF_FROM_BUF(buf));
 
-}
-
-void  On (zb_uint8_t param)
-{
-    zb_uint8_t *ptr = NULL;
-   zb_buf_t *buf = ZB_BUF_FROM_REF(param);
-   ZB_BUF_INITIAL_ALLOC(buf, ZB_TEST_DATA_SIZE, ptr);
-   ptr[0]=dOn;
-   ptr[1]=0;
-   sent_data(param);
-}
-void  Off (zb_uint8_t param)
-{
-    zb_uint8_t *ptr = NULL;
-   zb_buf_t *buf = ZB_BUF_FROM_REF(param);
-   ZB_BUF_INITIAL_ALLOC(buf, ZB_TEST_DATA_SIZE, ptr);
-   ptr[0]=dOff;
-   ptr[1]=0;
-   sent_data(param);
 }
 void  Toggle (zb_uint8_t param)
 {
@@ -210,33 +186,22 @@ void  Toggle (zb_uint8_t param)
    ptr[1]=0;
    sent_data(param);
 }
-void  LevelSet (zb_uint8_t param)
-{
-    zb_uint8_t *ptr = NULL;
-   zb_buf_t *buf = ZB_BUF_FROM_REF(param);
-   zb_uint8_t *p=ZB_GET_BUF_PARAM(buf,zb_uint8_t);
-   zb_uint8_t f=*p; 
-   ZB_BUF_INITIAL_ALLOC(buf, ZB_TEST_DATA_SIZE, ptr);
-   ptr[1]=f;
-   ptr[0]=dLevelSet;
-   sent_data(param);
-}
-void  LevelUp (zb_uint8_t param)
+void  StepUp (zb_uint8_t param)
 {
     zb_uint8_t *ptr = NULL;
    zb_buf_t *buf = ZB_BUF_FROM_REF(param);
    ZB_BUF_INITIAL_ALLOC(buf, ZB_TEST_DATA_SIZE, ptr);
    ptr[1]=0;
-   ptr[0]= dLevelUp ;
+   ptr[0]= dStepUp ;
    sent_data(param);
 }
-void  LevelDown (zb_uint8_t param)
+void  ChangeColor (zb_uint8_t param)
 {
     zb_uint8_t *ptr = NULL;
    zb_buf_t *buf = ZB_BUF_FROM_REF(param);
    ZB_BUF_INITIAL_ALLOC(buf, ZB_TEST_DATA_SIZE, ptr);
    ptr[1]=0;
-   ptr[0]= dLevelDown; 
+   ptr[0]= dChangeColor ;
    sent_data(param);
 }
 
@@ -272,41 +237,22 @@ static void zc_send_data(zb_uint8_t param)
       ptr[i] =0 ;
     }
     TRACE_MSG(TRACE_APS3, "Sending apsde_data.request%hd", (FMT__H,inn));  */
-       switch(inn)
+       switch(inn%3+1)
        {
-         case dOff:
-         {
-
-           Off(param);
-           break;
-         }
-         case dOn:
-         {
-
-           On(param);
-           break;
-         }
          case dToggle:
          {
  
            Toggle(param);
            break;
          }
-         case dLevelSet:
+         case dStepUp:
          {
-           zb_uint8_t *p= ZB_GET_BUF_PARAM(buf,zb_uint8_t);
-           *p=70;
-           LevelSet(param);
+           StepUp(param);
            break;
          }
-         case dLevelUp:
+         case dChangeColor:
          {
-           LevelUp(param);
-           break;
-         }
-         case dLevelDown:
-         {
-           LevelDown(param);
+           ChangeColor(param);
            break;
          }
          default:break;
@@ -321,31 +267,4 @@ static void zc_send_data(zb_uint8_t param)
       // zb_apsde_data_request(1);
        ZB_SCHEDULE_CALLBACK(zb_apsde_data_request, ZB_REF_FROM_BUF(buf));*/
 }
-void data_indication(zb_uint8_t param)
-{
-  zb_ushort_t i;
-  zb_uint8_t *ptr;
-  zb_buf_t *asdu = (zb_buf_t *)ZB_BUF_FROM_REF(param);
-  /* Remove APS header from the packet */
-  ZB_APS_HDR_CUT_P(asdu, ptr);
 
-  TRACE_MSG(TRACE_APS2, "data_indication: packet %p len %d handle 0x%x", (FMT__P_D_D,
-                         asdu, (int)ZB_BUF_LEN(asdu), asdu->u.hdr.status));
-  /////////
-  //checkf(ptr[0]);
-  for (i = 0 ; i < ZB_BUF_LEN(asdu) ; ++i)
-  {
-    TRACE_MSG(TRACE_APS2, "%x %c", (FMT__D_C, (int)ptr[i], ptr[i]));
-    if (ptr[i] != i % 32 + '0')
-    {
-      TRACE_MSG(TRACE_ERROR, "Bad data %hx %c wants %x %c", (FMT__H_C_D_C, ptr[i], ptr[i],
-                              (int)(i % 32 + '0'), (char)i % 32 + '0'));
-    }
-  }
-
-  //sent_data(asdu);
-}
-#endif
-
-
-/*! @} */

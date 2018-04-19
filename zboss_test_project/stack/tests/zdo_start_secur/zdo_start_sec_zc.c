@@ -1,4 +1,4 @@
-/**************************************************************************2
+ /**************************************************************************
 *                      ZBOSS ZigBee Pro 2007 stack                         *
 *                                                                          *
 *          Copyright (c) 2012 DSR Corporation Denver CO, USA.              *
@@ -67,16 +67,14 @@ PURPOSE: Test for ZC application written using ZDO.
 #error Define ZB_SECURITY
 #endif
 
-#define On 1
-#define Off 0
-#define Toggle 2
-#define LevelSet 3
-#define LevelDown 5
-#define LevelUp 4
+#define dToggle 2
+#define dStepUp 3
+#define dChangeColor 1
   
 
 zb_uint8_t stat=1;
-int light=100;
+int light=0;
+int color =1;
 zb_ieee_addr_t g_ieee_addr = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x08};
 zb_uint8_t g_key[16] = { 0xab, 0xcd, 0xef, 0x01, 0x23, 0x45, 0x67, 0x89, 0, 0, 0, 0, 0, 0, 0, 0};
 
@@ -153,85 +151,6 @@ void zb_zdo_startup_complete(zb_uint8_t param) ZB_CALLBACK
 }
 
 
-/*
-   Trivial test: dump all APS data received
- */
-
-
-void data_indication(zb_uint8_t param) ZB_CALLBACK
-{
-  zb_ushort_t i;
-  zb_uint8_t *ptr;
-  zb_buf_t *asdu = (zb_buf_t *)ZB_BUF_FROM_REF(param);
-#ifndef APS_RETRANSMIT_TEST
- // zb_apsde_data_indication_t *ind = ZB_GET_BUF_PARAM(asdu, zb_apsde_data_indication_t);
-#endif
-
-  // Remove APS header from the packet 
-  ZB_APS_HDR_CUT_P(asdu, ptr);
-
-  TRACE_MSG(TRACE_APS2, "apsde_data_indication: packet %p len %d handle 0x%x", (FMT__P_D_D,
-                         asdu, (int)ZB_BUF_LEN(asdu), asdu->u.hdr.status));
-
-  for (i = 0 ; i < ZB_BUF_LEN(asdu) ; ++i)
-  {
-    TRACE_MSG(TRACE_APS2, "%x %c", (FMT__D_C, (int)ptr[i], ptr[i]));
-    if (ptr[i] != i % 32 + '0')
-    {
-      TRACE_MSG(TRACE_ERROR, "Bad data %hx %c wants %x %c", (FMT__H_C_D_C, ptr[i], ptr[i],
-                         (int)(i % 32 + '0'), (char)i % 32 + '0'));
-    }
-  }
-#ifdef APS_RETRANSMIT_TEST
-  zb_free_buf(asdu);
-#else
-  // send packet back to ZR 
- // zc_send_data(asdu, ind->src_addr);
-// zc_send_data();
-
-#endif
-}
-
-//#ifndef APS_RETRANSMIT_TEST
-/*void send_data(zb_uint8_t param)
-{
-  zb_apsde_data_req_t *req;
-  zb_uint8_t *ptr = NULL;
-  zb_short_t i;
-  zb_buf_t *buf = (zb_buf_t *)ZB_BUF_FROM_REF(param);
-  ZB_BUF_INITIAL_ALLOC(buf, ZB_TEST_DATA_SIZE, ptr);
-  req = ZB_GET_BUF_TAIL(buf, sizeof(zb_apsde_data_req_t));
-  req->dst_addr.addr_short = 0x0001;
-  req->addr_mode = ZB_APS_ADDR_MODE_16_ENDP_PRESENT;
-  req->tx_options = ZB_APSDE_TX_OPT_ACK_TX;
-  req->radius = 1;
-  req->profileid = 2;
-  req->src_endpoint = 10;
-  req->dst_endpoint = 10;
-
-  buf->u.hdr.handle = 0x11;
-
-#if 0
-  MAC_PIB().mac_pan_id = 0x1aaa;
-  ZB_UPDATE_PAN_ID();		?
-#endif
-
-  for (i = 0 ; i < ZB_TEST_DATA_SIZE ; ++i)
-  {
-     ptr[i]=0;
-  }
-  if(stat==0)
-  {
-    ptr[0]=0;
-  }
-  else
-  {
-    ptr[0]=1;
-  }
-  ptr[1]=light;
-  TRACE_MSG(TRACE_APS2, "Sending apsde_data.request", (FMT__0));
-  ZB_SCHEDULE_CALLBACK(zb_apsde_data_request, ZB_REF_FROM_BUF(buf));
-}*/
 void checkf(zb_uint8_t param)
 {
   zb_buf_t *asdu = (zb_buf_t *)ZB_BUF_FROM_REF(param);
@@ -240,21 +159,8 @@ void checkf(zb_uint8_t param)
  // TRACE_MSG(TRACE_APS2, "aaaaaaaaaa", (FMT__0));
   switch(*ptr)
   {
-     case On:
-     {
-        stat=1;
-        light=50;
-        TRACE_MSG(TRACE_APS2, "turn on", (FMT__0));
-        break;
-     }
-     case Off:
-     {
-       stat=0;
-       light=0;
-       TRACE_MSG(TRACE_APS2, "turn off", (FMT__0));
-       break;
-     }
-     case Toggle:
+
+     case dToggle:
      {
          stat=(stat+1)%2;
          if(stat==1)
@@ -268,14 +174,13 @@ void checkf(zb_uint8_t param)
          TRACE_MSG(TRACE_APS2,"toggle",(FMT__0));
          break;
      }
-     case LevelSet:
+     case dChangeColor:
      {
-        int value =ptr[1];
-        light=value;
-        TRACE_MSG(TRACE_APS2, "level of light %d", (FMT__D,value));
+        color =(color)%3+1;
+        TRACE_MSG(TRACE_APS2, "Color %d", (FMT__D,color));
         break;
      }
-     case LevelUp:
+     case dStepUp:
      {
         int value =10;
         if(light+value>100)
@@ -287,19 +192,7 @@ void checkf(zb_uint8_t param)
         TRACE_MSG(TRACE_APS2, "level of light %d", (FMT__D,light));
         break;
      }
-     case LevelDown:
-     {
-         int value =10;
-         if(light<value)
-         {
-            light=0;
-         }
-         else
-         light=light-value;
-         TRACE_MSG(TRACE_APS2, "level of light %d", (FMT__D,light));
-         break;
-     }
-     default:
+         default:
          TRACE_MSG(TRACE_APS2,"Unknown command!!!",(FMT__0));
   }
   //send_data(param);
