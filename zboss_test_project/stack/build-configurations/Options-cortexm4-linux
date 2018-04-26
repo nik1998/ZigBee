@@ -44,18 +44,20 @@
 #*                                                                          *
 #****************************************************************************
 #PURPOSE: Include file for Zigbee build under Unix
+# CORTEX M4 
 #*/
 
 CFLAGS=$(CFLAGS_DEBUG)
 
-PLATFORM_DEFINES=-DZB_PLATFORM_LINUX_PC32
+PLATFORM_DEFINES=-DZB_CORTEXM4 -Dcortexm4 -DUSE_STDPERIPH_DRIVER -DSTM32_E407 -DZB_MRF24J40 -DZB_TRANSPORT_CORTEXM4_UART -DZB_TRANSPORT_CORTEXM4_DATA_SPI
+
+OSIF_FILES = osif/cortexm4
 
 ####### Common options
-CC	=	gcc
-#CC	=	cxref-cc
-CXX	=	g++
-LD      =       ld
-OBJCOPY =       objcopy
+CC	=	arm-none-eabi-gcc
+CXX	=	arm-none-eabi-g++
+LD  =       arn-none-eabi-ld
+OBJCOPY = arm-none-eabi-objcopy	
 
 #MEMDEBUG      = -lefence
 #MEMDEBUG      = -ldl -lccmalloc /usr/lib/ccmalloc-g++.o -lccmalloc
@@ -67,39 +69,51 @@ MEMDEBUG      =
 # and ZB_TRACE_LEVEL (messages with layer > ZB_TRACE_LEVEL are unvisible).
 # Do not define ZB_TRACE_LEVEL to switch off trace.
 #
-TRACE_DEFINES = -DZB_TRACE_LEVEL=4 -DZB_TRACE_MASK=-1
+TRACE_DEFINES = -DZB_TRACE_LEVEL=5 -DZB_TRACE_MASK=0x0008
+USE_DEEP_GDB = -ggdb3
+DEBUG_DEFINES = -DDEBUG $(TRACE_DEFINES) -DCHECK_RADIO_REGS $(USE_DEEP_GDB) 
 
-DEBUG_DEFINES = -DDEBUG $(TRACE_DEFINES)
+# DEBUG_CFLAGS   = -g
+# RELEASE_CFLAGS  = -O3
+# PROFILE_CFLAGS  = -g -O3 -pg
 
-DEBUG_CFLAGS   = -g
-
-RELEASE_CFLAGS  = -O3
-
-PROFILE_CFLAGS  = -g -O3 -pg
-
-WERROR = -Werror
-WARN_OPTIONS = -W -Wall -Wpointer-arith -Wcast-align -std=gnu99 -Wno-format-zero-length  -Wno-format-zero-length -Wno-int-to-pointer-cast -Wno-pointer-to-int-cast -Wno-unused-but-set-variable -Wno-unused-local-typedefs -Wno-unused-value -Wno-parentheses -Wno-shift-negative-value
+WERROR = 
+ANTI_WARNING =  -Wno-unused-local-typedefs -Wno-format-zero-length  -Wno-format-zero-length -Wno-int-to-pointer-cast -Wno-pointer-to-int-cast -Wno-unused-but-set-variable
+WARN_OPTIONS = -W -Wall -Wpointer-arith -Wcast-align -std=gnu99 $(ANTI_WARNING)
 WARN_OPTIONS_CXX = -W -Wall -Wpointer-arith -Wcast-align -pedantic
 
-CFLAGS_BUILD_CFG = $(DEBUG_CFLAGS)
 
-DEFINES = $(PLATFORM_DEFINES) $(DEBUG_DEFINES)
+#C FLAGS_BUILD_CFG = $(DEBUG_CFLAGS)
 
-CFLAGS = $(CFLAGS_BUILD_CFG) $(CFLAGS_USER) -pipe $(WARN_OPTIONS) -fno-strict-aliasing $(WERROR)
+
+LINKER= -T$(BUILD_HOME)/$(OSIF_FILES)/board/stm32_olimex_flash.ld --specs=nosys.specs  -Wl,--gc-sections
+#
+CORTEX=	-mlittle-endian -mthumb -mcpu=cortex-m4 -mthumb-interwork -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -ffreestanding
+# 
+
+CFLAGS_BUILD_CFG  =-g -O0 -Wall $(CORTEX) -DZB_LITTLE_ENDIAN
+
+DEFINES = $(PLATFORM_DEFINES) -DZB_TRANSPORT_CORTEXM4 -DZB_LITTLE_ENDIAN -DZB_DEBUG_BUFFERS $(TRACE_DEFINES)
+#-DZB_SECURITY  
+
+CFLAGS = $(CFLAGS_BUILD_CFG) $(CFLAGS_USER) $(DEFINES) -pipe $(WARN_OPTIONS) -fno-strict-aliasing $(WERROR)
 CXXFLAGS = $(CFLAGS_BUILD_CFG) $(CFLAGS_USER) -pipe $(WARN_OPTIONS_CXX) -fno-strict-aliasing $(WERROR)
 
 DEPSWITCH      = -MM
-AR	=	ar
+AR	=	arm-none-eabi-ar
 RM      =       rm -rf
 MAKE    =       make -e
 
 MAKE_LIB    = $(AR) r $@ $^
 
 PROF_FLAG=
+STARTCODE	=	$(BUILD_HOME)/$(OSIF_FILES)/board/startup_olimex_stm32f4xx.s
+CFLAGS_BIN  =   $(DEFINES) -Wall $(CORTEX) $(LINKER)
 
-LINK_BINARY = $(CC) $(PROF_FLAG) -o $@ $^ $(MEMDEBUG) -lpthread $(LINK_FLAGS) $(LIBS) $(LIBS)
-LINK_BINARY_ED = $(CC) $(PROF_FLAG) -o $@ $^ $(MEMDEBUG) -lpthread $(LINK_FLAGS) $(LIBS_ED) $(LIBS_ED)
-LINK_BINARY_CXX = $(CXX) -g $(PROF_FLAG) -o $@ $^ $(MEMDEBUG) -lpthread $(LINK_FLAGS)
+
+LINK_BINARY = $(CC) $(PROF_FLAG) $(CFLAGS_BIN) $(MEMDEBUG) -o $@ $^ $(STARTCODE) $(LIBS) 
+LINK_BINARY_ED = $(CC) $(PROF_FLAG) $(CFLAGS_BIN) $(MEMDEBUG) -o $@ $^ $(STARTCODE) $(LIBS_ED)
+LINK_BINARY_CXX = $(CXX) -g $(PROF_FLAG) -o $@ $^ $(CFLAGS_BIN) $(MEMDEBUG) $(LINK_FLAGS)
 
 #
 # Implicit rules
@@ -126,7 +140,7 @@ bldall : all
 clean: doclean
 
 doclean:
-	$(RM) *.o *.a core core.* vgcore.* *~ */*.o src/*~ src/*.o include/*~ $(BINS) $(OTHERS_CLEAN) $(TMP_SRCS)
+	$(RM) *.hex *.bin *.o *.a core core.* vgcore.* *~ */*.o src/*~ src/*.o include/*~ $(BINS) $(OTHERS_CLEAN) $(TMP_SRCS)
 
 PRETEST = echo
 
@@ -163,38 +177,44 @@ include $(BUILD_HOME)/Platform
 #
 
 # logger
-COMMON_LIB = $(BUILD_HOME)/common/libcommon.a
-COMMON_INC = $(BUILD_HOME)/include
+COMMON_LIB = 	$(BUILD_HOME)/common/libcommon.a
+COMMON_INC = 	$(BUILD_HOME)/include
+COMMON_INC +=   -I$(BUILD_HOME)/$(OSIF_FILES)
+COMMON_INC +=   -I$(BUILD_HOME)/$(OSIF_FILES)/SPL_inc
 COMMON_LIB_ED = $(BUILD_HOME)/common/libcommon.ed.a
 
 # osif
-OSIF_INC = $(BUILD_HOME)/osif/include
-OSIF_LIB = $(BUILD_HOME)/osif/unix/libosif.a
-OSIF_LIB_ED = $(BUILD_HOME)/osif/unix/libosif.ed.a
+
+OSIF_INC = 		$(BUILD_HOME)/osif/include
+OSIF_INC +=		-I$(BUILD_HOME)/include
+OSIF_INC +=     -I$(BUILD_HOME)/$(OSIF_FILES)/SPL_inc
+OSIF_INC +=		-I$(BUILD_HOME)/$(OSIF_FILES)/board
+OSIF_LIB =      $(BUILD_HOME)/$(OSIF_FILES)/libosif.a
+OSIF_LIB_ED =   $(BUILD_HOME)/$(OSIF_FILES)/libosif.ed.a
 
 # MAC
-MAC_LIB = $(BUILD_HOME)/mac/libmac.a
-MAC_LIB_ED = $(BUILD_HOME)/mac/libmac.ed.a
+MAC_LIB = 		$(BUILD_HOME)/mac/libmac.a
+MAC_LIB_ED = 	$(BUILD_HOME)/mac/libmac.ed.a
 
 # NWK
-NWK_LIB = $(BUILD_HOME)/nwk/libnwk.a
-NWK_LIB_ED = $(BUILD_HOME)/nwk/libnwk.ed.a
+NWK_LIB = 		$(BUILD_HOME)/nwk/libnwk.a
+NWK_LIB_ED = 	$(BUILD_HOME)/nwk/libnwk.ed.a
 
 # APS
-APS_LIB = $(BUILD_HOME)/aps/libaps.a
-APS_LIB_ED = $(BUILD_HOME)/aps/libaps.ed.a
+APS_LIB = 		$(BUILD_HOME)/aps/libaps.a
+APS_LIB_ED = 	$(BUILD_HOME)/aps/libaps.ed.a
 
 # ZDO
-ZDO_LIB = $(BUILD_HOME)/zdo/libzdo.a
-ZDO_LIB_ED = $(BUILD_HOME)/zdo/libzdo.ed.a
+ZDO_LIB = 		$(BUILD_HOME)/zdo/libzdo.a
+ZDO_LIB_ED = 	$(BUILD_HOME)/zdo/libzdo.ed.a
 
 # Security
-SECUR_LIB = $(BUILD_HOME)/secur/libsec.a
-SECUR_LIB_ED = $(BUILD_HOME)/secur/libsec.ed.a
+SECUR_LIB = 	$(BUILD_HOME)/secur/libsec.a
+SECUR_LIB_ED = 	$(BUILD_HOME)/secur/libsec.ed.a
 
 # ZCL
-ZCL_LIB = $(BUILD_HOME)/zcl/libzcl.a
-ZCL_LIB_ED = $(BUILD_HOME)/zcl/libzcl.ed.a
+ZCL_LIB = 		$(BUILD_HOME)/zcl/libzcl.a
+ZCL_LIB_ED = 	$(BUILD_HOME)/zcl/libzcl.ed.a
 
 #
 # #####
