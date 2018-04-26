@@ -1,0 +1,101 @@
+19:42:49.786 0 zb_ib.c:115	aps_channel_mask 0x1800
+19:42:49.786 0 mac.c:76	>>mac_init
+19:42:49.786 0 mac.c:137	zb_get_out_buf: zb_mac_init
+19:42:49.786 0 zb_bufpool.c:141	=================
+19:42:49.786 0 zb_bufpool.c:142	GET BUF 0x5630475eeab0
+19:42:49.786 0 zb_bufpool.c:143	ref 0
+19:42:49.786 0 zb_bufpool.c:144	allocated 0: 1
+19:42:49.786 0 zb_bufpool.c:145	allocated 1: 0
+19:42:49.786 0 zb_bufpool.c:146	=================
+19:42:49.786 0 mac.c:139	zb_get_in_buf: zb_mac_init
+19:42:49.786 0 zb_bufpool.c:141	=================
+19:42:49.786 0 zb_bufpool.c:142	GET BUF 0x5630475eeb50
+19:42:49.786 0 zb_bufpool.c:143	ref 1
+19:42:49.786 0 zb_bufpool.c:144	allocated 0: 1
+19:42:49.786 0 zb_bufpool.c:145	allocated 1: 1
+19:42:49.786 0 zb_bufpool.c:146	=================
+19:42:49.786 0 mac.c:142	zb_get_in_buf: zb_mac_init
+19:42:49.786 0 zb_bufpool.c:141	=================
+19:42:49.786 0 zb_bufpool.c:142	GET BUF 0x5630475eebf0
+19:42:49.786 0 zb_bufpool.c:143	ref 2
+19:42:49.786 0 zb_bufpool.c:144	allocated 0: 2
+19:42:49.786 0 zb_bufpool.c:145	allocated 1: 1
+19:42:49.786 0 zb_bufpool.c:146	=================
+19:42:49.786 0 mac.c:166	<<mac_init
+19:42:49.786 0 nwk_main.c:93	+nwk_init
+19:42:49.786 0 nwk_main.c:115	>>nib_init
+19:42:49.786 0 nwk_main.c:128	<<nib_init
+19:42:49.786 0 nwk_neighbor.c:67	nb_init
+19:42:49.786 0 nwk_cr_mesh_routing.c:139	>> mesh_r_init
+19:42:49.786 0 zb_scheduler.c:283	tm_freelist, get nent 0x5630475ee848
+19:42:49.786 0 zb_scheduler.c:294	0x5630475ee848 scheduled alarm 0x5630473c80a5, run_after 130, at 130, param 0
+19:42:49.786 0 zb_scheduler.c:349	cur t 0, head t 130
+19:42:49.786 0 nwk_cr_mesh_routing.c:143	schd r disc expiry f 0
+19:42:49.786 0 zb_scheduler.c:283	tm_freelist, get nent 0x5630475ee828
+19:42:49.786 0 zb_scheduler.c:294	0x5630475ee828 scheduled alarm 0x5630473c83dc, run_after 325, at 325, param 0
+19:42:49.786 0 zb_scheduler.c:349	cur t 0, head t 130
+19:42:49.786 0 nwk_cr_mesh_routing.c:147	schd pend expiry f 0
+19:42:49.786 0 nwk_cr_mesh_routing.c:149	<< mesh_r_init
+19:42:49.786 0 nwk_main.c:110	-nwk_init
+19:42:49.786 0 aps_main.c:94	+zb_aps_init
+19:42:49.786 0 aps_main.c:109	-zb_aps_init
+19:42:49.786 0 af_descriptor.c:243	zb_set_default_ffd_descriptor_values
+19:42:49.786 0 af_descriptor.c:85	node desc, server_mask 41 mac cap 0xa
+19:42:49.786 0 af_descriptor.c:160	cluster_id 0x8000, cluster_number 0, input count 7
+19:42:49.786 0 af_descriptor.c:160	cluster_id 0x8001, cluster_number 1, input count 7
+19:42:49.786 0 af_descriptor.c:160	cluster_id 0x8002, cluster_number 2, input count 7
+19:42:49.786 0 af_descriptor.c:160	cluster_id 0x8003, cluster_number 3, input count 7
+19:42:49.786 0 af_descriptor.c:160	cluster_id 0x8004, cluster_number 4, input count 7
+19:42:49.786 0 af_descriptor.c:160	cluster_id 0x8005, cluster_number 5, input count 7
+19:42:49.786 0 af_descriptor.c:160	cluster_id 0x8006, cluster_number 6, input count 7
+19:42:49.786 0 af_descriptor.c:174	cluster_id 0x0, cluster_number 0, output count 8
+19:42:49.786 0 af_descriptor.c:174	cluster_id 0x1, cluster_number 1, output count 8
+19:42:49.786 0 af_descriptor.c:174	cluster_id 0x2, cluster_number 2, output count 8
+19:42:49.786 0 af_descriptor.c:174	cluster_id 0x3, cluster_number 3, output count 8
+19:42:49.786 0 af_descriptor.c:174	cluster_id 0x4, cluster_number 4, output count 8
+19:42:49.786 0 af_descriptor.c:174	cluster_id 0x5, cluster_number 5, output count 8
+19:42:49.786 0 af_descriptor.c:174	cluster_id 0x6, cluster_number 6, output count 8
+19:42:49.786 0 af_descriptor.c:174	cluster_id 0x13, cluster_number 7, output count 8
+19:42:49.786 0 zdo_app.c:131	ext pan id 0 - startup
+19:42:49.786 0 zb_bufpool.c:141	=================
+19:42:49.786 0 zb_bufpool.c:142	GET BUF 0x5630475eec90
+19:42:49.786 0 zb_bufpool.c:143	ref 3
+19:42:49.786 0 zb_bufpool.c:144	allocated 0: 3
+19:42:49.786 0 zb_bufpool.c:145	allocated 1: 1
+19:42:49.786 0 zb_bufpool.c:146	=================
+19:42:49.786 0 zb_scheduler.c:254	0x5630475ee500 scheduled cb 0x5630473bfced param 3 (in_b 0)
+19:42:49.786 0 zdo_app.c:199	return now
+19:42:49.786 0 zb_scheduler.c:105	cb_q written 1, read_i 0, write_i 1
+19:42:49.786 0 zb_scheduler.c:115	0x5630475ee500 calling cb 0x5630473bfced param 3 in_b 0 len 0
+19:42:49.786 0 nwk_cr_formation.c:71	>>nwk_formation_req 3
+19:42:49.786 0 nwk_cr_formation.c:73	nwk state 0 joined 0
+19:42:49.786 0 zb_scheduler.c:254	0x5630475ee510 scheduled cb 0x5630473de39a param 3 (in_b 0)
+19:42:49.786 0 nwk_cr_formation.c:127	<<nwk_formation_req
+19:42:49.786 0 zb_scheduler.c:105	cb_q written 1, read_i 1, write_i 2
+19:42:49.786 0 zb_scheduler.c:115	0x5630475ee510 calling cb 0x5630473de39a param 3 in_b 0 len 0
+19:42:49.786 0 mac_scan.c:104	>> zb_mlme_scan_request 3
+19:42:49.786 0 zb_scheduler.c:254	0x5630475ee520 scheduled cb 0x5630473de276 param 3 (in_b 0)
+19:42:49.786 0 mac_scan.c:136	<< zb_mlme_scan_request
+19:42:49.786 0 zb_scheduler.c:105	cb_q written 1, read_i 2, write_i 3
+19:42:49.786 0 zb_scheduler.c:115	0x5630475ee520 calling cb 0x5630473de276 param 3 in_b 0 len 0
+19:42:49.786 0 mac_scan.c:67	>> zb_handle_scan_request
+19:42:49.786 0 mac_scan.c:360	>> zb_mlme_active_scan
+19:42:49.786 0 mac_scan.c:365	idle state, set beacon found == 0
+19:42:49.786 0 mac_scan.c:372	set beacon mode ret 0, param channels 0x400000
+19:42:49.786 0 mac_scan.c:385	chan mask 0 40 , chan 11
+19:42:49.786 0 zb_scheduler.c:254	0x5630475ee530 scheduled cb 0x5630473de6e9 param 0 (in_b 255)
+19:42:49.786 0 mac_scan.c:387	<< zb_mlme_active_scan, ret 0
+19:42:49.786 0 mac_scan.c:92	<< zb_handle_scan_request i
+19:42:49.786 0 zb_scheduler.c:105	cb_q written 1, read_i 3, write_i 4
+19:42:49.786 0 zb_scheduler.c:115	0x5630475ee530 calling cb 0x5630473de6e9 param 0 in_b 255 len -1
+19:42:49.786 0 mac_scan.c:208	>> zb_mlme_scan_step
+19:42:49.786 0 mac_scan.c:257	set channel 22
+19:42:49.786 0 mac_routines.c:225	+zb_beacon_request_command
+19:42:49.786 0 mac.c:578	>>mac_fill_mhr
+19:42:49.786 0 mac.c:629	<<mac_fill_mhr
+19:42:49.786 0 zb_mac_transport_linux_pipes.c:199	>>zb_mac_put_data buf 0x5630475eeab0
+19:42:49.786 0 zb_mac_transport_linux_pipes.c:149	>>zb_mac_traffic_dump #1 buf 0x5630475eeab0 / 0 in_b 0 (size 11) is_w 1
+19:42:49.786 0 zb_mac_transport_linux_pipes.c:182	t: start 1519231369; t 1519231369 786931, time 51
+19:42:49.786 0 zb_mac_transport_linux_pipes.c:192	<<zb_mac_traffic_dump
+19:42:49.786 0 zb_mac_transport_linux_pipes.c:373	>>write_to_pipe
+19:42:49.786 0 zb_mac_transport_linux_pipes.c:381	open wpipe /tmp/zt0.read. wait if nessesary
