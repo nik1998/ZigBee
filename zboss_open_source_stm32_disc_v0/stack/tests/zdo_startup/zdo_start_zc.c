@@ -52,7 +52,9 @@ PURPOSE: Test for ZC application written using ZDO.
 #include "zb_nwk.h"
 #include "zb_aps.h"
 #include "zb_zdo.h"
-
+#define dToggle 2
+#define dStepUp 3
+#define dChangeColor 1
 #define ZB_TEST_DUMMY_DATA_SIZE 10
 
 zb_ieee_addr_t g_zc_addr = {0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa};
@@ -69,9 +71,11 @@ zb_ieee_addr_t g_zc_addr = {0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa};
   received packet, it sends packet to ZR, when ZR received packet, it sends
   packet to ZC etc.
  */
-
+zb_uint8_t stat=1;
+int light=0;
+int color =1;
 static void zc_send_data(zb_buf_t *buf, zb_uint16_t addr);
-
+void checkf(zb_uint8_t param);
 void data_indication(zb_uint8_t param) ZB_CALLBACK;
 
 MAIN()
@@ -113,7 +117,7 @@ MAIN()
   }
 
   TRACE_DEINIT();
-
+  zb_af_set_data_indication(checkf);
   MAIN_RETURN(0);
 }
 
@@ -124,13 +128,59 @@ void zb_zdo_startup_complete(zb_uint8_t param) ZB_CALLBACK
   if (buf->u.hdr.status == 0)
   {
     TRACE_MSG(TRACE_APS1, "Device STARTED OK", (FMT__0));
-    zb_af_set_data_indication(data_indication);
+    zb_af_set_data_indication(checkf);
   }
   else
   {
     TRACE_MSG(TRACE_ERROR, "Device start FAILED status %d", (FMT__D, (int)buf->u.hdr.status));
   }
   zb_free_buf(buf);
+}
+void checkf(zb_uint8_t param)
+{
+  zb_buf_t *asdu = (zb_buf_t *)ZB_BUF_FROM_REF(param);
+  zb_uint8_t *ptr;
+  ZB_APS_HDR_CUT_P(asdu, ptr);
+ // TRACE_MSG(TRACE_APS2, "aaaaaaaaaa", (FMT__0));
+  switch(*ptr)
+  {
+
+     case dToggle:
+     {
+         stat=(stat+1)%2;
+         if(stat==1)
+         {
+           light=50;
+         }
+         else
+         {
+           light=0;
+         }
+         TRACE_MSG(TRACE_APS2,"toggle",(FMT__0));
+         break;
+     }
+     case dChangeColor:
+     {
+        color =(color)%3+1;
+        TRACE_MSG(TRACE_APS2, "Color %d", (FMT__D,color));
+        break;
+     }
+     case dStepUp:
+     {
+        int value =10;
+        if(light+value>100)
+        {
+          light=100;
+        }
+        else
+        light=light+value;
+        TRACE_MSG(TRACE_APS2, "level of light %d", (FMT__D,light));
+        break;
+     }
+         default:
+         TRACE_MSG(TRACE_APS2,"Unknown command!!!",(FMT__0));
+  }
+  //send_data(param);
 }
 
 
