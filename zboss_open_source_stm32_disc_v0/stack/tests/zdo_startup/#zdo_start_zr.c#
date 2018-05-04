@@ -63,14 +63,12 @@ PURPOSE: Test for ZC application written using ZDO.
 /*! @{ */
 /*void TIM2_IRQHandler(void);
 void EXTI0_IRQHandler(void);*/
-int ind=1;
 static void send_data(zb_buf_t *buf);
 void function_state(int ind);
 void MyInit();
 int arr[3];
-void ChangePulse(int delta);
+void InitLeds();
 void TimTim();
-void Initleds(int Pins, int PinSource);
 
 #ifndef APS_RETRANSMIT_TEST
 void data_indication(zb_uint8_t param) ZB_CALLBACK;
@@ -101,10 +99,10 @@ MAIN()
 #else
   ZB_INIT("zdo_zr", "2", "2");
 #endif
-  
 #ifdef ZB_SECURITY
   ZG->nwk.nib.security_level = 0;
 #endif
+
   MyInit();
   /* FIXME: temporary, until neighbor table is not in nvram */
   /* add extended address of potential parent to emulate that we've already
@@ -123,7 +121,6 @@ MAIN()
     ZB_IEEE_ADDR_COPY(ZB_PIB_EXTENDED_ADDRESS(), &g_zr_addr);
   }
 
- // MyInit();
   if (zdo_dev_start() != RET_OK)
   {
     TRACE_MSG(TRACE_ERROR, "zdo_dev_start failed", (FMT__0));
@@ -139,17 +136,46 @@ MAIN()
 }
 void MyInit()
 {
+  InitLeds();
+  TimTim();
   GPIO_InitTypeDef  GPIO_InitStructure;
-
   RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOD, ENABLE);
  // RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA, ENABLE);
   RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOE, ENABLE);
-  //button interrupt
-  RCC_APB2PeriphClockCmd(RCC_APB2Periph_SYSCFG/*|RCC_APB2Periph_TIM1*/, ENABLE);
-    //RCC_APB2PeriphClockCmd(RCC_APB2Periph_TIM1,ENABLE);
+ //button interrupt
+  RCC_APB2PeriphClockCmd(RCC_APB2Periph_SYSCFG, ENABLE);
   SYSCFG_EXTILineConfig(EXTI_PortSourceGPIOE, EXTI_PinSource0);
   SYSCFG_EXTILineConfig(EXTI_PortSourceGPIOE, EXTI_PinSource1);
-  //Init LedGPIO
+  //Init Leds 
+ // GPIO_PinAFConfig(GPIOA,GPIO_PinSource8/*|GPIO_PinSource9|GPIO_PinSource10*/,GPIO_AF_TIM1);
+ // GPIO_PinAFConfig(GPIOA,GPIO_PinSource9/*|GPIO_PinSource9|GPIO_PinSource10*/,GPIO_AF_TIM1);
+  //GPIO_PinAFConfig(GPIOA,GPIO_PinSource10/*|GPIO_PinSource9|GPIO_PinSource10*/,GPIO_AF_TIM1);
+
+  /*GPIO_InitStructure.GPIO_Pin= GPIO_Pin_8|GPIO_Pin_9|GPIO_Pin_10;
+  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
+  GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
+  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;
+  GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
+  GPIO_Init(GPIOA, &GPIO_InitStructure);*/
+
+ /** //Timer
+  TIM_TimeBaseInitTypeDef ttt;
+  RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2,ENABLE);
+  ttt.TIM_Period=1000000-1;
+  ttt.TIM_Prescaler=84-1;
+  ttt.TIM_ClockDivision=0;
+  ttt.TIM_CounterMode=TIM_CounterMode_Up;
+  TIM_TimeBaseInit(TIM2,&ttt);
+  TIM_ITConfig(TIM2, TIM_IT_Update,ENABLE);
+  TIM_Cmd(TIM2,ENABLE);
+  //Timer vector
+  NVIC_InitTypeDef nv;
+  nv.NVIC_IRQChannel=TIM2_IRQn;
+  nv.NVIC_IRQChannelPreemptionPriority=0x00;
+  nv.NVIC_IRQChannelSubPriority=0x01;
+  nv.NVIC_IRQChannelCmd=ENABLE;
+  NVIC_Init(&nv);*/
+ //Init LedGPIO
   GPIO_InitTypeDef  GPIO_InitStructure1;
   GPIO_InitStructure1.GPIO_Pin= GPIO_Pin_12|GPIO_Pin_13|GPIO_Pin_14|GPIO_Pin_15;
   GPIO_InitStructure1.GPIO_Mode = GPIO_Mode_OUT;
@@ -157,8 +183,32 @@ void MyInit()
   GPIO_InitStructure1.GPIO_Speed = GPIO_Speed_100MHz;
   GPIO_InitStructure1.GPIO_PuPd = GPIO_PuPd_NOPULL;
   GPIO_Init(GPIOD, &GPIO_InitStructure1);
+  GPIO_SetBits(GPIOD,GPIO_Pin_12|GPIO_Pin_14|GPIO_Pin_15); 
 
- //button
+ /* //light
+    TIM_TimeBaseInitTypeDef ttt;
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_TIM1,ENABLE);
+    ttt.TIM_Period=100000/60-1;
+    ttt.TIM_Prescaler=1680;
+    ttt.TIM_ClockDivision=0;
+    ttt.TIM_CounterMode=TIM_CounterMode_Up;
+    TIM_TimeBaseInit(TIM1,&ttt);
+    TIM_CtrlPWMOutputs(TIM1,ENABLE);
+    TIM_Cmd(TIM1,ENABLE);
+    TIM_OCInitTypeDef aaa;
+    aaa.TIM_OCMode=TIM_OCMode_PWM1;
+    aaa.TIM_Pulse=1600;
+    aaa.TIM_OCPolarity=TIM_OCPolarity_High; 
+    TIM_OC1Init(TIM1,&aaa);
+    TIM_OC1PreloadConfig(TIM1,TIM_OCPreload_Enable);
+    TIM_OC2Init(TIM1,&aaa);
+    TIM_OC2PreloadConfig(TIM1,TIM_OCPreload_Enable);
+    TIM_OC3Init(TIM1,&aaa);
+    TIM_OC3PreloadConfig(TIM1,TIM_OCPreload_Enable);
+*/
+
+
+  //button
   GPIO_InitTypeDef GPIO_In;
 GPIO_In.GPIO_Pin= GPIO_Pin_1|GPIO_Pin_0;
   GPIO_In.GPIO_Mode = GPIO_Mode_IN;
@@ -174,8 +224,8 @@ void MyInit()
    eee.EXTI_Trigger=EXTI_Trigger_Falling;
    EXTI_Init(&eee);
 
-  eee.EXTI_Line=EXTI_Line1;
-  EXTI_Init(&eee);
+ // eee.EXTI_Line=EXTI_Line1;
+ // EXTI_Init(&eee);
    //vector
   NVIC_InitTypeDef nvec;
   nvec.NVIC_IRQChannel=EXTI0_IRQn;
@@ -184,51 +234,21 @@ void MyInit()
   nvec.NVIC_IRQChannelCmd=ENABLE;
   NVIC_Init(&nvec);
 
-  nvec.NVIC_IRQChannel=EXTI1_IRQn;
-  NVIC_Init(&nvec);
-
-  Initleds(GPIO_Pin_8,GPIO_PinSource8);
-  TimTim();
+ // nvec.NVIC_IRQChannel=EXTI1_IRQn;
+  //NVIC_Init(&nvec);
   arr[0]=0;
   arr[1]=0;
   arr[2]=0;
-  GPIO_SetBits(GPIOD,GPIO_Pin_14); 
- /* int h=-1;
-  int c=0;
-  while (1)
-  {   
-    c++;
-    if(c==14)
-    {
-      c=0;
-      h=-h;
-    }
-    ChangePulse(h*100);
-    for(int i=0;i<1000000;i++);
-  }*/
- } 
-/* void PWM()
-{
-  for (int i=0;i<50000;i++)
-  {
-    TIM_SetCompare1(TIM1,i);
-    for(int j=0;j<5000;j++)
-    {
-    }
+ // GPIO_SetBits(GPIOA,GPIO_Pin_10|GPIO_Pin_9|GPIO_Pin_8);
+//  GPIO_ResetBits(GPIOA,GPIO_Pin_9);
 
-  }
-}*/
-   //Init Leds
-  void Initleds(int Pins,int PinSource)
+}  
+  void InitLeds(int Pins,int PinSource)
   {
     GPIO_InitTypeDef  GPIO_InitStructure;
     RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA, ENABLE);
-   // GPIO_PinAFConfig(GPIOA,PinSource,GPIO_AF_TIM1);
-    GPIO_PinAFConfig(GPIOA,GPIO_PinSource8/*|GPIO_PinSource9|GPIO_PinSource10*/,GPIO_AF_TIM1);
-    GPIO_PinAFConfig(GPIOA,GPIO_PinSource9/*|GPIO_PinSource9|GPIO_PinSource10*/,GPIO_AF_TIM1);
-    GPIO_PinAFConfig(GPIOA,GPIO_PinSource10/*|GPIO_PinSource9|GPIO_PinSource10*/,GPIO_AF_TIM1);
- // GPIO_InitStructure.GPIO_Pin= Pins;
-    GPIO_InitStructure.GPIO_Pin= GPIO_Pin_8|GPIO_Pin_9|GPIO_Pin_10;
+    GPIO_PinAFConfig(GPIOA,PinSource,GPIO_AF_TIM1);
+  GPIO_InitStructure.GPIO_Pin= Pins;
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
     GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;
@@ -236,12 +256,11 @@ void MyInit()
     GPIO_Init(GPIOA, &GPIO_InitStructure);
   }
    
-  //Int Timer
-  void TimTim()
+ void TimTim()
   {
     TIM_TimeBaseInitTypeDef ttt;
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_TIM1,ENABLE);
-    ttt.TIM_Period=100000/60-1;
+    ttt.TIM_Period=9999;
     ttt.TIM_Prescaler=1680;
     ttt.TIM_ClockDivision=0;
     ttt.TIM_CounterMode=TIM_CounterMode_Up;
@@ -258,27 +277,21 @@ void MyInit()
     TIM_OC2PreloadConfig(TIM1,TIM_OCPreload_Enable);
     TIM_OC3Init(TIM1,&aaa);
     TIM_OC3PreloadConfig(TIM1,TIM_OCPreload_Enable);
-    //Timer2
-    TIM_TimeBaseInitTypeDef ttt2;
-    RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2,ENABLE);
-    ttt2.TIM_Period=1000000-1;
-    ttt2.TIM_Prescaler=84-1;
-    ttt2.TIM_ClockDivision=0;
-    ttt2.TIM_CounterMode=TIM_CounterMode_Up;
-    TIM_TimeBaseInit(TIM2,&ttt2);
-    TIM_ITConfig(TIM2, TIM_IT_Update,ENABLE);
-    TIM_Cmd(TIM2,ENABLE);
-    //Timer vector
-    NVIC_InitTypeDef nv;
-    nv.NVIC_IRQChannel=TIM2_IRQn;
-    nv.NVIC_IRQChannelPreemptionPriority=0x00;
-    nv.NVIC_IRQChannelSubPriority=0x01;
-    nv.NVIC_IRQChannelCmd=ENABLE;
-    NVIC_Init(&nv);
   }
+/* void  ChangePulse(int delta)      
+{    
+   if(pulse+delta>0 && pulse+delta<1600)
+   {
+      pulse=pulse+delta;
+   }
+   TIM_SetCompare1(TIM1,pulse);
+}*/
+
+
+char co=0;
 int ok=1;
-int co=0;
-void TIM2_IRQHandler(void)
+int ind=3;
+/*void TIM2_IRQHandler(void)
 {
   if(ok==0)
   {
@@ -289,22 +302,15 @@ void TIM2_IRQHandler(void)
     co=0;
     ok=1;
   }
+
   if(TIM_GetITStatus(TIM2,TIM_IT_Update)!=RESET)
   {
     TIM_ClearITPendingBit(TIM2, TIM_IT_Update);
   }
-}
+}*/
 
-int pulse=1; 
-  void  ChangePulse(int delta)      
-  {    
-     if(pulse+delta>0 && pulse+delta<1600)
-     {
-        pulse=pulse+delta;
-     }
-     TIM_SetCompare2(TIM1,pulse);
-  }
-void EXTI0_IRQHandler(void)
+// User button interrupt handler. Do nothing except the led.
+/*void EXTI0_IRQHandler(void)
 {
   if(EXTI_GetITStatus(EXTI_Line0)!=RESET)
   {
@@ -329,13 +335,13 @@ void EXTI0_IRQHandler(void)
       
     EXTI_ClearITPendingBit(EXTI_Line0);
   }
-}
-void EXTI1_IRQHandler(void)
+}*/
+/*void EXTI1_IRQHandler(void)
 {
   if(EXTI_GetITStatus(EXTI_Line1)!=RESET)
   {
   //  GPIO_SetBits(GPIOA,GPIO_Pin_8);
-    arr[ind-1]+=100;
+   arr[ind-1]+=100;
     if(ind==1)
     TIM_SetCompare1(TIM1,arr[ind-1]);
     else
@@ -345,6 +351,37 @@ void EXTI1_IRQHandler(void)
     TIM_SetCompare3(TIM1,arr[ind-1]); 
     EXTI_ClearITPendingBit(EXTI_Line1);
   }
+}*/
+int c=0;
+int h=-1;
+/*void EXTI0_IRQHandler(void)
+{
+  if(EXTI_GetITStatus(EXTI_Line0)!=RESET)
+  {
+
+    if(h>0)
+    ChangePulse(h*1200-100);
+    else
+    ChangePulse(h*1200);  
+    h=-h;
+    EXTI_ClearITPendingBit(EXTI_Line0);
+  }
+}*/
+int pul=0;
+void EXTI0_IRQHandler(void)
+{
+  if(EXTI_GetITStatus(EXTI_Line0)!=RESET)
+  {
+   // GPIO_ResetBits(GPIOD,GPIO_Pin_12|GPIO_Pin_14|GPIO_Pin_15);
+    if(ok)
+    pul+=100;
+    if(pul>8000)
+      pul=0;
+    ok=(ok+1)%2;
+
+    TIM_SetCompare1(TIM1,pul);
+    EXTI_ClearITPendingBit(EXTI_Line0);
+  }
 }
 void zb_zdo_startup_complete(zb_uint8_t param) ZB_CALLBACK
 {
@@ -353,11 +390,9 @@ void zb_zdo_startup_complete(zb_uint8_t param) ZB_CALLBACK
     {
       TRACE_MSG(TRACE_APS1, "Device STARTED OK", (FMT__0));
 #ifndef APS_RETRANSMIT_TEST
-     // zb_af_set_data_indication(data_indication);
+      zb_af_set_data_indication(data_indication);
 #endif
-     // send_data((zb_buf_t *)ZB_BUF_FROM_REF(param));
-     //PWM();
-    // MyInit();
+      send_data((zb_buf_t *)ZB_BUF_FROM_REF(param));
     }
   else
     {
