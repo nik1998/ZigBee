@@ -68,6 +68,7 @@ static void send_data(zb_buf_t *buf);
 void function_state(int ind);
 void MyInit();
 int arr[3];
+int CommandParse(int com);
 void ChangePulse(int delta);
 void TimTim();
 void Initleds(int Pins, int PinSource);
@@ -276,18 +277,21 @@ void MyInit()
     nv.NVIC_IRQChannelCmd=ENABLE;
     NVIC_Init(&nv);
   }
-int ok=1;
+int ok1=0;
+int ok2=0;
 int co=0;
 void TIM2_IRQHandler(void)
 {
-  if(ok==0)
+  if(ok1|ok2)
   {
     co++;
   }
   if(co==2)
   {
     co=0;
-    ok=1;
+    CommandParse(ok1*10+ok2);
+    ok1=0;
+    ok2=0;
   }
   if(TIM_GetITStatus(TIM2,TIM_IT_Update)!=RESET)
   {
@@ -304,11 +308,111 @@ int pulse=1;
      }
      TIM_SetCompare2(TIM1,pulse);
   }
+void EXTI1_IRQHandler(void)
+{
+  if(EXTI_GetITStatus(EXTI_Line1)!=RESET)
+  {
+   /* GPIO_ResetBits(GPIOD,GPIO_Pin_12|GPIO_Pin_14|GPIO_Pin_15); 
+      if(ind==1)
+      {
+        GPIO_SetBits(GPIOD,GPIO_Pin_12); 
+        ind=2;
+      }
+      else
+            if(ind==2)
+            {
+              GPIO_SetBits(GPIOD,GPIO_Pin_15); 
+              ind=3;
+            }
+            else
+            if(ind==3)
+            {
+              GPIO_SetBits(GPIOD,GPIO_Pin_14); 
+              ind=1;
+            }*/
+    ok2=1;
+   /* if(arr[ind-1]==0)
+    {
+      arr[ind-1]=800;
+    }
+    else
+    {
+      arr[ind-1]=0;
+    }
+    if(ind==1)
+    TIM_SetCompare1(TIM1,arr[ind-1]);
+    else
+    if(ind==2)
+    TIM_SetCompare2(TIM1,arr[ind-1]); 
+    else
+    TIM_SetCompare3(TIM1,arr[ind-1]); */
+
+    EXTI_ClearITPendingBit(EXTI_Line1);
+  }
+}
 void EXTI0_IRQHandler(void)
 {
   if(EXTI_GetITStatus(EXTI_Line0)!=RESET)
   {
-    GPIO_ResetBits(GPIOD,GPIO_Pin_12|GPIO_Pin_14|GPIO_Pin_15); 
+  //  GPIO_SetBits(GPIOA,GPIO_Pin_8);
+    ok1=1;
+   /* arr[ind-1]+=100;
+    if(arr[ind-1]>1600)
+    {
+      arr[ind-1]=0;
+    }
+    if(ind==1)
+    TIM_SetCompare1(TIM1,arr[ind-1]);
+    else
+    if(ind==2)
+    TIM_SetCompare2(TIM1,arr[ind-1]); 
+    else
+    TIM_SetCompare3(TIM1,arr[ind-1]); */
+    EXTI_ClearITPendingBit(EXTI_Line0);
+  }
+}
+int CommandParse(int com)
+{
+  switch(com)
+  {
+    case 10:
+    {
+      arr[ind-1]+=100;
+      if(arr[ind-1]>1600)
+      {
+        arr[ind-1]=0;
+      }
+      if(ind==1)
+      TIM_SetCompare1(TIM1,arr[ind-1]);
+      else
+      if(ind==2)
+      TIM_SetCompare2(TIM1,arr[ind-1]); 
+      else
+      TIM_SetCompare3(TIM1,arr[ind-1]);
+      break;
+    }
+    case 1:
+    {
+      if(arr[ind-1]==0)
+      {
+        arr[ind-1]=800;
+      }
+      else
+      {
+        arr[ind-1]=0;
+      }
+      if(ind==1)
+        TIM_SetCompare1(TIM1,arr[ind-1]);
+      else
+      if(ind==2)
+        TIM_SetCompare2(TIM1,arr[ind-1]); 
+      else
+      TIM_SetCompare3(TIM1,arr[ind-1]); 
+      break;
+    }
+    case 11:
+    {
+       GPIO_ResetBits(GPIOD,GPIO_Pin_12|GPIO_Pin_14|GPIO_Pin_15); 
       if(ind==1)
       {
         GPIO_SetBits(GPIOD,GPIO_Pin_12); 
@@ -326,26 +430,11 @@ void EXTI0_IRQHandler(void)
               GPIO_SetBits(GPIOD,GPIO_Pin_14); 
               ind=1;
             }
-      
-    EXTI_ClearITPendingBit(EXTI_Line0);
-  }
+      break;
+    }
+ }
 }
-void EXTI1_IRQHandler(void)
-{
-  if(EXTI_GetITStatus(EXTI_Line1)!=RESET)
-  {
-  //  GPIO_SetBits(GPIOA,GPIO_Pin_8);
-    arr[ind-1]+=100;
-    if(ind==1)
-    TIM_SetCompare1(TIM1,arr[ind-1]);
-    else
-    if(ind==2)
-    TIM_SetCompare2(TIM1,arr[ind-1]); 
-    else
-    TIM_SetCompare3(TIM1,arr[ind-1]); 
-    EXTI_ClearITPendingBit(EXTI_Line1);
-  }
-}
+
 void zb_zdo_startup_complete(zb_uint8_t param) ZB_CALLBACK
 {
   zb_buf_t *buf = ZB_BUF_FROM_REF(param);
