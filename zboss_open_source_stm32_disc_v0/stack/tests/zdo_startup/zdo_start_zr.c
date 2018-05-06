@@ -54,8 +54,8 @@ PURPOSE: Test for ZC application written using ZDO.
 #include "zb_aps.h"
 #include "zb_zdo.h"
 #define dToggle 2
-#define dStepUp 3
-#define dChangeColor 1
+#define dStepUp 1
+#define dChangeColor 3
 #include "stm32.h"
 //#define HSE_VALUE 8000000
 //#define PLL_M 8
@@ -68,15 +68,15 @@ static void send_data(zb_buf_t *buf);
 void function_state(int ind);
 void MyInit();
 int arr[3];
-int CommandParse(int com);
+void CommandParse(int com);
 void ChangePulse(int delta);
 void TimTim();
 void Initleds(int Pins, int PinSource);
 
-#ifndef APS_RETRANSMIT_TEST
+/*#ifndef APS_RETRANSMIT_TEST
 void data_indication(zb_uint8_t param) ZB_CALLBACK;
 #endif
-
+*/
 /*
   ZR joins to ZC, then sends APS packet.
  */
@@ -194,20 +194,7 @@ void MyInit()
   arr[1]=0;
   arr[2]=0;
   GPIO_SetBits(GPIOD,GPIO_Pin_14); 
- /* int h=-1;
-  int c=0;
-  while (1)
-  {   
-    c++;
-    if(c==14)
-    {
-      c=0;
-      h=-h;
-    }
-    ChangePulse(h*100);
-    for(int i=0;i<1000000;i++);
-  }*/
- } 
+  } 
 /* void PWM()
 {
   for (int i=0;i<50000;i++)
@@ -290,6 +277,7 @@ void TIM2_IRQHandler(void)
   {
     co=0;
     CommandParse(ok1*10+ok2);
+    //function_state(ok1+2*ok2);
     ok1=0;
     ok2=0;
   }
@@ -299,54 +287,11 @@ void TIM2_IRQHandler(void)
   }
 }
 
-int pulse=1; 
-  void  ChangePulse(int delta)      
-  {    
-     if(pulse+delta>0 && pulse+delta<1600)
-     {
-        pulse=pulse+delta;
-     }
-     TIM_SetCompare2(TIM1,pulse);
-  }
 void EXTI1_IRQHandler(void)
 {
   if(EXTI_GetITStatus(EXTI_Line1)!=RESET)
   {
-   /* GPIO_ResetBits(GPIOD,GPIO_Pin_12|GPIO_Pin_14|GPIO_Pin_15); 
-      if(ind==1)
-      {
-        GPIO_SetBits(GPIOD,GPIO_Pin_12); 
-        ind=2;
-      }
-      else
-            if(ind==2)
-            {
-              GPIO_SetBits(GPIOD,GPIO_Pin_15); 
-              ind=3;
-            }
-            else
-            if(ind==3)
-            {
-              GPIO_SetBits(GPIOD,GPIO_Pin_14); 
-              ind=1;
-            }*/
     ok2=1;
-   /* if(arr[ind-1]==0)
-    {
-      arr[ind-1]=800;
-    }
-    else
-    {
-      arr[ind-1]=0;
-    }
-    if(ind==1)
-    TIM_SetCompare1(TIM1,arr[ind-1]);
-    else
-    if(ind==2)
-    TIM_SetCompare2(TIM1,arr[ind-1]); 
-    else
-    TIM_SetCompare3(TIM1,arr[ind-1]); */
-
     EXTI_ClearITPendingBit(EXTI_Line1);
   }
 }
@@ -354,24 +299,11 @@ void EXTI0_IRQHandler(void)
 {
   if(EXTI_GetITStatus(EXTI_Line0)!=RESET)
   {
-  //  GPIO_SetBits(GPIOA,GPIO_Pin_8);
     ok1=1;
-   /* arr[ind-1]+=100;
-    if(arr[ind-1]>1600)
-    {
-      arr[ind-1]=0;
-    }
-    if(ind==1)
-    TIM_SetCompare1(TIM1,arr[ind-1]);
-    else
-    if(ind==2)
-    TIM_SetCompare2(TIM1,arr[ind-1]); 
-    else
-    TIM_SetCompare3(TIM1,arr[ind-1]); */
     EXTI_ClearITPendingBit(EXTI_Line0);
   }
 }
-int CommandParse(int com)
+void CommandParse(int com)
 {
   switch(com)
   {
@@ -487,7 +419,6 @@ void  Toggle (zb_uint8_t param)
    zb_buf_t *buf = ZB_BUF_FROM_REF(param);
    ZB_BUF_INITIAL_ALLOC(buf, ZB_TEST_DATA_SIZE, ptr);
    ptr[0]=dToggle;
-   ptr[1]=0;
    send_data(param);
 }
 void  StepUp (zb_uint8_t param)
@@ -495,7 +426,6 @@ void  StepUp (zb_uint8_t param)
     zb_uint8_t *ptr = NULL;
    zb_buf_t *buf = ZB_BUF_FROM_REF(param);
    ZB_BUF_INITIAL_ALLOC(buf, ZB_TEST_DATA_SIZE, ptr);
-   ptr[1]=0;
    ptr[0]= dStepUp ;
    send_data(param);
 }
@@ -504,7 +434,6 @@ void  ChangeColor (zb_uint8_t param)
     zb_uint8_t *ptr = NULL;
    zb_buf_t *buf = ZB_BUF_FROM_REF(param);
    ZB_BUF_INITIAL_ALLOC(buf, ZB_TEST_DATA_SIZE, ptr);
-   ptr[1]=0;
    ptr[0]= dChangeColor ;
    send_data(param);
 }
@@ -522,11 +451,10 @@ void function_state(int ind)
       ptr[i] =0 ;
     }
 
-         switch(ind%3+1)
+       switch(ind)
        {
          case dToggle:
          {
- 
            Toggle(param);
            break;
          }
@@ -547,7 +475,7 @@ void function_state(int ind)
       // ZB_SCHEDULE_ALARM(zc_send_data,0,5*ZB_TIME_ONE_SECOND);
 }
 
-#ifndef APS_RETRANSMIT_TEST
+/*#ifndef APS_RETRANSMIT_TEST
 void data_indication(zb_uint8_t param)
 {
   zb_ushort_t i;
@@ -568,10 +496,9 @@ void data_indication(zb_uint8_t param)
                               (int)(i % 32 + '0'), (char)i % 32 + '0'));
     }
   }
-  
  // send_data(asdu);
 }
 #endif
-
+*/
 
 /*! @} */
