@@ -106,7 +106,7 @@ MAIN()
 #ifdef ZB_SECURITY
   ZG->nwk.nib.security_level = 0;
 #endif
-  MyInit();
+//  MyInit();
   /* FIXME: temporary, until neighbor table is not in nvram */
   /* add extended address of potential parent to emulate that we've already
    * been connected to it */
@@ -195,17 +195,6 @@ void MyInit()
   arr[2]=0;
   GPIO_SetBits(GPIOD,GPIO_Pin_14); 
   } 
-/* void PWM()
-{
-  for (int i=0;i<50000;i++)
-  {
-    TIM_SetCompare1(TIM1,i);
-    for(int j=0;j<5000;j++)
-    {
-    }
-
-  }
-}*/
    //Init Leds
   void Initleds(int Pins,int PinSource)
   {
@@ -267,7 +256,7 @@ void MyInit()
 int ok1=0;
 int ok2=0;
 int co=0;
-void TIM2_IRQHandler(void)
+/*void TIM2_IRQHandler(void)
 {
   if(ok1|ok2)
   {
@@ -277,7 +266,7 @@ void TIM2_IRQHandler(void)
   {
     co=0;
     CommandParse(ok1*10+ok2);
-    //function_state(ok1+2*ok2);
+    function_state(ok1+2*ok2);
     ok1=0;
     ok2=0;
   }
@@ -302,7 +291,7 @@ void EXTI0_IRQHandler(void)
     ok1=1;
     EXTI_ClearITPendingBit(EXTI_Line0);
   }
-}
+}*/
 void CommandParse(int com)
 {
   switch(com)
@@ -376,10 +365,7 @@ void zb_zdo_startup_complete(zb_uint8_t param) ZB_CALLBACK
 #ifndef APS_RETRANSMIT_TEST
      // zb_af_set_data_indication(data_indication);
 #endif
-     // send_data((zb_buf_t *)ZB_BUF_FROM_REF(param));
-     //PWM();
-    // MyInit();
-    }
+     }
   else
     {
       TRACE_MSG(TRACE_ERROR, "Device started FAILED status %d", (FMT__D, (int)buf->u.hdr.status));

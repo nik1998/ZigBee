@@ -77,7 +77,7 @@ int ind=1;
 int arr[3];
 int a[10]={1,1,1,2,3,1,1,2,3,2};
 static int cur=0;
-//static void zc_send_data(zb_buf_t *buf, zb_uint16_t addr);
+static void zc_send_data(zb_buf_t *buf);
 //void checkf(zb_uint8_t param);
 //void data_indication(zb_uint8_t param) ZB_CALLBACK;
 void TimTim();
@@ -106,7 +106,7 @@ MAIN()
 #ifdef ZB_SECURITY
   ZG->nwk.nib.security_level = 0;
 #endif
-  MyInit();
+  //MyInit();
   ZB_IEEE_ADDR_COPY(ZB_PIB_EXTENDED_ADDRESS(), &g_zc_addr);
   MAC_PIB().mac_pan_id = 0x1aaa;
 
@@ -128,7 +128,7 @@ MAIN()
   MAIN_RETURN(0);
 }
 
-static void check(zb_buf_t *buf)
+/*static void check(zb_buf_t *buf)
 {
     zb_uint8_t *ptr = NULL;
     GPIO_SetBits(GPIOD,GPIO_Pin_12|GPIO_Pin_14|GPIO_Pin_15); 
@@ -141,7 +141,7 @@ static void check(zb_buf_t *buf)
       ZB_SCHEDULE_ALARM(check,buf,3*ZB_TIME_ONE_SECOND);
     }
     //ZB_SCHEDULE_CALLBACK(zb_apsde_data_request, ZB_REF_FROM_BUF(buf));
- }
+ }*/
 
 void zb_zdo_startup_complete(zb_uint8_t param) ZB_CALLBACK
 {
@@ -151,7 +151,7 @@ void zb_zdo_startup_complete(zb_uint8_t param) ZB_CALLBACK
   {
     TRACE_MSG(TRACE_APS1, "Device STARTED OK", (FMT__0));
     zb_af_set_data_indication(CommandParse);
-    ZB_SCHEDULE_ALARM(check,buf,5*ZB_TIME_ONE_SECOND);
+    ZB_SCHEDULE_ALARM(zc_send_data,buf,5*ZB_TIME_ONE_SECOND);
   }
   else
   {
@@ -350,7 +350,7 @@ void CommandParse(zb_uint8_t param)
   zc_send_data(asdu, ind->src_addr);
 }*/
 
-/*static void zc_send_data(zb_buf_t *buf, zb_uint16_t addr)
+static void zc_send_data(zb_buf_t *buf)
 {
     zb_apsde_data_req_t *req;
     zb_uint8_t *ptr = NULL;
@@ -358,7 +358,7 @@ void CommandParse(zb_uint8_t param)
 
     ZB_BUF_INITIAL_ALLOC(buf, ZB_TEST_DUMMY_DATA_SIZE , ptr);
     req = ZB_GET_BUF_TAIL(buf, sizeof(zb_apsde_data_req_t));
-    req->dst_addr.addr_short = addr;
+    req->dst_addr.addr_short = 0x0001;
     req->addr_mode = ZB_APS_ADDR_MODE_16_ENDP_PRESENT;
     req->tx_options = ZB_APSDE_TX_OPT_ACK_TX;
     req->radius = 1;
@@ -372,6 +372,6 @@ void CommandParse(zb_uint8_t param)
     }
     TRACE_MSG(TRACE_APS3, "Sending apsde_data.request", (FMT__0));
     ZB_SCHEDULE_CALLBACK(zb_apsde_data_request, ZB_REF_FROM_BUF(buf));
- }*/
+ }
 
 /*! @} */
